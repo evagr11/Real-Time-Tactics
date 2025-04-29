@@ -1,13 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class GameModel
+public class GameModel : MonoBehaviour
 {
-    // Aquí más adelante: tablero, piezas, turnos, cursor...
+   
 
-    public GameModel()
+    void Start()
     {
-        // Inicializaciones que vendrán en los siguientes días
+
     }
 }
