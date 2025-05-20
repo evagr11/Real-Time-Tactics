@@ -51,4 +51,42 @@ public class Board
             }
         }
     }
+
+    public bool Attack(Vector2Int position, bool isPlayer2Attacker)
+    {
+        if (IsOOB(position))
+            return false;
+
+        IGameEntity entity = GetEntityAtPosition(position);
+        Piece targetPiece = entity as Piece;
+        if (targetPiece != null)
+        {
+            // Solo ataca si la pieza es del jugador contrario y está activa
+            if (targetPiece.isPlayer2 != isPlayer2Attacker && targetPiece.entityGameObject.activeInHierarchy)
+            {
+                IAttackable attackableEntity = targetPiece as IAttackable;
+                if (attackableEntity != null)
+                {
+                    attackableEntity.Attacked();
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public void AttackFrom(Vector2Int position, bool isPlayer2Attacker)
+    {
+        Vector2Int[] directions = { Vector2Int.up, Vector2Int.down, Vector2Int.left, Vector2Int.right };
+        foreach (var dir in directions)
+        {
+            Vector2Int target = position + dir;
+            Attack(target, isPlayer2Attacker);
+        }
+    }
+
+    public bool IsOOB(Vector2Int pos)
+    {
+        return pos.x < 0 || pos.x >= width || pos.y < 0 || pos.y >= height;
+    }
 }

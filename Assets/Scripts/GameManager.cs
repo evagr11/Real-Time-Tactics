@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] float YOffsetForPieces = 0.5f;
     [SerializeField] int pieceNum = 3;
     [SerializeField] bool startWithRandomPlayer = true;
+    [SerializeField] public int maxHealth;
+
 
     Board board;
     CursorLogic cursorLogic;
@@ -51,6 +53,7 @@ public class GameManager : MonoBehaviour
     {
         Vector2Int moveDirection = Vector2Int.zero;
         bool interactPressed = false;
+        bool attackPressed = false;
 
         if (isPlayer2Turn)
         {
@@ -60,6 +63,7 @@ public class GameManager : MonoBehaviour
             else if (Input.GetKeyDown(KeyCode.RightArrow)) moveDirection = Vector2Int.up;
 
             if (Input.GetKeyDown(KeyCode.RightShift)) interactPressed = true;
+            if (Input.GetKeyDown(KeyCode.Keypad0)) attackPressed = true;
         }
         else
         {
@@ -69,6 +73,7 @@ public class GameManager : MonoBehaviour
             else if (Input.GetKeyDown(KeyCode.D)) moveDirection = Vector2Int.up;
 
             if (Input.GetKeyDown(KeyCode.LeftShift)) interactPressed = true;
+            if (Input.GetKeyDown(KeyCode.Space)) attackPressed = true;
         }
 
         if (moveDirection != Vector2Int.zero)
@@ -79,6 +84,11 @@ public class GameManager : MonoBehaviour
         if (interactPressed)
         {
             cursorLogic.HandlePieceInteraction(isPlayer2Turn);
+        }
+
+        if (attackPressed)
+        {
+            board.AttackFrom(cursorLogic.currentPosition, isPlayer2Turn);
         }
     }
 
@@ -101,11 +111,11 @@ public class GameManager : MonoBehaviour
         Vector2Int[] player1StartPositions = { new Vector2Int(midX - 1, 0), new Vector2Int(midX, 0), new Vector2Int(midX + 1, 0) };
         Vector2Int[] player2StartPositions = { new Vector2Int(midX - 1, boardHeight - 1), new Vector2Int(midX, boardHeight - 1), new Vector2Int(midX + 1, boardHeight - 1) };
 
-        CreateInitialPieces(player1StartPositions, player1PiecePrefab, false);
-        CreateInitialPieces(player2StartPositions, player2PiecePrefab, true);
+        CreateInitialPieces(player1StartPositions, player1PiecePrefab, false, maxHealth);
+        CreateInitialPieces(player2StartPositions, player2PiecePrefab, true, maxHealth);
     }
 
-    void CreateInitialPieces(Vector2Int[] startPositions, GameObject piecePrefab, bool isPlayer2)
+    void CreateInitialPieces(Vector2Int[] startPositions, GameObject piecePrefab, bool isPlayer2, int maxHealth)
     {
         for (int i = 0; i < pieceNum; i++)
         {
@@ -116,7 +126,7 @@ public class GameManager : MonoBehaviour
                 Vector3 visualPos = pieceSquare.boardSquare.transform.position + new Vector3(0, YOffsetForPieces, 0);
                 GameObject pieceObj = Instantiate(piecePrefab, visualPos, Quaternion.identity);
 
-                Piece piece = new Piece(pos, isPlayer2, pieceObj, YOffsetForPieces);
+                Piece piece = new Piece(pos, isPlayer2, pieceObj, YOffsetForPieces, maxHealth);
                 allPieces.Add(piece);
                 board.SetEntityAtPosition(pos, piece);
             }
