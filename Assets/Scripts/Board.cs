@@ -54,14 +54,15 @@ public class Board
 
     public bool Attack(Vector2Int position, bool isPlayer2Attacker)
     {
-        if (IsOOB(position))
+        if (IsOutOfBounds(position))
             return false;
 
         IGameEntity entity = GetEntityAtPosition(position);
+
+        // Si es una pieza, solo ataca si es del jugador contrario y está activa
         Piece targetPiece = entity as Piece;
         if (targetPiece != null)
         {
-            // Solo ataca si la pieza es del jugador contrario y está activa
             if (targetPiece.isPlayer2 != isPlayer2Attacker && targetPiece.entityGameObject.activeInHierarchy)
             {
                 IAttackable attackableEntity = targetPiece as IAttackable;
@@ -71,7 +72,16 @@ public class Board
                     return true;
                 }
             }
+            // No retornes aquí, deja que siga para comprobar si es otra entidad atacable
         }
+
+        // Si es una crate u otra entidad atacable, la ataca siempre
+        if (entity is IAttackable attackable && !(entity is Piece))
+        {
+            attackable.Attacked();
+            return true;
+        }
+
         return false;
     }
 
@@ -85,8 +95,21 @@ public class Board
         }
     }
 
-    public bool IsOOB(Vector2Int pos)
+    public bool IsOutOfBounds(Vector2Int pos)
     {
         return pos.x < 0 || pos.x >= width || pos.y < 0 || pos.y >= height;
+    }
+
+    public void ClearEntityAtPosition(Vector2Int position)
+    {
+        while (GetSquareAtPosition(position.x, position.y).containedEntity != null)
+        {
+            SetEntityAtPosition(position, null);
+        }
+    }
+
+    public void PlaceCrateAtPosition(Vector2Int position, IGameEntity crate)
+    {
+        GetSquareAtPosition(position.x, position.y).containedEntity = crate;
     }
 }
