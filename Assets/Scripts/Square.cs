@@ -3,7 +3,8 @@ using UnityEngine;
 public class Square
 {
     public Vector2Int position;
-    GameObject boardSquare;
+    public GameObject boardSquare;
+    public IGameEntity containedEntity;
 
     public Square(int x, int y, GameObject boardSquarePrefab, Transform parent)
     {
@@ -12,7 +13,9 @@ public class Square
             boardSquarePrefab,
             new Vector3(position.x, 0, position.y),
             Quaternion.identity,
-            parent  
+            parent
         );
+        this.containedEntity = null;
     }
+
 }
