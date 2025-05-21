@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class PieceVisual : MonoBehaviour
 {
-    private Vector3 initialScale;
-    private Vector3 initialLocalPosition;
+    // Este script gestiona el aspecto visual de una pieza, permitiendo que se reduzca su tamaño en el eje Y al recibir daño.
+
+    private Vector3 initialScale; // Escala inicial de la pieza
+    private Vector3 initialLocalPosition; // Posición local inicial de la pieza
+
 
     void Awake()
     {

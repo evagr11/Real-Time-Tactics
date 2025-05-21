@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class CrateVisuals : MonoBehaviour
 {
+    // Este script gestiona la animación visual de la caja (crate): rotación y oscilación vertical.
+
     public float rotationSpeed = 60f; // grados por segundo
     public float oscillationAmplitude = 0.05f; // altura máxima de la oscilación (muy bajo)
     public float oscillationFrequency = 0.3f; // ciclos por segundo (muy lento)

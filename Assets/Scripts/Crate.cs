@@ -5,11 +5,15 @@ using UnityEngine.UIElements;
 
 public class Crate : BoardEntity, IAttackable
 {
-    CrateVisuals visuals;
+    // Este script representa una caja (crate) en el tablero, que puede ser atacada y destruida.
+
+    CrateVisuals visuals; // Referencia al componente visual de la caja
 
     public Crate(Vector2Int position, EntityID iD, GameObject prefab) : base(position, iD)
     {
+        // Calcula la posición de aparición de la caja
         Vector3 spawnPos = GameManager.Vector2IntToVector3(position) + new Vector3(0, 0.25f, 0);
+        // Instancia el objeto visual de la caja
         visuals = GameObject.Instantiate(
             prefab,
             spawnPos,
@@ -17,6 +21,7 @@ public class Crate : BoardEntity, IAttackable
         ).GetComponent<CrateVisuals>();
     }
 
+    // Devuelve el GameObject visual de la caja
     public override GameObject entityGameObject => visuals != null ? visuals.gameObject : null;
 
     public void Attacked()
@@ -34,6 +39,7 @@ public class Crate : BoardEntity, IAttackable
         }
     }
 
+    // Destruye el objeto visual si existe
     public override void DestroyVisuals()
     {
         if (visuals != null)
