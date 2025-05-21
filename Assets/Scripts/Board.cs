@@ -64,12 +64,17 @@ public class Board
             return false;
 
         IGameEntity entity = GetEntityAtPosition(position);
+        if (entity == null)
+            return false;
 
         // Si es una pieza, solo ataca si es del jugador contrario y está activa
         Piece targetPiece = entity as Piece;
         if (targetPiece != null)
         {
-            if (targetPiece.isPlayer2 != isPlayer2Attacker && targetPiece.entityGameObject.activeInHierarchy)
+            // Verificar que el GameObject no sea nulo antes de acceder a activeInHierarchy
+            if (targetPiece.isPlayer2 != isPlayer2Attacker &&
+            targetPiece.entityGameObject != null &&
+            targetPiece.entityGameObject.activeInHierarchy)
             {
                 IAttackable attackableEntity = targetPiece as IAttackable;
                 if (attackableEntity != null)
