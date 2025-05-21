@@ -241,11 +241,11 @@ MonoBehaviour:
   boardWidth: 5
   boardHeight: 5
   boardSquarePrefab: {fileID: 8011252497055852361, guid: 46f68ad390b0d5d4593082237c5e2d8f, type: 3}
-  cursorPrefab: {fileID: 6188653601061698076, guid: 3939fdd04699fec498c18edd5427ddc8, type: 3}
+  cursorPrefab: {fileID: 2878505248777992562, guid: 3939fdd04699fec498c18edd5427ddc8, type: 3}
   player1PiecePrefab: {fileID: 165450438687451647, guid: a51afa4f1db851847bd4eb610077c6af, type: 3}
   player2PiecePrefab: {fileID: 2286749689547368469, guid: f94305df3701b314289844000caf408a, type: 3}
-  cratePrefab: {fileID: 4346232606762557063, guid: 792438cf4ccd5c14080b89f915ccbbd9, type: 3}
-  healthPickupPrefab: {fileID: 5340109313758904995, guid: 1b696e3c7c59bf742aa0068de836cc6a, type: 3}
+  cratePrefab: {fileID: 4227750382354114720, guid: 73ed8bc3a1a4c0746b19ed19217c4b6a, type: 3}
+  healthPickupPrefab: {fileID: 2723450346909700246, guid: 077a454f8ffe7704d9df83f8b28825f7, type: 3}
   YOffsetForPieces: 0.5
   pieceNum: 3
   startWithRandomPlayer: 1
