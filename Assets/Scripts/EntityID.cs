@@ -1,6 +1,8 @@
-public enum EntityID
+ï»¿public enum EntityID
 {
-    // Enumeración que identifica los tipos de entidades posibles en el tablero.
+    // Enumeraciï¿½n que identifica los tipos de entidades posibles en el tablero.
+    None, // Ninguna entidad
     Piece,   // Pieza de jugador
-    Crate    // Caja
+    Crate,    // Caja
+    HealthPickup
 }

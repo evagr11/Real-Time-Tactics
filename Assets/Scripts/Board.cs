@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class Board
 {
@@ -28,7 +28,7 @@ public class Board
 
     public Square GetSquareAtPosition(int x, int y)
     {
-        // Devuelve la casilla en la posición dada, o null si está fuera de límites
+        // Devuelve la casilla en la posiciï¿½n dada, o null si estï¿½ fuera de lï¿½mites
         if (x < 0 || x >= width || y < 0 || y >= height)
         {
             return null;
@@ -38,14 +38,14 @@ public class Board
 
     public IGameEntity GetEntityAtPosition(Vector2Int position)
     {
-        // Devuelve la entidad en la posición dada
+        // Devuelve la entidad en la posiciï¿½n dada
         Square square = GetSquareAtPosition(position.x, position.y);
         return square?.containedEntity;
     }
 
     public void SetEntityAtPosition(Vector2Int position, IGameEntity entity)
     {
-        // Coloca una entidad en la posición dada
+        // Coloca una entidad en la posiciï¿½n dada
         Square square = GetSquareAtPosition(position.x, position.y);
         if (square != null)
         {
@@ -59,7 +59,7 @@ public class Board
 
     public bool Attack(Vector2Int position, bool isPlayer2Attacker)
     {
-        // Realiza un ataque en la posición dada
+        // Realiza un ataque en la posiciï¿½n dada
         if (IsOutOfBounds(position))
             return false;
 
@@ -67,7 +67,7 @@ public class Board
         if (entity == null)
             return false;
 
-        // Si es una pieza, solo ataca si es del jugador contrario y está activa
+        // Si es una pieza, solo ataca si es del jugador contrario y estï¿½ activa
         Piece targetPiece = entity as Piece;
         if (targetPiece != null)
         {
@@ -83,7 +83,7 @@ public class Board
                     return true;
                 }
             }
-            // No retornes aquí, deja que siga para comprobar si es otra entidad atacable
+            // No retornes aquï¿½, deja que siga para comprobar si es otra entidad atacable
         }
 
         // Si es una crate, la ataca siempre
@@ -98,7 +98,7 @@ public class Board
 
     public void AttackFrom(Vector2Int position, bool isPlayer2Attacker)
     {
-        // Ataca en las 4 direcciones desde la posición dada
+        // Ataca en las 4 direcciones desde la posiciï¿½n dada
         Vector2Int[] directions = { Vector2Int.up, Vector2Int.down, Vector2Int.left, Vector2Int.right };
         foreach (var dir in directions)
         {
@@ -109,13 +109,13 @@ public class Board
 
     public bool IsOutOfBounds(Vector2Int pos)
     {
-        // Devuelve true si la posición está fuera del tablero
+        // Devuelve true si la posiciï¿½n estï¿½ fuera del tablero
         return pos.x < 0 || pos.x >= width || pos.y < 0 || pos.y >= height;
     }
 
     public void ClearEntityAtPosition(Vector2Int position)
     {
-        // Elimina la entidad de la posición dada
+        // Elimina la entidad de la posiciï¿½n dada
         while (GetSquareAtPosition(position.x, position.y).containedEntity != null)
         {
             SetEntityAtPosition(position, null);
@@ -124,7 +124,7 @@ public class Board
 
     public void PlaceCrateAtPosition(Vector2Int position, IGameEntity crate)
     {
-        // Coloca una caja en la posición dada
+        // Coloca una caja en la posiciï¿½n dada
         GetSquareAtPosition(position.x, position.y).containedEntity = crate;
     }
 }

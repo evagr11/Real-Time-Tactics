@@ -1,13 +1,13 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class CursorVisual : MonoBehaviour
 {
     // Este script gestiona el aspecto visual del cursor en el tablero
 
-    // Actualiza la posición visual del cursor en el mundo
+    // Actualiza la posiciï¿½n visual del cursor en el mundo
     public void UpdatePosition(Vector3 newPosition)
     {
-        // Mueve el objeto visual del cursor a la posición indicada
+        // Mueve el objeto visual del cursor a la posiciï¿½n indicada
         transform.position = newPosition;
     }
 }

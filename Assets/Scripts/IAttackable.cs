@@ -1,7 +1,7 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public interface IAttackable
 {
-    // Interfaz que indica que una entidad puede ser atacada (recibir daño o ser destruida).    
-    void Attacked(); // Método que se llama cuando la entidad es atacada
+    // Interfaz que indica que una entidad puede ser atacada (recibir daï¿½o o ser destruida).    
+    void Attacked(); // Mï¿½todo que se llama cuando la entidad es atacada
 }

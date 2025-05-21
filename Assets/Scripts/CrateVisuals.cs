@@ -1,11 +1,11 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class CrateVisuals : MonoBehaviour
 {
-    // Este script gestiona la animación visual de la caja (crate): rotación y oscilación vertical.
+    // Este script gestiona la animaciï¿½n visual de la caja (crate): rotaciï¿½n y oscilaciï¿½n vertical.
 
     public float rotationSpeed = 60f; // grados por segundo
-    public float oscillationAmplitude = 0.05f; // altura máxima de la oscilación (muy bajo)
+    public float oscillationAmplitude = 0.05f; // altura mï¿½xima de la oscilaciï¿½n (muy bajo)
     public float oscillationFrequency = 0.3f; // ciclos por segundo (muy lento)
 
     private Vector3 initialPosition;
@@ -17,10 +17,10 @@ public class CrateVisuals : MonoBehaviour
 
     void Update()
     {
-        // Rotación continua en Y
+        // Rotaciï¿½n continua en Y
         transform.Rotate(0, rotationSpeed * Time.deltaTime, 0, Space.World);
 
-        // Oscilación vertical
+        // Oscilaciï¿½n vertical
         float offsetY = Mathf.Sin(Time.time * Mathf.PI * 2f * oscillationFrequency) * oscillationAmplitude;
         Vector3 pos = initialPosition + new Vector3(0, offsetY, 0);
         transform.position = pos;

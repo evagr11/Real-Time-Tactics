@@ -1,13 +1,13 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PieceVisual : MonoBehaviour
 {
-    // Este script gestiona el aspecto visual de una pieza, permitiendo que se reduzca su tamaño en el eje Y al recibir daño.
+    // Este script gestiona el aspecto visual de una pieza, permitiendo que se reduzca su tamaï¿½o en el eje Y al recibir daï¿½o.
 
     private Vector3 initialScale; // Escala inicial de la pieza
-    private Vector3 initialLocalPosition; // Posición local inicial de la pieza
+    private Vector3 initialLocalPosition; // Posiciï¿½n local inicial de la pieza
 
 
     void Awake()
@@ -16,23 +16,24 @@ public class PieceVisual : MonoBehaviour
         initialLocalPosition = transform.localPosition;
     }
 
-    // Llama a este método desde Piece.Attacked(), pasando la vida actual y la máxima
+    // Llama a este mï¿½todo desde Piece.Attacked(), pasando la vida actual y la mï¿½xima
     public void ShrinkOnHit(int currentHealth, int maxHealth)
     {
         // Si la vida es 0 o menos, desaparece
         if (currentHealth <= 0)
         {
             transform.localScale = new Vector3(initialScale.x, 0f, initialScale.z);
-            transform.localPosition = initialLocalPosition - new Vector3(0, initialScale.y * 0.5f, 0);
+            transform.localPosition -= new Vector3(0, initialScale.y * 0.5f, 0); // Solo ajusta sin restaurar posiciÃ³n
             return;
         }
 
-        // Escalado proporcional en Y según la vida restante
+        // Escalado proporcional en Y segÃºn la vida restante
         float yScale = (float)currentHealth / maxHealth;
         transform.localScale = new Vector3(initialScale.x, initialScale.y * yScale, initialScale.z);
 
-        // Ajusta la posición local en Y para que la base siga apoyada
+        // Ajusta la posiciÃ³n local en Y para que la base siga apoyada sin restablecer `initialLocalPosition`
         float yOffset = (initialScale.y - initialScale.y * yScale) * 0.5f;
-        transform.localPosition = initialLocalPosition - new Vector3(0, yOffset, 0);
+        transform.localPosition -= new Vector3(0, yOffset, 0); // Mantiene la posiciÃ³n actual
     }
+
 }

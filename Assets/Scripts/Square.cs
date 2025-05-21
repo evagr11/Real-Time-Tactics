@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class Square
 {
@@ -11,9 +11,9 @@ public class Square
 
     public Square(int x, int y, GameObject boardSquarePrefab, Transform parent)
     {
-        // Asigna la posición lógica de la casilla
+        // Asigna la posiciï¿½n lï¿½gica de la casilla
         this.position = new Vector2Int(x, y);
-        // Instancia el objeto visual de la casilla en la posición correspondiente
+        // Instancia el objeto visual de la casilla en la posiciï¿½n correspondiente
 
         this.boardSquare = GameObject.Instantiate(
             boardSquarePrefab,
@@ -21,7 +21,7 @@ public class Square
             Quaternion.identity,
             parent
         );
-        // Inicialmente la casilla está vacía
+        // Inicialmente la casilla estï¿½ vacï¿½a
         this.containedEntity = null;
     }
 

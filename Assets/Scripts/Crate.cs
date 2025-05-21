@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -11,7 +11,7 @@ public class Crate : BoardEntity, IAttackable
 
     public Crate(Vector2Int position, EntityID iD, GameObject prefab) : base(position, iD)
     {
-        // Calcula la posición de aparición de la caja
+        // Calcula la posiciï¿½n de apariciï¿½n de la caja
         Vector3 spawnPos = GameManager.Vector2IntToVector3(position) + new Vector3(0, 0.25f, 0);
         // Instancia el objeto visual de la caja
         visuals = GameObject.Instantiate(
@@ -31,6 +31,9 @@ public class Crate : BoardEntity, IAttackable
 
         // Lanza el evento si lo necesitas
         GameEvents.CrateBroke.Invoke(position);
+
+        // Instancia el HealthPickup en la misma posiciÃ³n
+        GameManager.Instance.SpawnHealthPickup(position);
 
         // Destruye el objeto visual
         if (visuals != null)
