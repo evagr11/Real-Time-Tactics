@@ -245,7 +245,7 @@ public class GameManager : MonoBehaviour
     {
         timeLeftInTurn = turnTime;
 
-        //cursorVisual.UpdateMaterial(isPlayer2Turn);
+        cursorVisual.UpdateMaterial(isPlayer2Turn);
 
         UpdateTimerBarColor();
     }
