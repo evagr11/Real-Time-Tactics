@@ -9,11 +9,41 @@ public class PieceVisual : MonoBehaviour
     private Vector3 initialScale; // Escala inicial de la pieza
     private Vector3 initialLocalPosition; // Posici�n local inicial de la pieza
 
+    [SerializeField] Color cooldownColor;
+
+    public Piece pieceReference;
+    public float cooldownTransitionTime; // Variable para almacenar el tiempo de transición de cooldown
+
+
+    private Material originalMaterial;
+    private Renderer pieceRenderer;
+    private bool isInterpolating = false;
+    private float cooldownTimer;
+    private Color originalColor;
+
+    void Start()
+    {
+        if (pieceReference != null)
+        {
+            cooldownTransitionTime = pieceReference.attackCooldownDuration;
+        }
+
+        originalColor = originalMaterial.color;
+    }
+
+
+    void Update()
+    {
+        InterpolateMaterial();
+    }
 
     void Awake()
     {
         initialScale = transform.localScale;
         initialLocalPosition = transform.localPosition;
+
+        pieceRenderer = GetComponent<Renderer>();
+        originalMaterial = pieceRenderer.material;
     }
 
     // Llama a este m�todo desde Piece.Attacked(), pasando la vida actual y la m�xima
@@ -34,6 +64,31 @@ public class PieceVisual : MonoBehaviour
         // Ajusta la posición local en Y para que la base siga apoyada sin restablecer `initialLocalPosition`
         float yOffset = (initialScale.y - initialScale.y * yScale) * 0.5f;
         transform.localPosition -= new Vector3(0, yOffset, 0); // Mantiene la posición actual
+    }
+
+    public void UpdateCooldownVisual(bool isOnCooldown)
+    {
+        if (isOnCooldown)
+        {
+            isInterpolating = true;
+            cooldownTimer = 0f;
+        }
+    }
+
+    void InterpolateMaterial()
+    {
+        if (isInterpolating)
+        {
+            cooldownTimer += Time.deltaTime;
+            float t = Mathf.Clamp01(cooldownTimer / cooldownTransitionTime);
+
+            pieceRenderer.material.color = Color.Lerp(cooldownColor, originalColor, t);
+
+            if (t >= 1f)
+            {
+                isInterpolating = false;
+            }
+        }
     }
 
 }

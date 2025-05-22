@@ -57,37 +57,37 @@ public class Board
         }
     }
 
-    public bool Attack(Vector2Int position, bool isPlayer2Attacker)
+
+
+    public bool Attack(Vector2Int position, bool isPlayer2Attacker, Piece attackingPiece)
     {
-        // Realiza un ataque en la posici�n dada
-        if (IsOutOfBounds(position))
+        if (IsOutOfBounds(position) || attackingPiece == null)
             return false;
 
         IGameEntity entity = GetEntityAtPosition(position);
         if (entity == null)
             return false;
 
-        // Si es una pieza, solo ataca si es del jugador contrario y est� activa
-        Piece targetPiece = entity as Piece;
-        if (targetPiece != null)
+        // **Si la entidad atacada es una pieza, verifica el cooldown**
+        if (entity is Piece targetPiece)
         {
-            // Verificar que el GameObject no sea nulo antes de acceder a activeInHierarchy
+            if (attackingPiece.isOnAttackCooldown)
+                return false; // Bloquea el ataque si está en cooldown
+
             if (targetPiece.isPlayer2 != isPlayer2Attacker &&
-            targetPiece.entityGameObject != null &&
-            targetPiece.entityGameObject.activeInHierarchy)
+                targetPiece.entityGameObject != null &&
+                targetPiece.entityGameObject.activeInHierarchy)
             {
                 IAttackable attackableEntity = targetPiece as IAttackable;
                 if (attackableEntity != null)
                 {
                     attackableEntity.Attacked();
+                    attackingPiece.StartAttackCooldown(); // Activa cooldown después del ataque
                     return true;
                 }
             }
-            // No retornes aqu�, deja que siga para comprobar si es otra entidad atacable
         }
-
-        // Si es una crate, la ataca siempre
-        if (entity is IAttackable attackable && !(entity is Piece))
+        else if (entity is IAttackable attackable) // Si no es una pieza, permite el ataque
         {
             attackable.Attacked();
             return true;
@@ -96,16 +96,18 @@ public class Board
         return false;
     }
 
-    public void AttackFrom(Vector2Int position, bool isPlayer2Attacker)
+
+    public void AttackFrom(Vector2Int position, bool isPlayer2Attacker, Piece attackingPiece)
     {
-        // Ataca en las 4 direcciones desde la posici�n dada
+        // Ataca en las 4 direcciones desde la posición dada
         Vector2Int[] directions = { Vector2Int.up, Vector2Int.down, Vector2Int.left, Vector2Int.right };
         foreach (var dir in directions)
         {
             Vector2Int target = position + dir;
-            Attack(target, isPlayer2Attacker);
+            Attack(target, isPlayer2Attacker, attackingPiece); // Asegúrate de pasar la pieza atacante
         }
     }
+
 
     public bool IsOutOfBounds(Vector2Int pos)
     {

@@ -13,6 +13,12 @@ public class Piece : IGameEntity, IAttackable
     public int maxHealth { get; private set; } // Ahora resiste 3 ataques
     public int currentHealth { get; private set; } // Ahora resiste 3 ataques
 
+    public bool isOnAttackCooldown { get; private set; }
+    private float currentAttackCooldownTimer;
+    public float attackCooldownDuration { get; set; } = 2f;
+
+
+
     public Piece(Vector2Int startPosition, bool isPlayer2, GameObject pieceGameObject, float yOffset, int maxHealth)
     {
         position = startPosition; // Asigna la posici�n inicial
@@ -21,6 +27,12 @@ public class Piece : IGameEntity, IAttackable
         this.yOffsetOnBoard = yOffset; // Asigna el offset visual
         this.maxHealth = maxHealth; // Asigna la vida m�xima
         this.currentHealth = maxHealth; // Inicializa la vida actual
+
+        isOnAttackCooldown = false;
+        currentAttackCooldownTimer = 0f;
+
+
+
     }
 
     public void UpdatePosition(Vector2Int newLogicalPosition, Board boardReference)
@@ -77,4 +89,39 @@ public class Piece : IGameEntity, IAttackable
             }
         }
     }
+
+    public void StartAttackCooldown()
+    {
+        if (!isOnAttackCooldown)
+        {
+            PieceVisual visual = pieceGameObject.GetComponent<PieceVisual>();
+            if (visual != null)
+            {
+                isOnAttackCooldown = true;
+                currentAttackCooldownTimer = attackCooldownDuration;
+                visual.UpdateCooldownVisual(true);
+
+            }
+        }
+    }
+
+    public void Cooldown(float deltaTime)
+    {
+        if (isOnAttackCooldown)
+        {
+            currentAttackCooldownTimer -= deltaTime;
+            if (currentAttackCooldownTimer <= 0)
+            {
+                isOnAttackCooldown = false;
+                currentAttackCooldownTimer = 0;
+
+                PieceVisual visual = pieceGameObject.GetComponent<PieceVisual>();
+                if (visual != null)
+                {
+                    visual.UpdateCooldownVisual(false);
+                }
+            }
+        }
+    }
+
 }

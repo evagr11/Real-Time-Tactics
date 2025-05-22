@@ -32,8 +32,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] Color playerColor1;
     [SerializeField] Color playerColor2;
 
-
-
     Board board;
     CursorLogic cursorLogic;
     CursorVisual cursorVisual;
@@ -89,6 +87,8 @@ public class GameManager : MonoBehaviour
         UpdateTurnTimerVisuals();
         // Actualiza la posici�n visual del cursor
         UpdateCursorVisualPosition();
+
+        UpdatePieceCooldowns();
     }
 
     void HandlePlayerInput()
@@ -120,7 +120,9 @@ public class GameManager : MonoBehaviour
         // Mueve el cursor si hay direcci�n
         if (moveDirection != Vector2Int.zero) cursorLogic.Move(moveDirection);
         if (interactPressed) cursorLogic.HandlePieceInteraction(isPlayer2Turn);
-        if (attackPressed) board.AttackFrom(cursorLogic.currentPosition, isPlayer2Turn);
+        if (attackPressed)
+            board.AttackFrom(cursorLogic.currentPosition, isPlayer2Turn, GetCurrentPlayerPiece());
+
     }
 
     void UpdateCursorVisualPosition()
@@ -294,4 +296,42 @@ public class GameManager : MonoBehaviour
         StartNewTurn();
         
     }
+
+    void UpdatePieceCooldowns()
+    {
+        float dt = Time.deltaTime;
+        for (int i = allPieces.Count - 1; i >= 0; i--)
+        {
+            Piece piece = allPieces[i];
+
+            // Verificar si el GameObject aún existe antes de acceder a sus propiedades
+            if (piece.pieceGameObject == null || !piece.pieceGameObject.activeInHierarchy)
+            {
+                // Si la pieza ya no existe, limpiarla del tablero y eliminarla de la lista
+                if (board.GetEntityAtPosition(piece.position) == piece)
+                {
+                    board.SetEntityAtPosition(piece.position, null);
+                }
+                allPieces.RemoveAt(i);
+                continue; // Evita seguir procesando una pieza que ya ha sido eliminada
+            }
+
+            // Si la pieza existe, continuar con el cooldown
+            piece.Cooldown(dt);
+        }
+    }
+
+
+    Piece GetCurrentPlayerPiece()
+    {
+        foreach (Piece piece in allPieces)
+        {
+            if (piece.isPlayer2 == isPlayer2Turn && piece.position == cursorLogic.currentPosition)
+            {
+                return piece;
+            }
+        }
+        return null; // Si no encuentra una pieza en la posición actual
+    }
+
 }
