@@ -32,6 +32,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] Color playerColor1;
     [SerializeField] Color playerColor2;
 
+    [SerializeField] Image panel;
+    [SerializeField] float targetY;
+    [SerializeField] float speed;
+
+
     Board board;
     CursorLogic cursorLogic;
     CursorVisual cursorVisual;
@@ -89,6 +94,7 @@ public class GameManager : MonoBehaviour
         UpdateCursorVisualPosition();
 
         UpdatePieceCooldowns();
+        CheckGameOver();
     }
 
     void HandlePlayerInput()
@@ -284,18 +290,45 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    void CheckGameOver()
+    {
+        bool player1HasPieces = allPieces.Exists(piece => !piece.isPlayer2);
+        bool player2HasPieces = allPieces.Exists(piece => piece.isPlayer2);
+
+        if (!player1HasPieces)
+        {
+            StartCoroutine(LowerPanelCoroutine(panel, targetY, speed));
+        }
+        else if (!player2HasPieces)
+        {
+            StartCoroutine(LowerPanelCoroutine(panel, targetY, speed));
+        }
+    }
+    IEnumerator LowerPanelCoroutine(Image panel, float targetY, float speed)
+    {
+        Vector3 startPos = panel.rectTransform.position;
+        Vector3 targetPos = new Vector3(startPos.x, targetY, startPos.z);
+
+        while (panel.rectTransform.position.y > targetY)
+        {
+            panel.rectTransform.position = Vector3.MoveTowards(panel.rectTransform.position, targetPos, speed * Time.deltaTime);
+            yield return null;
+        }
+    }
+
+
     void EndTurn()
     {
-
         if (cursorLogic != null)
         {
             cursorLogic.HandlePieceInteraction(isPlayer2Turn);
         }
 
+
         isPlayer2Turn = !isPlayer2Turn;
         StartNewTurn();
-        
     }
+
 
     void UpdatePieceCooldowns()
     {
