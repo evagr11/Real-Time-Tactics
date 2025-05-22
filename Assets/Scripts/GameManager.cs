@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -297,14 +298,15 @@ public class GameManager : MonoBehaviour
 
         if (!player1HasPieces)
         {
-            StartCoroutine(LowerPanelCoroutine(panel, targetY, speed));
+            StartCoroutine(LowerPanelCoroutine(panel, targetY, speed, "Win2"));
         }
         else if (!player2HasPieces)
         {
-            StartCoroutine(LowerPanelCoroutine(panel, targetY, speed));
+            StartCoroutine(LowerPanelCoroutine(panel, targetY, speed, "Win1"));
         }
     }
-    IEnumerator LowerPanelCoroutine(Image panel, float targetY, float speed)
+
+    IEnumerator LowerPanelCoroutine(Image panel, float targetY, float speed, string sceneToLoad)
     {
         Vector3 startPos = panel.rectTransform.position;
         Vector3 targetPos = new Vector3(startPos.x, targetY, startPos.z);
@@ -314,7 +316,10 @@ public class GameManager : MonoBehaviour
             panel.rectTransform.position = Vector3.MoveTowards(panel.rectTransform.position, targetPos, speed * Time.deltaTime);
             yield return null;
         }
+
+        SceneManager.LoadScene(sceneToLoad);
     }
+
 
 
     void EndTurn()

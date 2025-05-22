@@ -15,7 +15,7 @@ public class Piece : IGameEntity, IAttackable
 
     public bool isOnAttackCooldown { get; private set; }
     private float currentAttackCooldownTimer;
-    public float attackCooldownDuration { get; set; } = 2f;
+    public float attackCooldownDuration { get; set; } = .5f;
 
 
 
