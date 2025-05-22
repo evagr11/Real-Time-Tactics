@@ -122,3 +122,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldownColor: {r: 0, g: 0, b: 0, a: 1}
   cooldownTransitionTime: 3
+  healParticlesPrefab: {fileID: 6677069855102146314, guid: 0c45ad0237b0ae145b7ef42621855c27, type: 3}

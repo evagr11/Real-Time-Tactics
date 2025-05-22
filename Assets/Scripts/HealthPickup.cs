@@ -16,11 +16,18 @@ public class HealthPickup : BoardEntity
     {
         if (piece != null && piece.currentHealth < piece.maxHealth)
         {
+            // Cura la pieza en 1 punto
             piece.Heal(1);
+
+            // Invoca el efecto de partículas de sanación en la vista de la pieza
+            PieceVisual pv = piece.pieceGameObject.GetComponent<PieceVisual>();
+            if (pv != null)
+            {
+                pv.PlayHealParticles();
+            }
         }
-        // Elimina el objeto de vida del tablero
+        // Elimina el HealthPickup del tablero y su representación visual
         GameManager.Instance.RemoveHealthPickupAtPosition(position);
-        // Destruye el visual
         if (visual != null)
             GameObject.Destroy(visual.gameObject);
     }

@@ -10,6 +10,8 @@ public class CrateVisuals : MonoBehaviour
 
     private Vector3 initialPosition;
 
+    public GameObject BreakParticlesPrefab; // Prefab de partículas
+
     void Start()
     {
         initialPosition = transform.position;
@@ -24,5 +26,14 @@ public class CrateVisuals : MonoBehaviour
         float offsetY = Mathf.Sin(Time.time * Mathf.PI * 2f * oscillationFrequency) * oscillationAmplitude;
         Vector3 pos = initialPosition + new Vector3(0, offsetY, 0);
         transform.position = pos;
+    }
+
+    public void PlayDestructionParticles()
+    {
+        if (BreakParticlesPrefab != null)
+        {
+            GameObject particles = Instantiate(BreakParticlesPrefab, transform.position, Quaternion.identity);
+            Destroy(particles, 2f); // Destruye las partículas después de 2 segundos
+        }
     }
 }

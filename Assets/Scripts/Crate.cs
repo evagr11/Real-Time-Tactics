@@ -26,6 +26,13 @@ public class Crate : BoardEntity, IAttackable
 
     public void Attacked()
     {
+        // Lanza las partículas en la vista antes de destruir el objeto
+        if (visuals != null)
+        {
+            visuals.PlayDestructionParticles();
+            GameObject.Destroy(visuals.gameObject);
+        }
+
         // Elimina la crate del tablero
         GameManager.Instance.RemoveCrateAtPosition(position);
 
@@ -35,11 +42,6 @@ public class Crate : BoardEntity, IAttackable
         // Instancia el HealthPickup en la misma posición
         GameManager.Instance.SpawnHealthPickup(position);
 
-        // Destruye el objeto visual
-        if (visuals != null)
-        {
-            GameObject.Destroy(visuals.gameObject);
-        }
     }
 
     // Destruye el objeto visual si existe

@@ -21,6 +21,8 @@ public class PieceVisual : MonoBehaviour
     private float cooldownTimer;
     private Color originalColor;
 
+    public GameObject healParticlesPrefab;
+
     void Start()
     {
         if (pieceReference != null)
@@ -91,4 +93,26 @@ public class PieceVisual : MonoBehaviour
         }
     }
 
+    public void PlayHealParticles()
+    {
+        if (healParticlesPrefab != null)
+        {
+            // Instancia el prefab de partículas en la posición actual de la pieza
+            GameObject particlesObject = Instantiate(healParticlesPrefab, transform.position, Quaternion.identity);
+
+            // Intenta obtener el componente ParticleSystem del objeto instanciado
+            ParticleSystem ps = particlesObject.GetComponent<ParticleSystem>();
+            if (ps != null)
+            {
+                // Configura el color de inicio del sistema de partículas usando el color actual del material
+                var mainModule = ps.main;
+                // Se usa el color actual del renderer; puede ser originalMaterial o pieceRenderer.material.color
+                mainModule.startColor = pieceRenderer.material.color;
+            }
+
+            // Destruye el objeto de partículas una vez que hayan terminado su efecto (ajusta el tiempo según tu prefab)
+            Destroy(particlesObject, 2f);
+        }
+
+    }
 }
