@@ -1,0 +1,70 @@
+newmtl Bottom_Trunk
+Ka 0 0 0
+Ns 8.16617
+Ks 1 1 1
+Kd 0.251422 0.234667 0.169119
+map_Kd Bottom_Trunk.jpg
+map_Bump Bottom_Trunk_b.jpg
+newmtl Flamia_Leaves
+Ka 0 0 0
+Ns 7.69061
+Ks 1 1 1
+Kd 0.00691172 0.752064 0.0831501
+map_Kd Flamia_Leaves_1.jpg
+map_Bump Flamia_Leaves_b_1.jpg
+newmtl Flower
+Ka 0 0 0
+Ns 7.69061
+Ks 1 1 1
+Kd 0.748429 0.771807 0.632618
+map_Kd Flower_2.jpg
+map_Bump Flower_b_2.jpg
+newmtl Nexia_Leaves
+Ka 0 0 0
+Ns 7.69061
+Ks 1 1 1
+Kd 0.160484 0.242855 0.00587165
+map_Kd Nexia_Leaves_3.jpg
+map_Bump Nexia_Leaves_b_3.jpg
+newmtl Paradisia_Flower
+Ka 0 0 0
+Ns 7.69061
+Ks 1 1 1
+Kd 0.227067 0.242547 0.101877
+map_Kd Paradisia_Flowe0_4.jpg
+map_Bump Paradisia_Flowe1_4.jpg
+newmtl Trusia_Flower
+Ka 0 0 0
+Ns 7.24274
+Ks 1 1 1
+Kd 0.00423656 0.140226 0.208268
+map_Kd Trusia_Flower_5.jpg
+map_Bump Trusia_Flower_b_5.jpg
+newmtl Alien_LOV_1
+Ka 0 0 0
+Ns 1.19722
+Ks 1 1 1
+Kd 0.345736 0.288507 0.137477
+map_Kd Alien_LOV_1_6.jpg
+map_Bump Alien_LOV_1_b_6.jpg
+newmtl Palm_Leaf
+Ka 0 0 0
+Ns 19.7755
+Ks 1 1 1
+Kd 0.372686 0.0892243 0.204175
+map_Kd Palm_Leaf_7.jpg
+map_Bump Palm_Leaf_b_7.jpg
+newmtl Alien_Skin
+Ka 0 0 0
+Ns 1.93479
+Ks 0.996078 0.85098 0.458824
+Kd 0.50874 0.293084 0.338708
+map_Kd Alien_Skin_8.jpg
+map_Bump Alien_Skin_b_8.jpg
+newmtl Alien_Pikaka_Roo
+Ka 0 0 0
+Ns 4.48169
+Ks 1 1 1
+Kd 0.52739 0.471731 0.308691
+map_Kd Alien_Pikaka_Ro0_9.jpg
+map_Bump Alien_Pikaka_Ro1_9.jpg

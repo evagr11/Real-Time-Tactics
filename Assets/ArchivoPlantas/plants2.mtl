@@ -1,0 +1,35 @@
+newmtl Megaspore_Leaf
+Ka 0 0 0
+Ns 7.69061
+Ks 1 1 1
+Kd 0.126723 0.0771689 0.0494304
+map_Kd Megaspore_Leaf.jpg
+map_Bump Megaspore_Leaf_b.jpg
+newmtl Coconut_Tree_Lea
+Ka 0 0 0
+Ns 7.69061
+Ks 1 1 1
+Kd 0.894864 0.842976 0.918335
+map_Kd Coconut_Tree_Le0_1.jpg
+map_Bump Coconut_Tree_Le1_1.jpg
+newmtl Fantasy_Tree_Tru
+Ka 0 0 0
+Ns 13.1971
+Ks 1 1 1
+Kd 0.663692 0.470677 0.367093
+map_Kd Fantasy_Tree_Tr0_2.jpg
+map_Bump Fantasy_Tree_Tr1_2.jpg
+newmtl Fuzzy_Flower
+Ka 0 0 0
+Ns 11.0232
+Ks 1 0.952941 0.54902
+Kd 0.52182 0.355946 0.0491708
+map_Kd Fuzzy_Flower_3.jpg
+map_Bump Fuzzy_Flower_b_3.jpg
+newmtl Leafs___Flowers
+Ka 0 0 0
+Ns 7.69061
+Ks 1 1 1
+Kd 0.364432 0.170367 0.0689165
+map_Kd Leafs___Flowers_4.jpg
+map_Bump Leafs___Flowers__4.jpg

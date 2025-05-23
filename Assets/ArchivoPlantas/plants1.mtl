@@ -1,0 +1,35 @@
+newmtl SerratedMonstera
+Ka 0 0 0
+Ns 27.1126
+Ks 1 1 1
+Kd 0.530123 0.264613 0.0856714
+map_Kd SerratedMonster0.jpg
+map_Bump SerratedMonster1.jpg
+newmtl Body_Alien_2
+Ka 0 0 0
+Ns 1.34986
+Ks 1 0.631373 0.333333
+Kd 0.685345 0.453139 0.434695
+map_Kd Body_Alien_2_1.jpg
+map_Bump Body_Alien_2_b_1.jpg
+newmtl Alien_Leaf
+Ka 0 0 0
+Ns 3.74342
+Ks 0.835294 0.901961 0.898039
+Kd 0.577578 0.616491 0.849183
+map_Kd Alien_Leaf_2.jpg
+map_Bump Alien_Leaf_b_2.jpg
+newmtl Coconut_Tree_Lea
+Ka 0 0 0
+Ns 24.0467
+Ks 1 1 1
+Kd 0.286849 0.109134 0.0377945
+map_Kd Coconut_Tree_Le0_3.jpg
+map_Bump Coconut_Tree_Le1_3.jpg
+newmtl Devil_s_Flipper
+Ka 0 0 0
+Ns 4.48169
+Ks 1 1 1
+Kd 0.543642 0.161275 0.0745172
+map_Kd Devil_s_Flipper_4.jpg
+map_Bump Devil_s_Flipper__4.jpg
