@@ -64,6 +64,10 @@ public class Board
         if (IsOutOfBounds(position) || attackingPiece == null)
             return false;
 
+        // Solo permite el ataque si la pieza está siendo sostenida por el cursor
+        if (!attackingPiece.isHeld)
+            return false;
+
         IGameEntity entity = GetEntityAtPosition(position);
         if (entity == null)
             return false;
@@ -72,21 +76,26 @@ public class Board
         if (entity is Piece targetPiece)
         {
             if (attackingPiece.isOnAttackCooldown)
-                return false; // Bloquea el ataque si está en cooldown
+                return false;
 
-            if (targetPiece.isPlayer2 != isPlayer2Attacker &&
-                targetPiece.entityGameObject != null &&
+            if (targetPiece.isPlayer2 != isPlayer2Attacker && targetPiece.entityGameObject != null &&
                 targetPiece.entityGameObject.activeInHierarchy)
             {
                 IAttackable attackableEntity = targetPiece as IAttackable;
                 if (attackableEntity != null)
                 {
                     attackableEntity.Attacked();
-                    attackingPiece.StartAttackCooldown(); // Activa cooldown después del ataque
+
+                    // **Ajuste dinámico del cooldown antes de activarlo**
+                    int currentPieces = GameManager.Instance.GetActivePiecesCount(attackingPiece.isPlayer2);
+                    int initialPieces = GameManager.Instance.pieceNum;
+
+                    attackingPiece.StartAttackCooldown(currentPieces, initialPieces);
                     return true;
                 }
             }
         }
+
         else if (entity is IAttackable attackable) // Si no es una pieza, permite el ataque
         {
             attackable.Attacked();

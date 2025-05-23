@@ -22,6 +22,7 @@ public class PieceVisual : MonoBehaviour
     private Color originalColor;
 
     public GameObject healParticlesPrefab;
+    [SerializeField] private ParticleSystem destructionParticles;
 
     void Start()
     {
@@ -68,12 +69,13 @@ public class PieceVisual : MonoBehaviour
         transform.localPosition -= new Vector3(0, yOffset, 0); // Mantiene la posición actual
     }
 
-    public void UpdateCooldownVisual(bool isOnCooldown)
+    public void UpdateCooldownVisual(bool isOnCooldown, float cooldownTime)
     {
         if (isOnCooldown)
         {
             isInterpolating = true;
             cooldownTimer = 0f;
+            cooldownTransitionTime = cooldownTime; // Actualizar la duración visual del cooldown
         }
     }
 
@@ -115,4 +117,19 @@ public class PieceVisual : MonoBehaviour
         }
 
     }
+
+    public void PlayDestructionParticles()
+    {
+        ParticleSystem particlesInstance = Instantiate(destructionParticles, transform.position + Vector3.up * 1.5f, Quaternion.identity);
+        ParticleSystemRenderer particleRenderer = particlesInstance.GetComponent<ParticleSystemRenderer>();
+        if (particleRenderer != null && pieceRenderer != null)
+        {
+            particleRenderer.material = pieceRenderer.material;
+        }
+
+        particlesInstance.Play();
+
+        Destroy(particlesInstance.gameObject, particlesInstance.main.duration);
+    }
+
 }

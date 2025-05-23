@@ -15,7 +15,9 @@ public class Piece : IGameEntity, IAttackable
 
     public bool isOnAttackCooldown { get; private set; }
     private float currentAttackCooldownTimer;
-    public float attackCooldownDuration { get; set; } = .5f;
+    public float attackCooldownDuration { get; set; } = 2f;
+
+    public bool isHeld { get; set; } = false;
 
 
 
@@ -73,6 +75,18 @@ public class Piece : IGameEntity, IAttackable
         }
         if (currentHealth <= 0 && pieceGameObject != null)
         {
+            PieceVisual visual = pieceGameObject.GetComponent<PieceVisual>();
+            visual.PlayDestructionParticles();
+
+            // Calcular la cantidad de piezas restantes para este jugador (se quita esta destruida)
+            int remainingPieces = GameManager.Instance.GetActivePiecesCount(isPlayer2) - 1;
+            if (remainingPieces < 0) remainingPieces = 0;
+            int initialPieces = GameManager.Instance.pieceNum;
+            // Se calcula el multiplicador: a menos piezas, menor será el multiplicador (con un mínimo de 0.2)
+            float multiplier = (float)remainingPieces / initialPieces;
+            multiplier = Mathf.Max(multiplier, 0.2f);
+            float newCooldown = attackCooldownDuration * multiplier;
+
             GameObject.Destroy(pieceGameObject);
         }
     }
@@ -90,7 +104,8 @@ public class Piece : IGameEntity, IAttackable
         }
     }
 
-    public void StartAttackCooldown()
+    public void StartAttackCooldown(int currentPieces, int initialPieces)
+
     {
         if (!isOnAttackCooldown)
         {
@@ -98,8 +113,13 @@ public class Piece : IGameEntity, IAttackable
             if (visual != null)
             {
                 isOnAttackCooldown = true;
-                currentAttackCooldownTimer = attackCooldownDuration;
-                visual.UpdateCooldownVisual(true);
+
+                // Multiplicador dinámico: a menos piezas, más corto es el cooldown
+                float multiplier = (float)currentPieces / initialPieces;
+                multiplier = Mathf.Max(multiplier, 0.2f);
+
+                currentAttackCooldownTimer = attackCooldownDuration * multiplier;
+                visual.UpdateCooldownVisual(true, currentAttackCooldownTimer);
 
             }
         }
@@ -118,7 +138,7 @@ public class Piece : IGameEntity, IAttackable
                 PieceVisual visual = pieceGameObject.GetComponent<PieceVisual>();
                 if (visual != null)
                 {
-                    visual.UpdateCooldownVisual(false);
+                    visual.UpdateCooldownVisual(false, attackCooldownDuration); // Restablecer tiempo visual
                 }
             }
         }

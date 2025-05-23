@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject healthPickupPrefab;
 
     [SerializeField] float YOffsetForPieces = 0.5f;
-    [SerializeField] int pieceNum = 3;
+    [SerializeField] public int pieceNum = 3;
     [SerializeField] bool startWithRandomPlayer = true;
     [SerializeField] public int maxHealth;
 
@@ -371,5 +371,26 @@ public class GameManager : MonoBehaviour
         }
         return null; // Si no encuentra una pieza en la posición actual
     }
+
+    public void ApplyCooldownToCurrentPiece()
+    {
+        Piece currentPiece = GetCurrentPlayerPiece();
+        if (currentPiece != null)
+        {
+            int currentPieces = GetActivePiecesCount(currentPiece.isPlayer2);
+            int initialPieces = pieceNum;
+
+            currentPiece.StartAttackCooldown(currentPieces, initialPieces);
+        }
+    }
+
+
+    public int GetActivePiecesCount(bool isPlayer2)
+    {
+        return allPieces.FindAll(p => p.isPlayer2 == isPlayer2).Count;
+    }
+
+
+
 
 }

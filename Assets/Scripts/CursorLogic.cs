@@ -69,6 +69,7 @@ public class CursorLogic
                 if (pieceToPick.isPlayer2 == isCurrentPlayer2 && pieceToPick.entityGameObject.activeInHierarchy)
                 {
                     heldPiece = pieceToPick;
+                    heldPiece.isHeld = true;  // Activa la bandera de "sostenida"
                     originalPickUpPosition = currentPosition;
                     boardReference.SetEntityAtPosition(originalPickUpPosition, null); // Quita la pieza del tablero
                     CalculateAllowedMoveSquares(); // Calcula los movimientos permitidos
@@ -86,10 +87,8 @@ public class CursorLogic
                     healthPickup.OnPickedUp(heldPiece);
                 }
                 boardReference.SetEntityAtPosition(currentPosition, heldPiece);
-                if (heldPiece.position != currentPosition)
-                {
-                    heldPiece.UpdatePosition(currentPosition, boardReference);
-                }
+                heldPiece.UpdatePosition(currentPosition, boardReference);
+                heldPiece.isHeld = false; // Desactiva la bandera de "sostenida"
                 heldPiece = null;
                 allowedMoveSquares.Clear();
             }
