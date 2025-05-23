@@ -264,6 +264,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorPlayer1: {fileID: 2100000, guid: ee259bef1544d7d4e9060897e00ff659, type: 2}
   colorPlayer2: {fileID: 2100000, guid: 305d94e655b105e4085314220264120d, type: 2}
+  heldPiecePrefab: {fileID: 8011252497055852361, guid: 46f68ad390b0d5d4593082237c5e2d8f, type: 3}
 --- !u!1 &7395816075414134672
 GameObject:
   m_ObjectHideFlags: 0
