@@ -5626,8 +5626,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 400}
-  m_SizeDelta: {x: 900, y: 400}
+  m_AnchoredPosition: {x: 0, y: 800}
+  m_SizeDelta: {x: 1200, y: 800}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &225033161
 MonoBehaviour:
@@ -5701,7 +5701,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -160}
+  m_AnchoredPosition: {x: 0, y: -320}
   m_SizeDelta: {x: 500, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &254019127
@@ -5794,20 +5794,20 @@ MonoBehaviour:
   player2PiecePrefab: {fileID: 2286749689547368469, guid: f94305df3701b314289844000caf408a, type: 3}
   cratePrefab: {fileID: 4227750382354114720, guid: 73ed8bc3a1a4c0746b19ed19217c4b6a, type: 3}
   healthPickupPrefab: {fileID: 8036688323611177146, guid: 69d0aa8de3d29e14ea077cf8dfdc1fe7, type: 3}
-  YOffsetForPieces: 0.5
-  pieceNum: 3
-  startWithRandomPlayer: 1
-  maxHealth: 3
-  minCrateSpawnCD: 5
-  maxCrateSpawnCD: 15
-  maxCratesOnBoard: 3
   turnTime: 15
   timerBar: {fileID: 254019127}
+  startWithRandomPlayer: 1
+  maxCratesOnBoard: 3
+  minCrateSpawnCD: 5
+  maxCrateSpawnCD: 15
+  YOffsetForPieces: 0.5
+  pieceNum: 3
+  maxHealth: 3
   playerColor1: {r: 1, g: 0, b: 0.47058824, a: 1}
   playerColor2: {r: 0, g: 1, b: 0.83137256, a: 1}
   panel: {fileID: 225033161}
-  targetY: 200
-  speed: 5
+  targetY: 400
+  speed: 10
 --- !u!1 &420181814
 GameObject:
   m_ObjectHideFlags: 0
