@@ -12,25 +12,25 @@ public class HealthPickup : BoardEntity
                              .GetComponent<HealthPickupVisual>();
     }
 
-    public override GameObject entityGameObject => visual != null ? visual.gameObject : null;
+    public override GameObject entityGameObject
+    {
+        get { return visual.gameObject; }
+    }
 
     public void OnPickedUp(Piece piece)
     {
-        if (piece != null && piece.currentHealth < piece.maxHealth)
+        if (piece.currentHealth < piece.maxHealth)
         {
             piece.Heal(1);
             PieceVisual pv = piece.pieceGameObject.GetComponent<PieceVisual>();
-            if (pv != null)
-                pv.PlayHealParticles();
+            pv.PlayHealParticles();
         }
         GameManager.Instance.RemoveHealthPickupAtPosition(position);
-        if (visual != null)
-            GameObject.Destroy(visual.gameObject);
+        GameObject.Destroy(visual.gameObject);
     }
 
     public override void DestroyVisuals()
     {
-        if (visual != null)
-            GameObject.Destroy(visual.gameObject);
+        GameObject.Destroy(visual.gameObject);
     }
 }

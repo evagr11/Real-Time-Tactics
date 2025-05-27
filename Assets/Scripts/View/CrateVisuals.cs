@@ -2,11 +2,12 @@
 
 public class CrateVisuals : MonoBehaviour
 {
-    public float rotationSpeed = 60f; // Rotación en grados por segundo
-    public float oscillationAmplitude = 0.05f; // Amplitud de oscilación vertical
-    public float oscillationFrequency = 0.3f; // Frecuencia de oscilación
+    public float rotationSpeed = 60f;     
+    public float moveSpeed = 0.1f;       
+    public float moveDistance = 0.05f;  
 
     private Vector3 initialPosition;
+    private bool movingUp = true;
     public GameObject BreakParticlesPrefab;
 
     void Start()
@@ -17,16 +18,29 @@ public class CrateVisuals : MonoBehaviour
     void Update()
     {
         transform.Rotate(0, rotationSpeed * Time.deltaTime, 0, Space.World);
-        float offsetY = Mathf.Sin(Time.time * Mathf.PI * 2f * oscillationFrequency) * oscillationAmplitude;
-        transform.position = initialPosition + new Vector3(0, offsetY, 0);
+        if (movingUp)
+        {
+            transform.position += new Vector3(0, moveSpeed * Time.deltaTime, 0);
+            if (transform.position.y >= initialPosition.y + moveDistance)
+            {
+                transform.position = new Vector3(transform.position.x, initialPosition.y + moveDistance, transform.position.z);
+                movingUp = false;
+            }
+        }
+        else
+        {
+            transform.position -= new Vector3(0, moveSpeed * Time.deltaTime, 0);
+            if (transform.position.y <= initialPosition.y - moveDistance)
+            {
+                transform.position = new Vector3(transform.position.x, initialPosition.y - moveDistance, transform.position.z);
+                movingUp = true;
+            }
+        }
     }
 
     public void PlayDestructionParticles()
     {
-        if (BreakParticlesPrefab != null)
-        {
-            GameObject particles = Instantiate(BreakParticlesPrefab, transform.position, Quaternion.identity);
-            Destroy(particles, 2f);
-        }
+        GameObject particles = Instantiate(BreakParticlesPrefab, transform.position, Quaternion.identity);
+        Destroy(particles, 2f);
     }
 }

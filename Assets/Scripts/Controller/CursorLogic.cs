@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 
 public class CursorLogic
 {
@@ -26,14 +27,22 @@ public class CursorLogic
         if (!IsHoldingPiece())
         {
             if (newPotentialPosition.x < 0)
+            {
                 newPotentialPosition.x = boardWidth - 1;
+            }
             else if (newPotentialPosition.x >= boardWidth)
+            {
                 newPotentialPosition.x = 0;
+            }
 
             if (newPotentialPosition.y < 0)
+            {
                 newPotentialPosition.y = boardHeight - 1;
+            }
             else if (newPotentialPosition.y >= boardHeight)
+            {
                 newPotentialPosition.y = 0;
+            }
 
             currentPosition = newPotentialPosition;
         }
@@ -57,16 +66,13 @@ public class CursorLogic
         if (heldPiece == null)
         {
             IGameEntity entityOnSquare = boardReference.GetEntityAtPosition(currentPosition);
-            if (entityOnSquare is Piece pieceToPick)
+            if (entityOnSquare is Piece pieceToPick && pieceToPick.isPlayer2 == isCurrentPlayer2 && pieceToPick.entityGameObject.activeInHierarchy)
             {
-                if (pieceToPick.isPlayer2 == isCurrentPlayer2 && pieceToPick.entityGameObject.activeInHierarchy)
-                {
-                    heldPiece = pieceToPick;
-                    heldPiece.isHeld = true;
-                    originalPickUpPosition = currentPosition;
-                    boardReference.SetEntityAtPosition(originalPickUpPosition, null);
-                    CalculateAllowedMoveSquares();
-                }
+                heldPiece = pieceToPick;
+                heldPiece.isHeld = true;
+                originalPickUpPosition = currentPosition;
+                boardReference.SetEntityAtPosition(originalPickUpPosition, null);
+                CalculateAllowedMoveSquares();
             }
         }
         else
@@ -75,7 +81,9 @@ public class CursorLogic
             if (entityAtTarget == null || entityAtTarget is HealthPickup || currentPosition == originalPickUpPosition)
             {
                 if (entityAtTarget is HealthPickup healthPickup)
+                {
                     healthPickup.OnPickedUp(heldPiece);
+                }
                 boardReference.SetEntityAtPosition(currentPosition, heldPiece);
                 heldPiece.UpdatePosition(currentPosition, boardReference);
                 heldPiece.isHeld = false;
@@ -89,7 +97,9 @@ public class CursorLogic
     {
         allowedMoveSquares.Clear();
         if (heldPiece == null)
+        {
             return;
+        }
 
         allowedMoveSquares.Add(originalPickUpPosition);
         Vector2Int[] directions = { Vector2Int.up, Vector2Int.down, Vector2Int.left, Vector2Int.right };
@@ -101,7 +111,9 @@ public class CursorLogic
             {
                 IGameEntity entityAtTarget = boardReference.GetEntityAtPosition(targetPos);
                 if (entityAtTarget == null || entityAtTarget is HealthPickup)
+                {
                     allowedMoveSquares.Add(targetPos);
+                }
             }
         }
     }

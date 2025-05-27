@@ -28,7 +28,9 @@ public class PieceVisual : MonoBehaviour
     void Start()
     {
         if (pieceReference != null)
+        {
             cooldownTransitionTime = pieceReference.attackCooldownDuration;
+        }
         originalColor = originalMaterial.color;
     }
 
@@ -66,34 +68,30 @@ public class PieceVisual : MonoBehaviour
         if (isInterpolating)
         {
             cooldownTimer += Time.deltaTime;
-            float t = Mathf.Clamp01(cooldownTimer / cooldownTransitionTime);
+            float t = (cooldownTimer / cooldownTransitionTime);
             pieceRenderer.material.color = Color.Lerp(cooldownColor, originalColor, t);
             if (t >= 1f)
+            {
                 isInterpolating = false;
+            }
         }
     }
 
     public void PlayHealParticles()
     {
-        if (healParticlesPrefab != null)
-        {
-            GameObject particlesObject = Instantiate(healParticlesPrefab, transform.position, Quaternion.identity);
-            ParticleSystem ps = particlesObject.GetComponent<ParticleSystem>();
-            if (ps != null)
-            {
-                var mainModule = ps.main;
-                mainModule.startColor = pieceRenderer.material.color;
-            }
-            Destroy(particlesObject, 2f);
-        }
+        GameObject particlesObject = Instantiate(healParticlesPrefab, transform.position, Quaternion.identity);
+        ParticleSystem ps = particlesObject.GetComponent<ParticleSystem>();
+        var mainModule = ps.main;
+        mainModule.startColor = pieceRenderer.material.color;
+        Destroy(particlesObject, 2f);
+        
     }
 
     public void PlayDestructionParticles()
     {
         ParticleSystem particlesInstance = Instantiate(destructionParticles, transform.position + Vector3.up * 1.5f, Quaternion.identity);
         ParticleSystemRenderer particleRenderer = particlesInstance.GetComponent<ParticleSystemRenderer>();
-        if (particleRenderer != null && pieceRenderer != null)
-            particleRenderer.material = pieceRenderer.material;
+        particleRenderer.material = pieceRenderer.material;
         particlesInstance.Play();
         Destroy(particlesInstance.gameObject, particlesInstance.main.duration);
     }

@@ -29,36 +29,37 @@ public class Piece : IGameEntity, IAttackable
     public void UpdatePosition(Vector2Int newLogicalPosition, Board boardReference)
     {
         position = newLogicalPosition;
-        if (pieceGameObject != null && boardReference != null)
+        Square targetSquare = boardReference.GetSquareAtPosition(newLogicalPosition.x, newLogicalPosition.y);
+        pieceGameObject.transform.position = targetSquare.boardSquare.transform.position + new Vector3(0, yOffsetOnBoard, 0);
+        if (targetSquare.containedEntity is HealthPickup healthPickup)
         {
-            Square targetSquare = boardReference.GetSquareAtPosition(newLogicalPosition.x, newLogicalPosition.y);
-            if (targetSquare != null && targetSquare.boardSquare != null)
-                pieceGameObject.transform.position = targetSquare.boardSquare.transform.position + new Vector3(0, yOffsetOnBoard, 0);
-            if (targetSquare != null && targetSquare.containedEntity is HealthPickup healthPickup)
-                healthPickup.OnPickedUp(this);
+            healthPickup.OnPickedUp(this);
         }
     }
+
 
     public void Attacked()
     {
         currentHealth--;
-        if (pieceGameObject != null)
+        PieceVisual visual = pieceGameObject.GetComponent<PieceVisual>();
+        visual.ShrinkOnHit(currentHealth, maxHealth);
+        
+        if (currentHealth <= 0)
         {
-            PieceVisual visual = pieceGameObject.GetComponent<PieceVisual>();
-            if (visual != null)
-                visual.ShrinkOnHit(currentHealth, maxHealth);
-        }
-        if (currentHealth <= 0 && pieceGameObject != null)
-        {
-            PieceVisual visual = pieceGameObject.GetComponent<PieceVisual>();
-            if (visual != null)
-                visual.PlayDestructionParticles();
+            visual.PlayDestructionParticles();
 
             int remainingPieces = GameManager.Instance.GetActivePiecesCount(isPlayer2) - 1;
-            remainingPieces = Mathf.Max(remainingPieces, 0);
+            if (remainingPieces < 0)
+            {
+                remainingPieces = 0;
+            }
+
             int initialPieces = GameManager.Instance.pieceNum;
             float multiplier = (float)remainingPieces / initialPieces;
-            multiplier = Mathf.Max(multiplier, 0.2f);
+            if (multiplier < 0.2f)
+            {
+                multiplier = 0.2f;
+            }
             float newCooldown = attackCooldownDuration * multiplier;
 
             GameObject.Destroy(pieceGameObject);
@@ -67,13 +68,14 @@ public class Piece : IGameEntity, IAttackable
 
     public void Heal(int amount)
     {
-        currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
-        if (pieceGameObject != null)
+        int calculatedHealth = currentHealth + amount;
+        if (calculatedHealth > maxHealth)
         {
-            PieceVisual visual = pieceGameObject.GetComponent<PieceVisual>();
-            if (visual != null)
-                visual.ShrinkOnHit(currentHealth, maxHealth);
+            calculatedHealth = maxHealth;
         }
+        currentHealth = calculatedHealth;
+        PieceVisual visual = pieceGameObject.GetComponent<PieceVisual>();
+        visual.ShrinkOnHit(currentHealth, maxHealth);
     }
 
     public void StartAttackCooldown(int currentPieces, int initialPieces)
@@ -81,14 +83,14 @@ public class Piece : IGameEntity, IAttackable
         if (!isOnAttackCooldown)
         {
             PieceVisual visual = pieceGameObject.GetComponent<PieceVisual>();
-            if (visual != null)
+            isOnAttackCooldown = true;
+            float multiplier = (float)currentPieces / initialPieces;
+            if (multiplier < 0.2f)
             {
-                isOnAttackCooldown = true;
-                float multiplier = (float)currentPieces / initialPieces;
-                multiplier = Mathf.Max(multiplier, 0.2f);
-                currentAttackCooldownTimer = attackCooldownDuration * multiplier;
-                visual.UpdateCooldownVisual(true, currentAttackCooldownTimer);
+                multiplier = 0.2f;
             }
+            currentAttackCooldownTimer = attackCooldownDuration * multiplier;
+            visual.UpdateCooldownVisual(true, currentAttackCooldownTimer);
         }
     }
 
@@ -102,8 +104,7 @@ public class Piece : IGameEntity, IAttackable
                 isOnAttackCooldown = false;
                 currentAttackCooldownTimer = 0;
                 PieceVisual visual = pieceGameObject.GetComponent<PieceVisual>();
-                if (visual != null)
-                    visual.UpdateCooldownVisual(false, attackCooldownDuration);
+                visual.UpdateCooldownVisual(false, attackCooldownDuration);
             }
         }
     }

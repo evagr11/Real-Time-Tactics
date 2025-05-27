@@ -27,52 +27,57 @@ public class Board
     public Square GetSquareAtPosition(int x, int y)
     {
         if (x < 0 || x >= width || y < 0 || y >= height)
-            return null;
+        {  
+            return null; 
+        }
         return squares[x, y];
     }
 
     public IGameEntity GetEntityAtPosition(Vector2Int position)
     {
-        return GetSquareAtPosition(position.x, position.y)?.containedEntity;
+        return squares[position.x, position.y].containedEntity;
     }
+
 
     public void SetEntityAtPosition(Vector2Int position, IGameEntity entity)
     {
-        Square square = GetSquareAtPosition(position.x, position.y);
-        if (square == null) return;
-        square.containedEntity = entity;
+        squares[position.x, position.y].containedEntity = entity;
         if (entity != null)
+        {
             entity.position = position;
+        }
     }
+
 
     public bool Attack(Vector2Int position, bool isPlayer2Attacker, Piece attackingPiece)
     {
         if (IsOutOfBounds(position) || !attackingPiece.isHeld)
-            return false;
+        {  
+            return false; 
+        }
 
         IGameEntity entity = GetEntityAtPosition(position);
         if (entity == null)
+        {
             return false;
+        }
 
         if (entity is Piece targetPiece)
         {
             if (attackingPiece.isOnAttackCooldown)
+            {
                 return false;
+            }
 
             if (targetPiece.isPlayer2 != isPlayer2Attacker &&
-                targetPiece.entityGameObject != null &&
                 targetPiece.entityGameObject.activeInHierarchy)
             {
-                IAttackable attackableEntity = targetPiece as IAttackable;
-                if (attackableEntity != null)
-                {
-                    attackableEntity.Attacked();
+                targetPiece.Attacked();
 
-                    int currentPieces = GameManager.Instance.GetActivePiecesCount(attackingPiece.isPlayer2);
-                    int initialPieces = GameManager.Instance.pieceNum;
-                    attackingPiece.StartAttackCooldown(currentPieces, initialPieces);
-                    return true;
-                }
+                int currentPieces = GameManager.Instance.GetActivePiecesCount(attackingPiece.isPlayer2);
+                int initialPieces = GameManager.Instance.pieceNum;
+                attackingPiece.StartAttackCooldown(currentPieces, initialPieces);
+                return true;
             }
         }
         else if (entity is IAttackable attackable)

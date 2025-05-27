@@ -10,15 +10,16 @@ public class Crate : BoardEntity, IAttackable
         visuals = GameObject.Instantiate(prefab, spawnPos, Quaternion.identity).GetComponent<CrateVisuals>();
     }
 
-    public override GameObject entityGameObject => visuals != null ? visuals.gameObject : null;
+    public override GameObject entityGameObject
+    {
+        get { return visuals.gameObject; }
+    }
 
     public void Attacked()
     {
-        if (visuals != null)
-        {
-            visuals.PlayDestructionParticles();
-            GameObject.Destroy(visuals.gameObject);
-        }
+        visuals.PlayDestructionParticles();
+        GameObject.Destroy(visuals.gameObject);
+
         GameManager.Instance.RemoveCrateAtPosition(position);
         GameEvents.CrateBroke.Invoke(position);
         GameManager.Instance.SpawnHealthPickup(position);
@@ -26,7 +27,7 @@ public class Crate : BoardEntity, IAttackable
 
     public override void DestroyVisuals()
     {
-        if (visuals != null)
-            GameObject.Destroy(visuals.gameObject);
+        GameObject.Destroy(visuals.gameObject);
     }
+
 }

@@ -12,7 +12,16 @@ public class CursorVisual : MonoBehaviour
 
     public void UpdateMaterial(bool isPlayer2Turn)
     {
-        Material newMaterial = isPlayer2Turn ? colorPlayer2 : colorPlayer1;
+        Material newMaterial;
+        if (isPlayer2Turn)
+        {
+            newMaterial = colorPlayer2;
+        }
+        else
+        {
+            newMaterial = colorPlayer1;
+        }
+
         foreach (Renderer renderer in GetComponentsInChildren<Renderer>())
         {
             renderer.material = newMaterial;

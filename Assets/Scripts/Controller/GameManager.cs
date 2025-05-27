@@ -66,7 +66,15 @@ public class GameManager : MonoBehaviour
         cursorVisual = cursorObject.GetComponent<CursorVisual>();
 
         InitializePieces();
-        isPlayer2Turn = startWithRandomPlayer ? Random.Range(0, 2) == 0 : false;
+        if (startWithRandomPlayer)
+        {
+            isPlayer2Turn = (Random.Range(0, 2) == 0);
+        }
+        else
+        {
+            isPlayer2Turn = false;
+        }
+
         StartNewTurn();
         StartCoroutine(SpawnCrateCoroutine());
     }
@@ -74,7 +82,9 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         if (timeLeftInTurn > 0)
+        {
             HandlePlayerInput();
+        }
 
         UpdateTurnTimerVisuals();
         UpdateCursorVisualPosition();
@@ -108,12 +118,18 @@ public class GameManager : MonoBehaviour
         }
 
         if (moveDirection != Vector2Int.zero)
+        {
             cursorLogic.Move(moveDirection);
+        }
 
         if (interactPressed)
+        {
             cursorLogic.HandlePieceInteraction(isPlayer2Turn);
+        }
         if (attackPressed)
+        {
             board.AttackFrom(cursorLogic.currentPosition, isPlayer2Turn, GetCurrentPlayerPiece());
+        }
     }
 
     void UpdateCursorVisualPosition()
@@ -151,7 +167,9 @@ public class GameManager : MonoBehaviour
         while (true)
         {
             if (CountCratesOnBoard() < maxCratesOnBoard)
+            {
                 SpawnCrate();
+            }
             yield return new WaitForSeconds(Random.Range(minCrateSpawnCD, maxCrateSpawnCD));
         }
     }
@@ -164,7 +182,9 @@ public class GameManager : MonoBehaviour
             for (int y = 0; y < boardHeight; y++)
             {
                 if (board.GetSquareAtPosition(x, y).containedEntity is Crate)
+                {
                     count++;
+                }
             }
         }
         return count;
@@ -212,14 +232,23 @@ public class GameManager : MonoBehaviour
 
     void UpdateTurnTimerVisuals()
     {
-        timerBar.fillAmount = Mathf.Clamp01(timeLeftInTurn / turnTime);
+        timerBar.fillAmount = (timeLeftInTurn / turnTime);
     }
 
     void UpdateTimerBarColor()
     {
-        timerBar.color = isPlayer2Turn ? playerColor2 : playerColor1;
-        timerBar.fillOrigin = isPlayer2Turn ? (int)Image.OriginHorizontal.Right : (int)Image.OriginHorizontal.Left;
+        if (isPlayer2Turn)
+        {
+            timerBar.color = playerColor2;
+            timerBar.fillOrigin = (int)Image.OriginHorizontal.Right;
+        }
+        else
+        {
+            timerBar.color = playerColor1;
+            timerBar.fillOrigin = (int)Image.OriginHorizontal.Left;
+        }
     }
+
 
     void FixedUpdate()
     {
@@ -240,9 +269,13 @@ public class GameManager : MonoBehaviour
         bool player2HasPieces = allPieces.Exists(piece => piece.isPlayer2);
 
         if (!player1HasPieces)
+        {
             StartCoroutine(LowerPanelCoroutine(panel, targetY, speed, "Win2"));
+        }
         else if (!player2HasPieces)
+        {
             StartCoroutine(LowerPanelCoroutine(panel, targetY, speed, "Win1"));
+        }
     }
 
     IEnumerator LowerPanelCoroutine(Image panel, float targetY, float speed, string sceneToLoad)
@@ -295,8 +328,7 @@ public class GameManager : MonoBehaviour
     public void ApplyCooldownToCurrentPiece()
     {
         Piece currentPiece = GetCurrentPlayerPiece();
-        if (currentPiece != null)
-            currentPiece.StartAttackCooldown(GetActivePiecesCount(currentPiece.isPlayer2), pieceNum);
+        currentPiece.StartAttackCooldown(GetActivePiecesCount(currentPiece.isPlayer2), pieceNum);
     }
 
     public int GetActivePiecesCount(bool isPlayer2)
