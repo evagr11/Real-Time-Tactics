@@ -10,7 +10,7 @@
     <img src="https://img.shields.io/badge/Ver_Web-blue?style=for-the-badge&logo=googlechrome&logoColor=white" alt="logo de web" onclick="window.open('https://evagr11.github.io/Curriculum/proyectos/real-time-tactics.html', '_blank')" style="cursor: pointer;"/>
   </a>
   <a href="https://evagr.itch.io/real-time-tactics" target="_blank">
-    <img src="https://img.shields.io/badge/Itch.io-FA5C5C?style=for-the-badge&logo=itch.io&logoColor=white&color=818CF8" alt="Itch.io"/>
+    <img src="https://img.shields.io/badge/Itch.io-FA5C5C?style=for-the-badge&logo=itch.io&logoColor=white&color=FA5C5C" alt="Itch.io"/>
   </a>
 </div>
 
