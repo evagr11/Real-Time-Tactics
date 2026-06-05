@@ -3,9 +3,15 @@
 </div>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/Ver_Código-gray?style=for-the-badge&logo=github" alt="logo de github" onclick="window.open('https://github.com/evagr11/Real-Time-Tactics', '_blank')" style="cursor: pointer;"/>
-  <img src="https://img.shields.io/badge/Ver_Web-blue?style=for-the-badge&logo=googlechrome&logoColor=white" alt="logo de web" onclick="window.open('https://evagr11.github.io/Curriculum/proyectos/real-time-tactics.html', '_blank')" style="cursor: pointer;"/>
-  <img src="https://img.shields.io/badge/Ver_en_itch.io-FA5C5C?style=for-the-badge&logo=itch.io" alt="logo de itch.io" onclick="window.open('https://evagr.itch.io/real-time-tactics', '_blank')" style="cursor: pointer;"/>
+  <a href="https://github.com/evagr11/Real-Time-Tactics" target="_blank">
+    <img src="https://img.shields.io/badge/Ver_Código-gray?style=for-the-badge&logo=github" alt="logo de github" onclick="window.open('https://github.com/evagr11/Real-Time-Tactics', '_blank')" style="cursor: pointer;"/>
+  </a>
+  <a href="https://evagr11.github.io/Curriculum/proyectos/real-time-tactics.html" target="_blank">
+    <img src="https://img.shields.io/badge/Ver_Web-blue?style=for-the-badge&logo=googlechrome&logoColor=white" alt="logo de web" onclick="window.open('https://evagr11.github.io/Curriculum/proyectos/real-time-tactics.html', '_blank')" style="cursor: pointer;"/>
+  </a>
+  <a href="https://evagr.itch.io/real-time-tactics" target="_blank">
+    <img src="https://img.shields.io/badge/Itch.io-FA5C5C?style=for-the-badge&logo=itch.io&logoColor=white&color=818CF8" alt="Itch.io"/>
+  </a>
 </div>
 
   <br>
