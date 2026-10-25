@@ -1,0 +1,7 @@
+   # Excluir shaders y paquetes de terceros de las estadísticas de lenguaje
+   *.shader   linguist-detectable=false
+   *.cginc    linguist-detectable=false
+   *.hlsl     linguist-detectable=false
+   *.compute  linguist-detectable=false
+   Assets/TextMesh*Pro/** linguist-vendored
+   Packages/** linguist-vendored
