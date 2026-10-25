@@ -3,26 +3,20 @@
 </div>
 
 <div align="center">
-  <a href="https://github.com/evagr11/Real-Time-Tactics" target="_blank">
-    <img src="https://img.shields.io/badge/Ver_Código-gray?style=for-the-badge&logo=github" alt="logo de github" onclick="window.open('https://github.com/evagr11/Real-Time-Tactics', '_blank')" style="cursor: pointer;"/>
-  </a>
-  <a href="https://evagr11.github.io/Curriculum/proyectos/real-time-tactics.html" target="_blank">
-    <img src="https://img.shields.io/badge/Ver_Web-blue?style=for-the-badge&logo=googlechrome&logoColor=white" alt="logo de web" onclick="window.open('https://evagr11.github.io/Curriculum/proyectos/real-time-tactics.html', '_blank')" style="cursor: pointer;"/>
-  </a>
-  <a href="https://evagr.itch.io/real-time-tactics" target="_blank">
-    <img src="https://img.shields.io/badge/Itch.io-FA5C5C?style=for-the-badge&logo=itch.io&logoColor=white&color=FA5C5C" alt="Itch.io"/>
-  </a>
+  <a href="https://github.com/evagr11/Real-Time-Tactics" target="_blank"><img src="https://img.shields.io/badge/Ver_Código-181717?style=for-the-badge&logo=github&logoColor=white" alt="Ver Código"/></a>
+  <a href="https://evagr11.github.io/Curriculum/proyectos/real-time-tactics.html" target="_blank"><img src="https://img.shields.io/badge/Ver_Web-00b89a?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Ver Web"/></a>
+  <a href="https://evagr.itch.io/real-time-tactics" target="_blank"><img src="https://img.shields.io/badge/Jugar_en_itch.io-FA5C5C?style=for-the-badge&logo=itch.io&logoColor=white" alt="Jugar en itch.io"/></a>
 </div>
 
-  <br>
+<br>
 
 <div align="center">
-  <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com/?font=JetBrains+Mono&size=18&duration=3500&pause=800&color=ffffff&center=true&vCenter=true&width=600&lines=Desarrollado+en+Unity+3D%3BGameplay+t%C3%A1ctico+1v1%3BTurnos+limitados+en+tiempo+real%3BTablero+toroidal+5x5%3BScripts+en+C%23%3BMec%C3%A1nica+de+catch-up" alt="Typing SVG" /></a>
+  <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com/?font=JetBrains+Mono&size=18&duration=3500&pause=800&color=ff2d85&center=true&vCenter=true&width=600&lines=Desarrollado+en+Unity+3D%3BGameplay+t%C3%A1ctico+1v1%3BTurnos+limitados+en+tiempo+real%3BTablero+5x5+con+cursor+toroidal%3BScripts+en+C%23%3BMec%C3%A1nica+de+catch-up" alt="Typing SVG" /></a>
 </div>
 
 # 🚀 Sobre el Proyecto
 
-**Real-Time Tactics (RTT)** es un juego de estrategia táctica **1v1** desarrollado en **Unity 3D**. La partida se desarrolla en un tablero de **5x5 con geometría toroidal**, lo que significa que si una pieza sale por un lado, aparece por el opuesto. El escenario es un bosque encantado nocturno, con una atmósfera inmersiva creada a través de modelos 3D, efectos de partículas y una cuidada iluminación. Cada jugador controla 3 piezas cuyo objetivo es eliminar las del oponente.
+**Real-Time Tactics (RTT)** es un juego de estrategia táctica **1v1** desarrollado en **Unity 3D**. La partida se desarrolla en un tablero de **5x5** donde el **cursor es toroidal**: si sale por un lado, aparece por el opuesto, así que ninguna casilla queda lejos. El escenario es un bosque encantado nocturno, con una atmósfera inmersiva creada a través de modelos 3D, efectos de partículas y una cuidada iluminación. Cada jugador controla **3 piezas con 3 puntos de vida** y gana quien elimine las del oponente.
 
 <br>
 
@@ -35,11 +29,32 @@
 ### ✨ Características principales:
 
 *   👑 **Estrategia 1v1**: Enfréntate a otro jugador en un duelo táctico por la supremacía del tablero.
-*   ⏱️ **Turnos en Tiempo Real**: Cada jugador dispone de un tiempo limitado para ejecutar movimientos, ataques y curaciones antes de ceder el turno al oponente.
-*   🌐 **Tablero Toroidal**: Un campo de batalla 5x5 sin bordes, donde los flancos no existen y la estrategia posicional es clave.
+*   ⏱️ **Turnos en Tiempo Real**: Cada turno dura **15 segundos**, marcados por una barra del color del jugador. En ese tiempo puedes hacer todo lo que te dé tiempo; quién empieza se decide al azar.
+*   🌐 **Cursor Toroidal**: El cursor no tiene bordes y llega a cualquier pieza en pocos pasos; las piezas, en cambio, solo avanzan a casillas vecinas, así que la posición importa.
 *   ❤️ **Gestión de Salud Visual**: La altura de las piezas representa su vida. A medida que reciben daño, se encogen visualmente.
-*   ⚡ **Mecánica de Remontada (Catch-up)**: Si pierdes piezas, tus tiempos de enfriamiento (cooldowns) se reducen, dándote una oportunidad para cambiar el rumbo de la partida.
+*   ⚔️ **Ataque en cruz con enfriamiento**: Una pieza golpea a la vez las cuatro casillas vecinas y después espera unos segundos antes de volver a atacar.
+*   ⚡ **Mecánica de Remontada (Catch-up)**: El enfriamiento base es de 2 s y se multiplica por las piezas que te quedan entre las iniciales (con un mínimo del 20 %): con una sola pieza atacas el triple de rápido.
+*   📦 **Cajas y corazones**: Cada 5-15 segundos aparece una caja (máximo 3). Al romperla deja un corazón que cura 1 punto de vida a la pieza que lo recoge.
 *   🌲 **Ambientación Inmersiva**: Sumérgete en un bosque mágico con modelos 3D, efectos de partículas y una atmósfera nocturna.
+
+### 🎮 Cómo se juega
+
+Los dos jugadores comparten teclado y un mismo cursor, que cambia de color según de quién sea el turno.
+
+<div align="center">
+
+| Acción | Jugador 1 | Jugador 2 |
+| :----- | :-------: | :-------: |
+| Mover el cursor / la pieza | `W` `A` `S` `D` | Flechas |
+| Coger / soltar una pieza | `Ctrl izquierdo` | `Ctrl derecho` |
+| Atacar (con la pieza cogida) | `Espacio` | `Intro` |
+| Volver a jugar (en la pantalla de victoria) | `Espacio` | `Espacio` |
+
+</div>
+
+1. Lleva el cursor a una de tus piezas y cógela.
+2. Muévela a una casilla vecina libre (o con un corazón) y suéltala, o ataca desde donde está.
+3. Si se acaba tu turno con una pieza cogida, se suelta sola.
 
 # 🧠 Contexto del Proyecto
 
@@ -52,11 +67,20 @@ Este proyecto fue desarrollado como parte de la asignatura de **Programación** 
   <img src="https://img.shields.io/badge/Status-Stable-brightgreen?style=for-the-badge" alt="Status"/>
 </div>
 
-| Tecnología | Descripción                                          |
-| :--------- | :--------------------------------------------------- |
-| **Engine** | `Unity 3D` - Motor de juego para el desarrollo 2D/3D. |
-| **Lenguaje** | `C#` - Lenguaje principal para la lógica del juego. |
-| **Entorno**  | `Visual Studio` - IDE para la escritura de scripts.  |
+<br>
+
+<div align="center">
+
+| Tecnología | Descripción |
+| :--------- | :---------- |
+| **Motor** | `Unity 2023.2` (3D) |
+| **Lenguaje** | `C#` |
+| **Arquitectura** | Modelo / Vista / Controlador, interfaces (`IGameEntity`, `IAttackable`) y eventos (`GameEvents`) |
+| **Visual** | Modelos 3D (`.obj`), materiales propios, sistemas de partículas y corrutinas para las animaciones |
+| **Interfaz** | `Unity UI` (barra de tiempo) y escenas de victoria |
+| **Entorno** | `Visual Studio` |
+
+</div>
 
 # 🖼️ Capturas del Juego
 
@@ -86,18 +110,29 @@ Real-Time-Tactics/
 │   │   │   ├── GameManager.cs
 │   │   │   └── Square.cs
 │   │   ├── Model/
-│   │   │   ├── Board.cs
-│   │   │   ├── Piece.cs
-│   │   │   ├── Crate.cs
+│   │   │   ├── Board.cs           # Tablero, casillas y ataques
+│   │   │   ├── BoardEntity.cs     # Base de todo lo que ocupa una casilla
+│   │   │   ├── Piece.cs           # Vida, daño, curación y enfriamiento
+│   │   │   ├── Crate.cs           # Caja que suelta un corazón al romperse
+│   │   │   ├── HealthPickup.cs    # Corazón que cura
+│   │   │   ├── EntityID.cs
+│   │   │   ├── IAttackable.cs
 │   │   │   └── IGameEntity.cs
-│   │   └── View/
-│   │       ├── CrateVisuals.cs
-│   │       ├── CursorVisual.cs
-│   │       ├── PieceVisual.cs
-│   │       └── HealthPickupVisual.cs
-│   ├── ArchivoBox/
-│   ├── ArchivoHeart/
-│   └── ArchivoPlantas/
+│   │   ├── View/
+│   │   │   ├── CrateVisuals.cs
+│   │   │   ├── CursorVisual.cs
+│   │   │   ├── PieceVisual.cs     # Encoger al recibir daño, partículas y enfriamiento
+│   │   │   └── HealthPickupVisual.cs
+│   │   └── ResetGame.cs           # Reinicia desde la pantalla de victoria
+│   ├── Scenes/
+│   │   ├── Principal.unity        # Partida
+│   │   ├── Win1.unity             # Gana el jugador 1
+│   │   └── Win2.unity             # Gana el jugador 2
+│   ├── Prefabs/                   # Piezas, caja, corazón, cursor, casilla y partículas
+│   ├── Materiales/
+│   ├── ArchivoBox/                # Modelo 3D de la caja
+│   ├── ArchivoHeart/              # Modelo 3D del corazón
+│   └── ArchivoPlantas/            # Modelos 3D del bosque
 ├── Packages/
 │   └── manifest.json
 └── ProjectSettings/
@@ -105,7 +140,7 @@ Real-Time-Tactics/
 
 # 🚀 Cómo Utilizar el Proyecto
 
-Para ejecutar este proyecto localmente, necesitarás tener instalado Unity Hub y una versión compatible del Editor de Unity.
+Para ejecutar este proyecto localmente necesitas **Unity Hub** y **Unity 2023.2** (se creó con la 2023.2.20f1). Si solo quieres jugar, está [en itch.io](https://evagr.itch.io/real-time-tactics).
 
 1.  **Clona el repositorio:**
     ```bash
@@ -118,11 +153,10 @@ Para ejecutar este proyecto localmente, necesitarás tener instalado Unity Hub y
     *   Navega hasta la carpeta del proyecto clonado y selecciónala. Unity se encargará de importar y configurar el proyecto.
 
 3.  **Ejecuta el juego:**
-    *   Una vez que el proyecto esté abierto en el Editor de Unity, busca la escena principal llamada `Principal` en la carpeta `Assets/Scenes` (o en la raíz de `Assets`).
-    *   Haz doble clic sobre ella para abrirla.
+    *   Una vez que el proyecto esté abierto en el Editor de Unity, abre la escena `Principal` de la carpeta `Assets/Scenes`.
     *   Presiona el botón de **Play** ▶️ en la parte superior central del editor para iniciar el juego.
 
-</br>
+<br>
 
 <div align="center">
   <p>Creado por <strong>Eva Gallardo</strong></p>
