@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Real-Time Tactics: Archivo de código fuente BoardEntity.cs</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Real-Time Tactics
+   </div>
+   <div id="projectbrief">Juego de tablero por turnos con tiempo para dos jugadores: mover piezas, atacar, romper cajas y recoger vidas.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('BoardEntity_8cs_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">BoardEntity.cs</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="BoardEntity_8cs.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span>UnityEngine;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="foldopen" id="foldopen00004" data-start="{" data-end="};">
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="classBoardEntity.html">    4</a></span><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class </span><a class="code hl_class" href="classBoardEntity.html">BoardEntity</a> : <a class="code hl_interface" href="interfaceIGameEntity.html">IGameEntity</a></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>{</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="classBoardEntity.html#a1b3861aa5fb1544da34a30e868e9694e">    6</a></span>    <span class="keyword">protected</span> Vector2Int <a class="code hl_variable" href="classBoardEntity.html#a1b3861aa5fb1544da34a30e868e9694e">_position</a>; <span class="comment">// Posición en el tablero</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="classBoardEntity.html#a495b3e5f790d515c9befb400367180de">    8</a></span>    <span class="keyword">public</span> <a class="code hl_enumeration" href="EntityID_8cs.html#a9efda8f37908abe4b1bcbeb9392d34ca">EntityID</a> <a class="code hl_property" href="classBoardEntity.html#a495b3e5f790d515c9befb400367180de">ID</a> { <span class="keyword">get</span>; <span class="keyword">protected</span> <span class="keyword">set</span>; } <span class="comment">// Identificador de la entidad</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="classBoardEntity.html#abc6e772f77c728736d040e12c092af65">   10</a></span>    <span class="keyword">public</span> <a class="code hl_function" href="classBoardEntity.html#abc6e772f77c728736d040e12c092af65">BoardEntity</a>() { }</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="}">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="classBoardEntity.html#aa36919900cf7e21c6100b3c120aa5c12">   15</a></span>    <span class="keyword">public</span> <a class="code hl_function" href="classBoardEntity.html#aa36919900cf7e21c6100b3c120aa5c12">BoardEntity</a>(Vector2Int <a class="code hl_property" href="classBoardEntity.html#aa97391caba49b570c8755ed88c18160a">position</a>, <a class="code hl_enumeration" href="EntityID_8cs.html#a9efda8f37908abe4b1bcbeb9392d34ca">EntityID</a> <span class="keywordtype">id</span>)</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <a class="code hl_variable" href="classBoardEntity.html#a1b3861aa5fb1544da34a30e868e9694e">_position</a> = <a class="code hl_property" href="classBoardEntity.html#aa97391caba49b570c8755ed88c18160a">position</a>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <a class="code hl_property" href="classBoardEntity.html#a495b3e5f790d515c9befb400367180de">ID</a> = id;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    }</div>
+</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="foldopen" id="foldopen00022" data-start="{" data-end="};">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classBoardEntity.html#aa97391caba49b570c8755ed88c18160a">   22</a></span>    <span class="keyword">public</span> <span class="keyword">virtual</span> Vector2Int <a class="code hl_property" href="classBoardEntity.html#aa97391caba49b570c8755ed88c18160a">position</a></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keyword">get</span> { <span class="keywordflow">return</span> <a class="code hl_variable" href="classBoardEntity.html#a1b3861aa5fb1544da34a30e868e9694e">_position</a>; }</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keyword">set</span> { <a class="code hl_variable" href="classBoardEntity.html#a1b3861aa5fb1544da34a30e868e9694e">_position</a> = value; }</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    }</div>
+</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="classBoardEntity.html#a4564ba5abcf0b4b39d785685f29ccbb0">   29</a></span>    <span class="keyword">public</span> <span class="keyword">abstract</span> GameObject <a class="code hl_property" href="classBoardEntity.html#a4564ba5abcf0b4b39d785685f29ccbb0">entityGameObject</a> { <span class="keyword">get</span>; }</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="classBoardEntity.html#aeffccb7c47a2ae3ad5b658f0efee8104">   32</a></span>    <span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classBoardEntity.html#aeffccb7c47a2ae3ad5b658f0efee8104">DestroyVisuals</a>() { }</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>}</div>
+</div>
+<div class="ttc" id="aEntityID_8cs_html_a9efda8f37908abe4b1bcbeb9392d34ca"><div class="ttname"><a href="EntityID_8cs.html#a9efda8f37908abe4b1bcbeb9392d34ca">EntityID</a></div><div class="ttdeci">EntityID</div><div class="ttdoc">Tipos de entidad que puede haber en una casilla.</div><div class="ttdef"><b>Definition</b> <a href="EntityID_8cs_source.html#l00002">EntityID.cs:3</a></div></div>
+<div class="ttc" id="aclassBoardEntity_html"><div class="ttname"><a href="classBoardEntity.html">BoardEntity</a></div><div class="ttdoc">Base de lo que puede ocupar una casilla, salvo las piezas: cajas y vidas.</div><div class="ttdef"><b>Definition</b> <a href="#l00004">BoardEntity.cs:5</a></div></div>
+<div class="ttc" id="aclassBoardEntity_html_a1b3861aa5fb1544da34a30e868e9694e"><div class="ttname"><a href="classBoardEntity.html#a1b3861aa5fb1544da34a30e868e9694e">BoardEntity._position</a></div><div class="ttdeci">Vector2Int _position</div><div class="ttdef"><b>Definition</b> <a href="#l00006">BoardEntity.cs:6</a></div></div>
+<div class="ttc" id="aclassBoardEntity_html_a4564ba5abcf0b4b39d785685f29ccbb0"><div class="ttname"><a href="classBoardEntity.html#a4564ba5abcf0b4b39d785685f29ccbb0">BoardEntity.entityGameObject</a></div><div class="ttdeci">GameObject entityGameObject</div><div class="ttdoc">Objeto de la escena que la representa.</div><div class="ttdef"><b>Definition</b> <a href="#l00029">BoardEntity.cs:29</a></div></div>
+<div class="ttc" id="aclassBoardEntity_html_a495b3e5f790d515c9befb400367180de"><div class="ttname"><a href="classBoardEntity.html#a495b3e5f790d515c9befb400367180de">BoardEntity.ID</a></div><div class="ttdeci">EntityID ID</div><div class="ttdoc">Tipo de entidad.</div><div class="ttdef"><b>Definition</b> <a href="#l00008">BoardEntity.cs:8</a></div></div>
+<div class="ttc" id="aclassBoardEntity_html_aa36919900cf7e21c6100b3c120aa5c12"><div class="ttname"><a href="classBoardEntity.html#aa36919900cf7e21c6100b3c120aa5c12">BoardEntity.BoardEntity</a></div><div class="ttdeci">BoardEntity(Vector2Int position, EntityID id)</div><div class="ttdoc">Crea la entidad en una casilla.</div><div class="ttdef"><b>Definition</b> <a href="#l00015">BoardEntity.cs:15</a></div></div>
+<div class="ttc" id="aclassBoardEntity_html_aa97391caba49b570c8755ed88c18160a"><div class="ttname"><a href="classBoardEntity.html#aa97391caba49b570c8755ed88c18160a">BoardEntity.position</a></div><div class="ttdeci">virtual Vector2Int position</div><div class="ttdoc">Casilla en la que está.</div><div class="ttdef"><b>Definition</b> <a href="#l00022">BoardEntity.cs:23</a></div></div>
+<div class="ttc" id="aclassBoardEntity_html_abc6e772f77c728736d040e12c092af65"><div class="ttname"><a href="classBoardEntity.html#abc6e772f77c728736d040e12c092af65">BoardEntity.BoardEntity</a></div><div class="ttdeci">BoardEntity()</div><div class="ttdef"><b>Definition</b> <a href="#l00010">BoardEntity.cs:10</a></div></div>
+<div class="ttc" id="aclassBoardEntity_html_aeffccb7c47a2ae3ad5b658f0efee8104"><div class="ttname"><a href="classBoardEntity.html#aeffccb7c47a2ae3ad5b658f0efee8104">BoardEntity.DestroyVisuals</a></div><div class="ttdeci">virtual void DestroyVisuals()</div><div class="ttdoc">Borra su objeto de la escena.</div><div class="ttdef"><b>Definition</b> <a href="#l00032">BoardEntity.cs:32</a></div></div>
+<div class="ttc" id="ainterfaceIGameEntity_html"><div class="ttname"><a href="interfaceIGameEntity.html">IGameEntity</a></div><div class="ttdoc">Cualquier cosa que ocupa una casilla del tablero.</div><div class="ttdef"><b>Definition</b> <a href="IGameEntity_8cs_source.html#l00004">IGameEntity.cs:5</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_84bbf7b3c7f28a5a18725745e1505219.html">Assets</a></li><li class="navelem"><a class="el" href="dir_f13b41af88cf68434578284aaf699e39.html">Scripts</a></li><li class="navelem"><a class="el" href="dir_9982d9b0f4ad3ea6cfe45d3d01cb7131.html">Model</a></li><li class="navelem"><a class="el" href="BoardEntity_8cs.html">BoardEntity.cs</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>

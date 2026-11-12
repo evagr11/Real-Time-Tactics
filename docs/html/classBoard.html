@@ -1,0 +1,594 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Real-Time Tactics: Referencia de la clase Board</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Real-Time Tactics
+   </div>
+   <div id="projectbrief">Juego de tablero por turnos con tiempo para dos jugadores: mover piezas, atacar, romper cajas y recoger vidas.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('classBoard.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="#pub-attribs">Atributos públicos</a> &#124;
+<a href="classBoard-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle"><div class="title">Referencia de la clase Board</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>El tablero: una matriz de <a class="el" href="classSquare.html" title="Una casilla del tablero: su posición, su objeto en la escena y lo que hay encima.">Square</a> con lo que hay en cada casilla, y los ataques.  
+ <a href="#details">Más...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:a83d9e421edca3a2f85ee8612e45a8406" id="r_a83d9e421edca3a2f85ee8612e45a8406"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a83d9e421edca3a2f85ee8612e45a8406">Board</a> (int <a class="el" href="#a2f9e52c8f83e21be433bb3a323834595">width</a>, int <a class="el" href="#adbbf79735f96938460ee9bd4056ced62">height</a>, GameObject boardSquarePrefab)</td></tr>
+<tr class="memdesc:a83d9e421edca3a2f85ee8612e45a8406"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crea todas las casillas.  <br /></td></tr>
+<tr class="separator:a83d9e421edca3a2f85ee8612e45a8406"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7de5b8b643f1542590ca82cbfa509093" id="r_a7de5b8b643f1542590ca82cbfa509093"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSquare.html">Square</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7de5b8b643f1542590ca82cbfa509093">GetSquareAtPosition</a> (int x, int y)</td></tr>
+<tr class="separator:a7de5b8b643f1542590ca82cbfa509093"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a526453381a0dfbb431262bde0d59c06f" id="r_a526453381a0dfbb431262bde0d59c06f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interfaceIGameEntity.html">IGameEntity</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a526453381a0dfbb431262bde0d59c06f">GetEntityAtPosition</a> (Vector2Int position)</td></tr>
+<tr class="separator:a526453381a0dfbb431262bde0d59c06f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b24f63d3a53f8e5ab8b2ca1b48410b5" id="r_a2b24f63d3a53f8e5ab8b2ca1b48410b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b24f63d3a53f8e5ab8b2ca1b48410b5">SetEntityAtPosition</a> (Vector2Int position, <a class="el" href="interfaceIGameEntity.html">IGameEntity</a> entity)</td></tr>
+<tr class="memdesc:a2b24f63d3a53f8e5ab8b2ca1b48410b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pone una entidad en una casilla y actualiza su posición.  <br /></td></tr>
+<tr class="separator:a2b24f63d3a53f8e5ab8b2ca1b48410b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba4eee3e975371ff5e1552bc3f08b14b" id="r_aba4eee3e975371ff5e1552bc3f08b14b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aba4eee3e975371ff5e1552bc3f08b14b">Attack</a> (Vector2Int position, bool isPlayer2Attacker, <a class="el" href="classPiece.html">Piece</a> attackingPiece)</td></tr>
+<tr class="memdesc:aba4eee3e975371ff5e1552bc3f08b14b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ataca una casilla. A una pieza rival le quita vida si la pieza atacante no está en espera; una caja se rompe. Solo ataca la pieza que se lleva cogida.  <br /></td></tr>
+<tr class="separator:aba4eee3e975371ff5e1552bc3f08b14b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c4a4960f5cfaab0bc2793b7d07c68b9" id="r_a4c4a4960f5cfaab0bc2793b7d07c68b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4c4a4960f5cfaab0bc2793b7d07c68b9">AttackFrom</a> (Vector2Int position, bool isPlayer2Attacker, <a class="el" href="classPiece.html">Piece</a> attackingPiece)</td></tr>
+<tr class="memdesc:a4c4a4960f5cfaab0bc2793b7d07c68b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ataca las cuatro casillas vecinas.  <br /></td></tr>
+<tr class="separator:a4c4a4960f5cfaab0bc2793b7d07c68b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8a2d2fe5938e7da834e314a2f176121" id="r_af8a2d2fe5938e7da834e314a2f176121"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af8a2d2fe5938e7da834e314a2f176121">IsOutOfBounds</a> (Vector2Int pos)</td></tr>
+<tr class="separator:af8a2d2fe5938e7da834e314a2f176121"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5effa918b4c86e4ec2690471d73054eb" id="r_a5effa918b4c86e4ec2690471d73054eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5effa918b4c86e4ec2690471d73054eb">ClearEntityAtPosition</a> (Vector2Int position)</td></tr>
+<tr class="memdesc:a5effa918b4c86e4ec2690471d73054eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vacía una casilla.  <br /></td></tr>
+<tr class="separator:a5effa918b4c86e4ec2690471d73054eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2941424d6be57903a53cc218995cf2dc" id="r_a2941424d6be57903a53cc218995cf2dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2941424d6be57903a53cc218995cf2dc">PlaceCrateAtPosition</a> (Vector2Int position, <a class="el" href="interfaceIGameEntity.html">IGameEntity</a> crate)</td></tr>
+<tr class="memdesc:a2941424d6be57903a53cc218995cf2dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pone una caja en una casilla.  <br /></td></tr>
+<tr class="separator:a2941424d6be57903a53cc218995cf2dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Atributos públicos</h2></td></tr>
+<tr class="memitem:a2f9e52c8f83e21be433bb3a323834595" id="r_a2f9e52c8f83e21be433bb3a323834595"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2f9e52c8f83e21be433bb3a323834595">width</a></td></tr>
+<tr class="separator:a2f9e52c8f83e21be433bb3a323834595"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbbf79735f96938460ee9bd4056ced62" id="r_adbbf79735f96938460ee9bd4056ced62"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adbbf79735f96938460ee9bd4056ced62">height</a></td></tr>
+<tr class="separator:adbbf79735f96938460ee9bd4056ced62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad48b8cf0082e8d524bf469050c08bad7" id="r_ad48b8cf0082e8d524bf469050c08bad7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSquare.html">Square</a>[,]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad48b8cf0082e8d524bf469050c08bad7">squares</a></td></tr>
+<tr class="separator:ad48b8cf0082e8d524bf469050c08bad7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7d8b1e37bc9b7356e3199bd3e42a58f" id="r_ae7d8b1e37bc9b7356e3199bd3e42a58f"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae7d8b1e37bc9b7356e3199bd3e42a58f">boardContainer</a></td></tr>
+<tr class="separator:ae7d8b1e37bc9b7356e3199bd3e42a58f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>El tablero: una matriz de <a class="el" href="classSquare.html" title="Una casilla del tablero: su posición, su objeto en la escena y lo que hay encima.">Square</a> con lo que hay en cada casilla, y los ataques. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="Board_8cs_source.html#l00004">4</a> del archivo <a class="el" href="Board_8cs_source.html">Board.cs</a>.</p>
+</div><h2 class="groupheader">Documentación de constructores y destructores</h2>
+<a id="a83d9e421edca3a2f85ee8612e45a8406" name="a83d9e421edca3a2f85ee8612e45a8406"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83d9e421edca3a2f85ee8612e45a8406">&#9670;&#160;</a></span>Board()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Board.Board </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>width</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>height</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GameObject</td>          <td class="paramname"><span class="paramname"><em>boardSquarePrefab</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Crea todas las casillas. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">width</td><td>Ancho.</td></tr>
+    <tr><td class="paramname">height</td><td>Alto.</td></tr>
+    <tr><td class="paramname">boardSquarePrefab</td><td>Prefab de la casilla.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="Board_8cs_source.html#l00015">15</a> del archivo <a class="el" href="Board_8cs_source.html">Board.cs</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de funciones miembro</h2>
+<a id="aba4eee3e975371ff5e1552bc3f08b14b" name="aba4eee3e975371ff5e1552bc3f08b14b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba4eee3e975371ff5e1552bc3f08b14b">&#9670;&#160;</a></span>Attack()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Board.Attack </td>
+          <td>(</td>
+          <td class="paramtype">Vector2Int</td>          <td class="paramname"><span class="paramname"><em>position</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>isPlayer2Attacker</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classPiece.html">Piece</a></td>          <td class="paramname"><span class="paramname"><em>attackingPiece</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ataca una casilla. A una pieza rival le quita vida si la pieza atacante no está en espera; una caja se rompe. Solo ataca la pieza que se lleva cogida. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">position</td><td>Casilla atacada.</td></tr>
+    <tr><td class="paramname">isPlayer2Attacker</td><td>Si ataca el jugador 2.</td></tr>
+    <tr><td class="paramname">attackingPiece</td><td>Pieza que ataca.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd><code>true</code> si el ataque ha dado a algo.</dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="Board_8cs_source.html#l00073">73</a> del archivo <a class="el" href="Board_8cs_source.html">Board.cs</a>.</p>
+
+</div>
+</div>
+<a id="a4c4a4960f5cfaab0bc2793b7d07c68b9" name="a4c4a4960f5cfaab0bc2793b7d07c68b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c4a4960f5cfaab0bc2793b7d07c68b9">&#9670;&#160;</a></span>AttackFrom()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Board.AttackFrom </td>
+          <td>(</td>
+          <td class="paramtype">Vector2Int</td>          <td class="paramname"><span class="paramname"><em>position</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>isPlayer2Attacker</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classPiece.html">Piece</a></td>          <td class="paramname"><span class="paramname"><em>attackingPiece</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ataca las cuatro casillas vecinas. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">position</td><td>Casilla desde la que se ataca.</td></tr>
+    <tr><td class="paramname">isPlayer2Attacker</td><td>Si ataca el jugador 2.</td></tr>
+    <tr><td class="paramname">attackingPiece</td><td>Pieza que ataca.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="Board_8cs_source.html#l00117">117</a> del archivo <a class="el" href="Board_8cs_source.html">Board.cs</a>.</p>
+
+</div>
+</div>
+<a id="a5effa918b4c86e4ec2690471d73054eb" name="a5effa918b4c86e4ec2690471d73054eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5effa918b4c86e4ec2690471d73054eb">&#9670;&#160;</a></span>ClearEntityAtPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Board.ClearEntityAtPosition </td>
+          <td>(</td>
+          <td class="paramtype">Vector2Int</td>          <td class="paramname"><span class="paramname"><em>position</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Vacía una casilla. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">position</td><td>Casilla.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="Board_8cs_source.html#l00135">135</a> del archivo <a class="el" href="Board_8cs_source.html">Board.cs</a>.</p>
+
+</div>
+</div>
+<a id="a526453381a0dfbb431262bde0d59c06f" name="a526453381a0dfbb431262bde0d59c06f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a526453381a0dfbb431262bde0d59c06f">&#9670;&#160;</a></span>GetEntityAtPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="interfaceIGameEntity.html">IGameEntity</a> Board.GetEntityAtPosition </td>
+          <td>(</td>
+          <td class="paramtype">Vector2Int</td>          <td class="paramname"><span class="paramname"><em>position</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">position</td><td>Casilla.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Lo que hay en la casilla, o <code>null</code>.</dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="Board_8cs_source.html#l00046">46</a> del archivo <a class="el" href="Board_8cs_source.html">Board.cs</a>.</p>
+
+</div>
+</div>
+<a id="a7de5b8b643f1542590ca82cbfa509093" name="a7de5b8b643f1542590ca82cbfa509093"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7de5b8b643f1542590ca82cbfa509093">&#9670;&#160;</a></span>GetSquareAtPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classSquare.html">Square</a> Board.GetSquareAtPosition </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Columna.</td></tr>
+    <tr><td class="paramname">y</td><td>Fila.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>La casilla, o <code>null</code> si está fuera del tablero.</dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="Board_8cs_source.html#l00035">35</a> del archivo <a class="el" href="Board_8cs_source.html">Board.cs</a>.</p>
+
+</div>
+</div>
+<a id="af8a2d2fe5938e7da834e314a2f176121" name="af8a2d2fe5938e7da834e314a2f176121"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8a2d2fe5938e7da834e314a2f176121">&#9670;&#160;</a></span>IsOutOfBounds()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Board.IsOutOfBounds </td>
+          <td>(</td>
+          <td class="paramtype">Vector2Int</td>          <td class="paramname"><span class="paramname"><em>pos</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td>Casilla.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd><code>true</code> si está fuera del tablero.</dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="Board_8cs_source.html#l00128">128</a> del archivo <a class="el" href="Board_8cs_source.html">Board.cs</a>.</p>
+
+</div>
+</div>
+<a id="a2941424d6be57903a53cc218995cf2dc" name="a2941424d6be57903a53cc218995cf2dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2941424d6be57903a53cc218995cf2dc">&#9670;&#160;</a></span>PlaceCrateAtPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Board.PlaceCrateAtPosition </td>
+          <td>(</td>
+          <td class="paramtype">Vector2Int</td>          <td class="paramname"><span class="paramname"><em>position</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="interfaceIGameEntity.html">IGameEntity</a></td>          <td class="paramname"><span class="paramname"><em>crate</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pone una caja en una casilla. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">position</td><td>Casilla.</td></tr>
+    <tr><td class="paramname">crate</td><td>Caja.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="Board_8cs_source.html#l00143">143</a> del archivo <a class="el" href="Board_8cs_source.html">Board.cs</a>.</p>
+
+</div>
+</div>
+<a id="a2b24f63d3a53f8e5ab8b2ca1b48410b5" name="a2b24f63d3a53f8e5ab8b2ca1b48410b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b24f63d3a53f8e5ab8b2ca1b48410b5">&#9670;&#160;</a></span>SetEntityAtPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Board.SetEntityAtPosition </td>
+          <td>(</td>
+          <td class="paramtype">Vector2Int</td>          <td class="paramname"><span class="paramname"><em>position</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="interfaceIGameEntity.html">IGameEntity</a></td>          <td class="paramname"><span class="paramname"><em>entity</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pone una entidad en una casilla y actualiza su posición. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">position</td><td>Casilla.</td></tr>
+    <tr><td class="paramname">entity</td><td>Entidad, o <code>null</code> para vaciarla.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="Board_8cs_source.html#l00055">55</a> del archivo <a class="el" href="Board_8cs_source.html">Board.cs</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de datos miembro</h2>
+<a id="ae7d8b1e37bc9b7356e3199bd3e42a58f" name="ae7d8b1e37bc9b7356e3199bd3e42a58f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7d8b1e37bc9b7356e3199bd3e42a58f">&#9670;&#160;</a></span>boardContainer</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameObject Board.boardContainer</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Board_8cs_source.html#l00009">9</a> del archivo <a class="el" href="Board_8cs_source.html">Board.cs</a>.</p>
+
+</div>
+</div>
+<a id="adbbf79735f96938460ee9bd4056ced62" name="adbbf79735f96938460ee9bd4056ced62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbbf79735f96938460ee9bd4056ced62">&#9670;&#160;</a></span>height</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Board.height</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Board_8cs_source.html#l00007">7</a> del archivo <a class="el" href="Board_8cs_source.html">Board.cs</a>.</p>
+
+</div>
+</div>
+<a id="ad48b8cf0082e8d524bf469050c08bad7" name="ad48b8cf0082e8d524bf469050c08bad7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad48b8cf0082e8d524bf469050c08bad7">&#9670;&#160;</a></span>squares</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classSquare.html">Square</a> [,] Board.squares</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Board_8cs_source.html#l00008">8</a> del archivo <a class="el" href="Board_8cs_source.html">Board.cs</a>.</p>
+
+</div>
+</div>
+<a id="a2f9e52c8f83e21be433bb3a323834595" name="a2f9e52c8f83e21be433bb3a323834595"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f9e52c8f83e21be433bb3a323834595">&#9670;&#160;</a></span>width</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Board.width</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="Board_8cs_source.html#l00006">6</a> del archivo <a class="el" href="Board_8cs_source.html">Board.cs</a>.</p>
+
+</div>
+</div>
+<hr/>La documentación de esta clase está generada del siguiente archivo:<ul>
+<li><a class="el" href="Board_8cs_source.html">Board.cs</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classBoard.html">Board</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>

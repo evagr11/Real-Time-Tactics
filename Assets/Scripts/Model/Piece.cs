@@ -1,5 +1,9 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Pieza de un jugador: vida, posición y espera entre ataques. La espera es más corta cuantas menos
+/// piezas le quedan al jugador.
+/// </summary>
 public class Piece : IGameEntity, IAttackable
 {
     public bool isPlayer2 { get; private set; }
@@ -14,6 +18,12 @@ public class Piece : IGameEntity, IAttackable
     public float attackCooldownDuration { get; set; } = 2f;
     public bool isHeld { get; set; } = false;
 
+    /// <summary>Crea una pieza con la vida al máximo.</summary>
+    /// <param name="startPosition">Casilla de salida.</param>
+    /// <param name="isPlayer2">Si es del jugador 2.</param>
+    /// <param name="pieceGameObject">Su objeto en la escena.</param>
+    /// <param name="yOffset">Altura sobre la casilla.</param>
+    /// <param name="maxHealth">Vida máxima.</param>
     public Piece(Vector2Int startPosition, bool isPlayer2, GameObject pieceGameObject, float yOffset, int maxHealth)
     {
         position = startPosition;
@@ -26,6 +36,9 @@ public class Piece : IGameEntity, IAttackable
         currentAttackCooldownTimer = 0f;
     }
 
+    /// <summary>Mueve la pieza a otra casilla y recoge la vida si la hay.</summary>
+    /// <param name="newLogicalPosition">Casilla nueva.</param>
+    /// <param name="boardReference">Tablero.</param>
     public void UpdatePosition(Vector2Int newLogicalPosition, Board boardReference)
     {
         position = newLogicalPosition;
@@ -38,6 +51,7 @@ public class Piece : IGameEntity, IAttackable
     }
 
 
+    /// <summary>Quita un punto de vida, encoge la pieza y la destruye si llega a 0.</summary>
     public void Attacked()
     {
         currentHealth--;
@@ -66,6 +80,8 @@ public class Piece : IGameEntity, IAttackable
         }
     }
 
+    /// <summary>Cura la pieza sin pasar del máximo.</summary>
+    /// <param name="amount">Vida que se suma.</param>
     public void Heal(int amount)
     {
         int calculatedHealth = currentHealth + amount;
@@ -78,6 +94,9 @@ public class Piece : IGameEntity, IAttackable
         visual.ShrinkOnHit(currentHealth, maxHealth);
     }
 
+    /// <summary>Empieza la espera de ataque, más corta cuantas menos piezas quedan (mínimo un 20 %).</summary>
+    /// <param name="currentPieces">Piezas que le quedan al jugador.</param>
+    /// <param name="initialPieces">Piezas con las que empezó.</param>
     public void StartAttackCooldown(int currentPieces, int initialPieces)
     {
         if (!isOnAttackCooldown)
@@ -94,6 +113,8 @@ public class Piece : IGameEntity, IAttackable
         }
     }
 
+    /// <summary>Descuenta la espera de ataque.</summary>
+    /// <param name="deltaTime">Tiempo desde el último fotograma.</param>
     public void Cooldown(float deltaTime)
     {
         if (isOnAttackCooldown)

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+/// <summary>El tablero: una matriz de <see cref="Square"/> con lo que hay en cada casilla, y los ataques.</summary>
 public class Board
 {
     public int width;
@@ -7,6 +8,10 @@ public class Board
     public Square[,] squares;
     public GameObject boardContainer;
 
+    /// <summary>Crea todas las casillas.</summary>
+    /// <param name="width">Ancho.</param>
+    /// <param name="height">Alto.</param>
+    /// <param name="boardSquarePrefab">Prefab de la casilla.</param>
     public Board(int width, int height, GameObject boardSquarePrefab)
     {
         this.width = width;
@@ -24,6 +29,9 @@ public class Board
         }
     }
 
+    /// <param name="x">Columna.</param>
+    /// <param name="y">Fila.</param>
+    /// <returns>La casilla, o <c>null</c> si está fuera del tablero.</returns>
     public Square GetSquareAtPosition(int x, int y)
     {
         if (x < 0 || x >= width || y < 0 || y >= height)
@@ -33,12 +41,17 @@ public class Board
         return squares[x, y];
     }
 
+    /// <param name="position">Casilla.</param>
+    /// <returns>Lo que hay en la casilla, o <c>null</c>.</returns>
     public IGameEntity GetEntityAtPosition(Vector2Int position)
     {
         return squares[position.x, position.y].containedEntity;
     }
 
 
+    /// <summary>Pone una entidad en una casilla y actualiza su posición.</summary>
+    /// <param name="position">Casilla.</param>
+    /// <param name="entity">Entidad, o <c>null</c> para vaciarla.</param>
     public void SetEntityAtPosition(Vector2Int position, IGameEntity entity)
     {
         squares[position.x, position.y].containedEntity = entity;
@@ -49,6 +62,14 @@ public class Board
     }
 
 
+    /// <summary>
+    /// Ataca una casilla. A una pieza rival le quita vida si la pieza atacante no está en espera; una
+    /// caja se rompe. Solo ataca la pieza que se lleva cogida.
+    /// </summary>
+    /// <param name="position">Casilla atacada.</param>
+    /// <param name="isPlayer2Attacker">Si ataca el jugador 2.</param>
+    /// <param name="attackingPiece">Pieza que ataca.</param>
+    /// <returns><c>true</c> si el ataque ha dado a algo.</returns>
     public bool Attack(Vector2Int position, bool isPlayer2Attacker, Piece attackingPiece)
     {
         if (IsOutOfBounds(position) || !attackingPiece.isHeld)
@@ -89,6 +110,10 @@ public class Board
         return false;
     }
 
+    /// <summary>Ataca las cuatro casillas vecinas.</summary>
+    /// <param name="position">Casilla desde la que se ataca.</param>
+    /// <param name="isPlayer2Attacker">Si ataca el jugador 2.</param>
+    /// <param name="attackingPiece">Pieza que ataca.</param>
     public void AttackFrom(Vector2Int position, bool isPlayer2Attacker, Piece attackingPiece)
     {
         Vector2Int[] directions = { Vector2Int.up, Vector2Int.down, Vector2Int.left, Vector2Int.right };
@@ -98,16 +123,23 @@ public class Board
         }
     }
 
+    /// <param name="pos">Casilla.</param>
+    /// <returns><c>true</c> si está fuera del tablero.</returns>
     public bool IsOutOfBounds(Vector2Int pos)
     {
         return pos.x < 0 || pos.x >= width || pos.y < 0 || pos.y >= height;
     }
 
+    /// <summary>Vacía una casilla.</summary>
+    /// <param name="position">Casilla.</param>
     public void ClearEntityAtPosition(Vector2Int position)
     {
         SetEntityAtPosition(position, null);
     }
 
+    /// <summary>Pone una caja en una casilla.</summary>
+    /// <param name="position">Casilla.</param>
+    /// <param name="crate">Caja.</param>
     public void PlaceCrateAtPosition(Vector2Int position, IGameEntity crate)
     {
         GetSquareAtPosition(position.x, position.y).containedEntity = crate;

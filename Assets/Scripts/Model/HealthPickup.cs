@@ -1,9 +1,13 @@
 using UnityEngine;
 
+/// <summary>Vida que queda al romper una caja; cura un punto a la pieza que pasa por ella.</summary>
 public class HealthPickup : BoardEntity
 {
     HealthPickupVisual visual;
 
+    /// <summary>Crea la vida y su objeto en la escena.</summary>
+    /// <param name="position">Casilla.</param>
+    /// <param name="prefab">Prefab de la vida.</param>
     public HealthPickup(Vector2Int position, GameObject prefab)
         : base(position, EntityID.HealthPickup)
     {
@@ -17,6 +21,8 @@ public class HealthPickup : BoardEntity
         get { return visual.gameObject; }
     }
 
+    /// <summary>Cura un punto a la pieza si no tiene la vida al máximo y desaparece.</summary>
+    /// <param name="piece">Pieza que la recoge.</param>
     public void OnPickedUp(Piece piece)
     {
         if (piece.currentHealth < piece.maxHealth)
@@ -29,6 +35,7 @@ public class HealthPickup : BoardEntity
         GameObject.Destroy(visual.gameObject);
     }
 
+    /// <summary>Borra el objeto de la vida.</summary>
     public override void DestroyVisuals()
     {
         GameObject.Destroy(visual.gameObject);

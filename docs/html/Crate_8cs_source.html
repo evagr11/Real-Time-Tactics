@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Real-Time Tactics: Archivo de código fuente Crate.cs</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Real-Time Tactics
+   </div>
+   <div id="projectbrief">Juego de tablero por turnos con tiempo para dos jugadores: mover piezas, atacar, romper cajas y recoger vidas.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('Crate_8cs_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Crate.cs</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="Crate_8cs.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span>UnityEngine;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="foldopen" id="foldopen00004" data-start="{" data-end="};">
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="classCrate.html">    4</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="classCrate.html">Crate</a> : <a class="code hl_class" href="classBoardEntity.html">BoardEntity</a>, <a class="code hl_interface" href="interfaceIAttackable.html">IAttackable</a></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>{</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="classCrate.html#a9914bccccdc529b59fca3f602f4af402">    6</a></span>    <a class="code hl_class" href="classCrateVisuals.html">CrateVisuals</a> <a class="code hl_variable" href="classCrate.html#a9914bccccdc529b59fca3f602f4af402">visuals</a>; <span class="comment">// Componente visual de la caja</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="foldopen" id="foldopen00012" data-start="{" data-end="}">
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="classCrate.html#a406a48eae8b648d2ac405dec6edbe4a8">   12</a></span>    <span class="keyword">public</span> <a class="code hl_function" href="classCrate.html#a406a48eae8b648d2ac405dec6edbe4a8">Crate</a>(Vector2Int <a class="code hl_property" href="classBoardEntity.html#aa97391caba49b570c8755ed88c18160a">position</a>, <a class="code hl_enumeration" href="EntityID_8cs.html#a9efda8f37908abe4b1bcbeb9392d34ca">EntityID</a> iD, GameObject prefab) : base(<a class="code hl_property" href="classBoardEntity.html#aa97391caba49b570c8755ed88c18160a">position</a>, iD)</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        Vector3 spawnPos = <a class="code hl_class" href="classGameManager.html">GameManager</a>.<a class="code hl_function" href="classGameManager.html#ac624bbeb6485b28e745fec1c73cc0e99">Vector2IntToVector3</a>(<a class="code hl_property" href="classBoardEntity.html#aa97391caba49b570c8755ed88c18160a">position</a>) + <span class="keyword">new</span> Vector3(0, 0.25f, 0);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <a class="code hl_variable" href="classCrate.html#a9914bccccdc529b59fca3f602f4af402">visuals</a> = GameObject.Instantiate(prefab, spawnPos, Quaternion.identity).GetComponent&lt;<a class="code hl_class" href="classCrateVisuals.html">CrateVisuals</a>&gt;();</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    }</div>
+</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="foldopen" id="foldopen00018" data-start="{" data-end="};">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classCrate.html#ace822939e18df2fe51eb7856689d740f">   18</a></span>    <span class="keyword">public</span> <span class="keyword">override</span> GameObject <a class="code hl_property" href="classCrate.html#ace822939e18df2fe51eb7856689d740f">entityGameObject</a></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keyword">get</span> { <span class="keywordflow">return</span> <a class="code hl_variable" href="classCrate.html#a9914bccccdc529b59fca3f602f4af402">visuals</a>.gameObject; }</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    }</div>
+</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="foldopen" id="foldopen00024" data-start="{" data-end="}">
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classCrate.html#a37c5f6e3fb7a0d0986de066127a2a7ab">   24</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classCrate.html#a37c5f6e3fb7a0d0986de066127a2a7ab">Attacked</a>()</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <a class="code hl_variable" href="classCrate.html#a9914bccccdc529b59fca3f602f4af402">visuals</a>.<a class="code hl_function" href="classCrateVisuals.html#a7da56289f76a7c5a8d01349e416de298">PlayDestructionParticles</a>();</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        GameObject.Destroy(<a class="code hl_variable" href="classCrate.html#a9914bccccdc529b59fca3f602f4af402">visuals</a>.gameObject);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <a class="code hl_class" href="classGameManager.html">GameManager</a>.<a class="code hl_property" href="classGameManager.html#ad3e717f4fb0f378b969f4457de81f23e">Instance</a>.<a class="code hl_function" href="classGameManager.html#a244f4d3b182b79ecaab20d9ae331a644">RemoveCrateAtPosition</a>(<a class="code hl_property" href="classBoardEntity.html#aa97391caba49b570c8755ed88c18160a">position</a>);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <a class="code hl_class" href="classGameEvents.html">GameEvents</a>.<a class="code hl_variable" href="classGameEvents.html#acc190dcf10e5a0bd11b3292c7ef770a2">CrateBroke</a>.Invoke(<a class="code hl_property" href="classBoardEntity.html#aa97391caba49b570c8755ed88c18160a">position</a>);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <a class="code hl_class" href="classGameManager.html">GameManager</a>.<a class="code hl_property" href="classGameManager.html#ad3e717f4fb0f378b969f4457de81f23e">Instance</a>.<a class="code hl_function" href="classGameManager.html#a9b9be5116361dba83c66da4ee1ab5729">SpawnHealthPickup</a>(<a class="code hl_property" href="classBoardEntity.html#aa97391caba49b570c8755ed88c18160a">position</a>);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    }</div>
+</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="foldopen" id="foldopen00035" data-start="{" data-end="}">
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classCrate.html#a0e55b037b9d0f9839c79c016c04b3577">   35</a></span>    <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classCrate.html#a0e55b037b9d0f9839c79c016c04b3577">DestroyVisuals</a>()</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        GameObject.Destroy(<a class="code hl_variable" href="classCrate.html#a9914bccccdc529b59fca3f602f4af402">visuals</a>.gameObject);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    }</div>
+</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>}</div>
+</div>
+<div class="ttc" id="aEntityID_8cs_html_a9efda8f37908abe4b1bcbeb9392d34ca"><div class="ttname"><a href="EntityID_8cs.html#a9efda8f37908abe4b1bcbeb9392d34ca">EntityID</a></div><div class="ttdeci">EntityID</div><div class="ttdoc">Tipos de entidad que puede haber en una casilla.</div><div class="ttdef"><b>Definition</b> <a href="EntityID_8cs_source.html#l00002">EntityID.cs:3</a></div></div>
+<div class="ttc" id="aclassBoardEntity_html"><div class="ttname"><a href="classBoardEntity.html">BoardEntity</a></div><div class="ttdoc">Base de lo que puede ocupar una casilla, salvo las piezas: cajas y vidas.</div><div class="ttdef"><b>Definition</b> <a href="BoardEntity_8cs_source.html#l00004">BoardEntity.cs:5</a></div></div>
+<div class="ttc" id="aclassBoardEntity_html_aa97391caba49b570c8755ed88c18160a"><div class="ttname"><a href="classBoardEntity.html#aa97391caba49b570c8755ed88c18160a">BoardEntity.position</a></div><div class="ttdeci">virtual Vector2Int position</div><div class="ttdoc">Casilla en la que está.</div><div class="ttdef"><b>Definition</b> <a href="BoardEntity_8cs_source.html#l00022">BoardEntity.cs:23</a></div></div>
+<div class="ttc" id="aclassCrateVisuals_html"><div class="ttname"><a href="classCrateVisuals.html">CrateVisuals</a></div><div class="ttdoc">Aspecto de la caja: gira, flota y suelta partículas al romperse.</div><div class="ttdef"><b>Definition</b> <a href="CrateVisuals_8cs_source.html#l00004">CrateVisuals.cs:5</a></div></div>
+<div class="ttc" id="aclassCrateVisuals_html_a7da56289f76a7c5a8d01349e416de298"><div class="ttname"><a href="classCrateVisuals.html#a7da56289f76a7c5a8d01349e416de298">CrateVisuals.PlayDestructionParticles</a></div><div class="ttdeci">void PlayDestructionParticles()</div><div class="ttdoc">Crea las partículas de rotura y las borra a los 2 segundos.</div><div class="ttdef"><b>Definition</b> <a href="CrateVisuals_8cs_source.html#l00045">CrateVisuals.cs:45</a></div></div>
+<div class="ttc" id="aclassCrate_html"><div class="ttname"><a href="classCrate.html">Crate</a></div><div class="ttdoc">Caja que aparece en el tablero; al romperla deja una vida.</div><div class="ttdef"><b>Definition</b> <a href="#l00004">Crate.cs:5</a></div></div>
+<div class="ttc" id="aclassCrate_html_a0e55b037b9d0f9839c79c016c04b3577"><div class="ttname"><a href="classCrate.html#a0e55b037b9d0f9839c79c016c04b3577">Crate.DestroyVisuals</a></div><div class="ttdeci">override void DestroyVisuals()</div><div class="ttdoc">Borra el objeto de la caja.</div><div class="ttdef"><b>Definition</b> <a href="#l00035">Crate.cs:35</a></div></div>
+<div class="ttc" id="aclassCrate_html_a37c5f6e3fb7a0d0986de066127a2a7ab"><div class="ttname"><a href="classCrate.html#a37c5f6e3fb7a0d0986de066127a2a7ab">Crate.Attacked</a></div><div class="ttdeci">void Attacked()</div><div class="ttdoc">Rompe la caja con partículas, la quita del tablero, lanza GameEvents.CrateBroke y deja una vida.</div><div class="ttdef"><b>Definition</b> <a href="#l00024">Crate.cs:24</a></div></div>
+<div class="ttc" id="aclassCrate_html_a406a48eae8b648d2ac405dec6edbe4a8"><div class="ttname"><a href="classCrate.html#a406a48eae8b648d2ac405dec6edbe4a8">Crate.Crate</a></div><div class="ttdeci">Crate(Vector2Int position, EntityID iD, GameObject prefab)</div><div class="ttdoc">Crea la caja y su objeto en la escena.</div><div class="ttdef"><b>Definition</b> <a href="#l00012">Crate.cs:12</a></div></div>
+<div class="ttc" id="aclassCrate_html_a9914bccccdc529b59fca3f602f4af402"><div class="ttname"><a href="classCrate.html#a9914bccccdc529b59fca3f602f4af402">Crate.visuals</a></div><div class="ttdeci">CrateVisuals visuals</div><div class="ttdef"><b>Definition</b> <a href="#l00006">Crate.cs:6</a></div></div>
+<div class="ttc" id="aclassCrate_html_ace822939e18df2fe51eb7856689d740f"><div class="ttname"><a href="classCrate.html#ace822939e18df2fe51eb7856689d740f">Crate.entityGameObject</a></div><div class="ttdeci">override GameObject entityGameObject</div><div class="ttdef"><b>Definition</b> <a href="#l00018">Crate.cs:19</a></div></div>
+<div class="ttc" id="aclassGameEvents_html"><div class="ttname"><a href="classGameEvents.html">GameEvents</a></div><div class="ttdoc">Eventos del juego.</div><div class="ttdef"><b>Definition</b> <a href="GameEvents_8cs_source.html#l00005">GameEvents.cs:6</a></div></div>
+<div class="ttc" id="aclassGameEvents_html_acc190dcf10e5a0bd11b3292c7ef770a2"><div class="ttname"><a href="classGameEvents.html#acc190dcf10e5a0bd11b3292c7ef770a2">GameEvents.CrateBroke</a></div><div class="ttdeci">static Action&lt; Vector2Int &gt; CrateBroke</div><div class="ttdoc">Se lanza al romper una caja, con la casilla donde estaba.</div><div class="ttdef"><b>Definition</b> <a href="GameEvents_8cs_source.html#l00008">GameEvents.cs:8</a></div></div>
+<div class="ttc" id="aclassGameManager_html"><div class="ttname"><a href="classGameManager.html">GameManager</a></div><div class="ttdoc">Controla la partida: crea el tablero, las piezas y el cursor, reparte los turnos por tiempo,...</div><div class="ttdef"><b>Definition</b> <a href="GameManager_8cs_source.html#l00012">GameManager.cs:13</a></div></div>
+<div class="ttc" id="aclassGameManager_html_a244f4d3b182b79ecaab20d9ae331a644"><div class="ttname"><a href="classGameManager.html#a244f4d3b182b79ecaab20d9ae331a644">GameManager.RemoveCrateAtPosition</a></div><div class="ttdeci">void RemoveCrateAtPosition(Vector2Int pos)</div><div class="ttdoc">Quita la caja de una casilla.</div><div class="ttdef"><b>Definition</b> <a href="GameManager_8cs_source.html#l00229">GameManager.cs:229</a></div></div>
+<div class="ttc" id="aclassGameManager_html_a9b9be5116361dba83c66da4ee1ab5729"><div class="ttname"><a href="classGameManager.html#a9b9be5116361dba83c66da4ee1ab5729">GameManager.SpawnHealthPickup</a></div><div class="ttdeci">void SpawnHealthPickup(Vector2Int pos)</div><div class="ttdoc">Deja una vida en una casilla.</div><div class="ttdef"><b>Definition</b> <a href="GameManager_8cs_source.html#l00244">GameManager.cs:244</a></div></div>
+<div class="ttc" id="aclassGameManager_html_ac624bbeb6485b28e745fec1c73cc0e99"><div class="ttname"><a href="classGameManager.html#ac624bbeb6485b28e745fec1c73cc0e99">GameManager.Vector2IntToVector3</a></div><div class="ttdeci">static Vector3 Vector2IntToVector3(Vector2Int vector2IntPos)</div><div class="ttdoc">Pasa una casilla del tablero a una posición en la escena (X, 0, Y).</div><div class="ttdef"><b>Definition</b> <a href="GameManager_8cs_source.html#l00237">GameManager.cs:237</a></div></div>
+<div class="ttc" id="aclassGameManager_html_ad3e717f4fb0f378b969f4457de81f23e"><div class="ttname"><a href="classGameManager.html#ad3e717f4fb0f378b969f4457de81f23e">GameManager.Instance</a></div><div class="ttdeci">static GameManager Instance</div><div class="ttdoc">Única instancia del gestor, para que el modelo pueda llamarlo.</div><div class="ttdef"><b>Definition</b> <a href="GameManager_8cs_source.html#l00048">GameManager.cs:48</a></div></div>
+<div class="ttc" id="ainterfaceIAttackable_html"><div class="ttname"><a href="interfaceIAttackable.html">IAttackable</a></div><div class="ttdoc">Algo que se puede atacar: piezas y cajas.</div><div class="ttdef"><b>Definition</b> <a href="IAttackable_8cs_source.html#l00004">IAttackable.cs:5</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_84bbf7b3c7f28a5a18725745e1505219.html">Assets</a></li><li class="navelem"><a class="el" href="dir_f13b41af88cf68434578284aaf699e39.html">Scripts</a></li><li class="navelem"><a class="el" href="dir_9982d9b0f4ad3ea6cfe45d3d01cb7131.html">Model</a></li><li class="navelem"><a class="el" href="Crate_8cs.html">Crate.cs</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>

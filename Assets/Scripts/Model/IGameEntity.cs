@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+/// <summary>Cualquier cosa que ocupa una casilla del tablero.</summary>
 public interface IGameEntity
 {
     GameObject entityGameObject { get; } // GameObject visual de la entidad

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+/// <summary>Aspecto de la caja: gira, flota y suelta partículas al romperse.</summary>
 public class CrateVisuals : MonoBehaviour
 {
     public float rotationSpeed = 60f;     
@@ -10,11 +11,13 @@ public class CrateVisuals : MonoBehaviour
     private bool movingUp = true;
     public GameObject BreakParticlesPrefab;
 
+    /// <summary>Guarda la posición inicial.</summary>
     void Start()
     {
         initialPosition = transform.position;
     }
 
+    /// <summary>Gira el objeto y lo hace subir y bajar un poco, para que se vea que se puede recoger.</summary>
     void Update()
     {
         transform.Rotate(0, rotationSpeed * Time.deltaTime, 0, Space.World);
@@ -38,6 +41,7 @@ public class CrateVisuals : MonoBehaviour
         }
     }
 
+    /// <summary>Crea las partículas de rotura y las borra a los 2 segundos.</summary>
     public void PlayDestructionParticles()
     {
         GameObject particles = Instantiate(BreakParticlesPrefab, transform.position, Quaternion.identity);

@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['panel_0',['panel',['../classGameManager.html#ac43c312d21ca8f491bb42e5618fe9432',1,'GameManager']]],
+  ['piece_1',['Piece',['../classPiece.html',1,'Piece'],['../classPiece.html#a18e1949439c1fe888c54beb87bc23908',1,'Piece.Piece()'],['../EntityID_8cs.html#a9efda8f37908abe4b1bcbeb9392d34caaa5d512bf83495b68d0ffa20f79804dfc',1,'Piece:&#160;EntityID.cs']]],
+  ['piece_2ecs_2',['Piece.cs',['../Piece_8cs.html',1,'']]],
+  ['piecegameobject_3',['pieceGameObject',['../classPiece.html#a2f47a8616c0fcdd67ec4520ddb06a9b9',1,'Piece']]],
+  ['piecenum_4',['pieceNum',['../classGameManager.html#a0af056005cfb0031c3a9dadc816c2585',1,'GameManager']]],
+  ['piecereference_5',['pieceReference',['../classPieceVisual.html#ae5704d4e534f1a70094ef37264ab860b',1,'PieceVisual']]],
+  ['piecerenderer_6',['pieceRenderer',['../classPieceVisual.html#a2d26695cd5a53b9fc7292ce62112fee7',1,'PieceVisual']]],
+  ['piecevisual_7',['PieceVisual',['../classPieceVisual.html',1,'']]],
+  ['piecevisual_2ecs_8',['PieceVisual.cs',['../PieceVisual_8cs.html',1,'']]],
+  ['placecrateatposition_9',['PlaceCrateAtPosition',['../classBoard.html#a2941424d6be57903a53cc218995cf2dc',1,'Board']]],
+  ['playdestructionparticles_10',['PlayDestructionParticles',['../classCrateVisuals.html#a7da56289f76a7c5a8d01349e416de298',1,'CrateVisuals.PlayDestructionParticles()'],['../classPieceVisual.html#afc488efca9d50a9733c45887c45f6c67',1,'PieceVisual.PlayDestructionParticles()']]],
+  ['player1pieceprefab_11',['player1PiecePrefab',['../classGameManager.html#a6fdf869b1da17d7de33f1d6e6d20d575',1,'GameManager']]],
+  ['player2pieceprefab_12',['player2PiecePrefab',['../classGameManager.html#ad9429f511b168ddd4ce31bb10003f492',1,'GameManager']]],
+  ['playercolor1_13',['playerColor1',['../classGameManager.html#ad6466241b818f1db2774586ede8284bb',1,'GameManager']]],
+  ['playercolor2_14',['playerColor2',['../classGameManager.html#ab73eefaf0ce2302ccd7c21e1d1be297a',1,'GameManager']]],
+  ['playhealparticles_15',['PlayHealParticles',['../classPieceVisual.html#a0069d3a9b4aad5090bc3539ef2e7eea7',1,'PieceVisual']]],
+  ['position_16',['position',['../classSquare.html#aafec691c008b49842995b8155509f6b7',1,'Square.position'],['../classBoardEntity.html#aa97391caba49b570c8755ed88c18160a',1,'BoardEntity.position'],['../interfaceIGameEntity.html#a4dea4b021c8f4b80c44285ff38d2f8f8',1,'IGameEntity.position'],['../classPiece.html#a51e992d6dc842f0132a514a2fc2d1b1f',1,'Piece.position']]]
+];

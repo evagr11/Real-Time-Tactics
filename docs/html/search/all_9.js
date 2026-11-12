@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['iattackable_0',['IAttackable',['../interfaceIAttackable.html',1,'']]],
+  ['iattackable_2ecs_1',['IAttackable.cs',['../IAttackable_8cs.html',1,'']]],
+  ['id_2',['ID',['../classBoardEntity.html#a495b3e5f790d515c9befb400367180de',1,'BoardEntity']]],
+  ['igameentity_3',['IGameEntity',['../interfaceIGameEntity.html',1,'']]],
+  ['igameentity_2ecs_4',['IGameEntity.cs',['../IGameEntity_8cs.html',1,'']]],
+  ['inicio_2emd_5',['inicio.md',['../inicio_8md.html',1,'']]],
+  ['initializepieces_6',['InitializePieces',['../classGameManager.html#aee0ed21d86205fb44e65f5ffbdf6397e',1,'GameManager']]],
+  ['initiallocalposition_7',['initialLocalPosition',['../classPieceVisual.html#af92f050e846ff248be288629858380c8',1,'PieceVisual']]],
+  ['initialposition_8',['initialPosition',['../classCrateVisuals.html#a6c6985770d7298c22452090fac58bcaf',1,'CrateVisuals.initialPosition'],['../classHealthPickupVisual.html#a05edc898f8093fd4a0b67b0cb9d2f4e7',1,'HealthPickupVisual.initialPosition']]],
+  ['initialscale_9',['initialScale',['../classPieceVisual.html#af11b6f49bcdce9ffe80aacabcb89b084',1,'PieceVisual']]],
+  ['instance_10',['Instance',['../classGameManager.html#ad3e717f4fb0f378b969f4457de81f23e',1,'GameManager']]],
+  ['interpolatematerial_11',['InterpolateMaterial',['../classPieceVisual.html#abb61c271ceb84ee79e92cf99c0dae2ca',1,'PieceVisual']]],
+  ['isheld_12',['isHeld',['../classPiece.html#a55d821c72255712984fbceb15740e09d',1,'Piece']]],
+  ['isholdingpiece_13',['IsHoldingPiece',['../classCursorLogic.html#ae857a9ca43d7b872561873a54ac562d3',1,'CursorLogic']]],
+  ['isinterpolating_14',['isInterpolating',['../classPieceVisual.html#aed3eca3a38599573e92de05aefd22659',1,'PieceVisual']]],
+  ['isonattackcooldown_15',['isOnAttackCooldown',['../classPiece.html#aff1521698dd53b18d00bb89b7eb5e07b',1,'Piece']]],
+  ['isoutofbounds_16',['IsOutOfBounds',['../classBoard.html#af8a2d2fe5938e7da834e314a2f176121',1,'Board']]],
+  ['isplayer2_17',['isPlayer2',['../classPiece.html#affb78bd181e9500124ae7b0538af3701',1,'Piece']]],
+  ['isplayer2turn_18',['isPlayer2Turn',['../classGameManager.html#a60fa749c97b5d672a6ca02cadffd3ea0',1,'GameManager']]]
+];

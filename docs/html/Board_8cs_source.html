@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Real-Time Tactics: Archivo de código fuente Board.cs</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Real-Time Tactics
+   </div>
+   <div id="projectbrief">Juego de tablero por turnos con tiempo para dos jugadores: mover piezas, atacar, romper cajas y recoger vidas.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('Board_8cs_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Board.cs</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="Board_8cs.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span>UnityEngine;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="foldopen" id="foldopen00004" data-start="{" data-end="};">
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="classBoard.html">    4</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="classBoard.html">Board</a></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>{</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="classBoard.html#a2f9e52c8f83e21be433bb3a323834595">    6</a></span>    <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="classBoard.html#a2f9e52c8f83e21be433bb3a323834595">width</a>;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="classBoard.html#adbbf79735f96938460ee9bd4056ced62">    7</a></span>    <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="classBoard.html#adbbf79735f96938460ee9bd4056ced62">height</a>;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="classBoard.html#ad48b8cf0082e8d524bf469050c08bad7">    8</a></span>    <span class="keyword">public</span> <a class="code hl_class" href="classSquare.html">Square</a>[,] <a class="code hl_variable" href="classBoard.html#ad48b8cf0082e8d524bf469050c08bad7">squares</a>;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="classBoard.html#ae7d8b1e37bc9b7356e3199bd3e42a58f">    9</a></span>    <span class="keyword">public</span> GameObject <a class="code hl_variable" href="classBoard.html#ae7d8b1e37bc9b7356e3199bd3e42a58f">boardContainer</a>;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="}">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="classBoard.html#a83d9e421edca3a2f85ee8612e45a8406">   15</a></span>    <span class="keyword">public</span> <a class="code hl_function" href="classBoard.html#a83d9e421edca3a2f85ee8612e45a8406">Board</a>(<span class="keywordtype">int</span> <a class="code hl_variable" href="classBoard.html#a2f9e52c8f83e21be433bb3a323834595">width</a>, <span class="keywordtype">int</span> <a class="code hl_variable" href="classBoard.html#adbbf79735f96938460ee9bd4056ced62">height</a>, GameObject boardSquarePrefab)</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        this.width = <a class="code hl_variable" href="classBoard.html#a2f9e52c8f83e21be433bb3a323834595">width</a>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        this.height = <a class="code hl_variable" href="classBoard.html#adbbf79735f96938460ee9bd4056ced62">height</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <a class="code hl_variable" href="classBoard.html#ad48b8cf0082e8d524bf469050c08bad7">squares</a> = <span class="keyword">new</span> <a class="code hl_class" href="classSquare.html">Square</a>[<a class="code hl_variable" href="classBoard.html#a2f9e52c8f83e21be433bb3a323834595">width</a>, <a class="code hl_variable" href="classBoard.html#adbbf79735f96938460ee9bd4056ced62">height</a>];</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <a class="code hl_variable" href="classBoard.html#ae7d8b1e37bc9b7356e3199bd3e42a58f">boardContainer</a> = <span class="keyword">new</span> GameObject(<span class="stringliteral">&quot;BoardContainer&quot;</span>);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="classBoard.html#a2f9e52c8f83e21be433bb3a323834595">width</a>; i++)</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code hl_variable" href="classBoard.html#adbbf79735f96938460ee9bd4056ced62">height</a>; j++)</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>                <a class="code hl_variable" href="classBoard.html#ad48b8cf0082e8d524bf469050c08bad7">squares</a>[i, j] = <span class="keyword">new</span> <a class="code hl_class" href="classSquare.html">Square</a>(i, j, boardSquarePrefab, <a class="code hl_variable" href="classBoard.html#ae7d8b1e37bc9b7356e3199bd3e42a58f">boardContainer</a>.transform);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            }</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        }</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    }</div>
+</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="foldopen" id="foldopen00035" data-start="{" data-end="}">
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classBoard.html#a7de5b8b643f1542590ca82cbfa509093">   35</a></span>    <span class="keyword">public</span> <a class="code hl_class" href="classSquare.html">Square</a> <a class="code hl_function" href="classBoard.html#a7de5b8b643f1542590ca82cbfa509093">GetSquareAtPosition</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y)</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keywordflow">if</span> (x &lt; 0 || x &gt;= <a class="code hl_variable" href="classBoard.html#a2f9e52c8f83e21be433bb3a323834595">width</a> || y &lt; 0 || y &gt;= <a class="code hl_variable" href="classBoard.html#adbbf79735f96938460ee9bd4056ced62">height</a>)</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        {  </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            <span class="keywordflow">return</span> <span class="keyword">null</span>; </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        }</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classBoard.html#ad48b8cf0082e8d524bf469050c08bad7">squares</a>[x, y];</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    }</div>
+</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="foldopen" id="foldopen00046" data-start="{" data-end="}">
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="classBoard.html#a526453381a0dfbb431262bde0d59c06f">   46</a></span>    <span class="keyword">public</span> <a class="code hl_interface" href="interfaceIGameEntity.html">IGameEntity</a> <a class="code hl_function" href="classBoard.html#a526453381a0dfbb431262bde0d59c06f">GetEntityAtPosition</a>(Vector2Int position)</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classBoard.html#ad48b8cf0082e8d524bf469050c08bad7">squares</a>[position.x, position.y].<a class="code hl_variable" href="classSquare.html#a04cc30c319187ac6eed76fe2ed0d36d3">containedEntity</a>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    }</div>
+</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="foldopen" id="foldopen00055" data-start="{" data-end="}">
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="classBoard.html#a2b24f63d3a53f8e5ab8b2ca1b48410b5">   55</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classBoard.html#a2b24f63d3a53f8e5ab8b2ca1b48410b5">SetEntityAtPosition</a>(Vector2Int position, <a class="code hl_interface" href="interfaceIGameEntity.html">IGameEntity</a> entity)</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <a class="code hl_variable" href="classBoard.html#ad48b8cf0082e8d524bf469050c08bad7">squares</a>[position.x, position.y].<a class="code hl_variable" href="classSquare.html#a04cc30c319187ac6eed76fe2ed0d36d3">containedEntity</a> = entity;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <span class="keywordflow">if</span> (entity != <span class="keyword">null</span>)</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        {</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            entity.position = position;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        }</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    }</div>
+</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="foldopen" id="foldopen00073" data-start="{" data-end="}">
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="classBoard.html#aba4eee3e975371ff5e1552bc3f08b14b">   73</a></span>    <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classBoard.html#aba4eee3e975371ff5e1552bc3f08b14b">Attack</a>(Vector2Int position, <span class="keywordtype">bool</span> isPlayer2Attacker, <a class="code hl_class" href="classPiece.html">Piece</a> attackingPiece)</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="classBoard.html#af8a2d2fe5938e7da834e314a2f176121">IsOutOfBounds</a>(position) || !attackingPiece.<a class="code hl_property" href="classPiece.html#a55d821c72255712984fbceb15740e09d">isHeld</a>)</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        {  </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>; </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        }</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        <a class="code hl_interface" href="interfaceIGameEntity.html">IGameEntity</a> entity = <a class="code hl_function" href="classBoard.html#a526453381a0dfbb431262bde0d59c06f">GetEntityAtPosition</a>(position);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        <span class="keywordflow">if</span> (entity == <span class="keyword">null</span>)</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        {</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        }</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <span class="keywordflow">if</span> (entity is <a class="code hl_class" href="classPiece.html">Piece</a> targetPiece)</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        {</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            <span class="keywordflow">if</span> (attackingPiece.<a class="code hl_property" href="classPiece.html#aff1521698dd53b18d00bb89b7eb5e07b">isOnAttackCooldown</a>)</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            {</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            }</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            <span class="keywordflow">if</span> (targetPiece.isPlayer2 != isPlayer2Attacker &amp;&amp;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>                targetPiece.entityGameObject.activeInHierarchy)</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            {</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                targetPiece.Attacked();</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                <span class="keywordtype">int</span> currentPieces = <a class="code hl_class" href="classGameManager.html">GameManager</a>.<a class="code hl_property" href="classGameManager.html#ad3e717f4fb0f378b969f4457de81f23e">Instance</a>.<a class="code hl_function" href="classGameManager.html#ac18b697ee847a05ae5aea289cf0c67d0">GetActivePiecesCount</a>(attackingPiece.<a class="code hl_property" href="classPiece.html#affb78bd181e9500124ae7b0538af3701">isPlayer2</a>);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>                <span class="keywordtype">int</span> initialPieces = <a class="code hl_class" href="classGameManager.html">GameManager</a>.<a class="code hl_property" href="classGameManager.html#ad3e717f4fb0f378b969f4457de81f23e">Instance</a>.<a class="code hl_variable" href="classGameManager.html#a0af056005cfb0031c3a9dadc816c2585">pieceNum</a>;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                attackingPiece.<a class="code hl_function" href="classPiece.html#aeb2ce746b1603cd796db8614ca25ba14">StartAttackCooldown</a>(currentPieces, initialPieces);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>            }</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        }</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (entity is <a class="code hl_interface" href="interfaceIAttackable.html">IAttackable</a> attackable)</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        {</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>            attackable.Attacked();</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        }</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    }</div>
+</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="foldopen" id="foldopen00117" data-start="{" data-end="}">
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="classBoard.html#a4c4a4960f5cfaab0bc2793b7d07c68b9">  117</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classBoard.html#a4c4a4960f5cfaab0bc2793b7d07c68b9">AttackFrom</a>(Vector2Int position, <span class="keywordtype">bool</span> isPlayer2Attacker, <a class="code hl_class" href="classPiece.html">Piece</a> attackingPiece)</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    {</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        Vector2Int[] directions = { Vector2Int.up, Vector2Int.down, Vector2Int.left, Vector2Int.right };</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        <span class="keywordflow">foreach</span> (var dir <span class="keywordflow">in</span> directions)</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        {</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>            <a class="code hl_function" href="classBoard.html#aba4eee3e975371ff5e1552bc3f08b14b">Attack</a>(position + dir, isPlayer2Attacker, attackingPiece);</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        }</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    }</div>
+</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="foldopen" id="foldopen00128" data-start="{" data-end="}">
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="classBoard.html#af8a2d2fe5938e7da834e314a2f176121">  128</a></span>    <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classBoard.html#af8a2d2fe5938e7da834e314a2f176121">IsOutOfBounds</a>(Vector2Int pos)</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    {</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        <span class="keywordflow">return</span> pos.x &lt; 0 || pos.x &gt;= <a class="code hl_variable" href="classBoard.html#a2f9e52c8f83e21be433bb3a323834595">width</a> || pos.y &lt; 0 || pos.y &gt;= <a class="code hl_variable" href="classBoard.html#adbbf79735f96938460ee9bd4056ced62">height</a>;</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    }</div>
+</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="foldopen" id="foldopen00135" data-start="{" data-end="}">
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="classBoard.html#a5effa918b4c86e4ec2690471d73054eb">  135</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classBoard.html#a5effa918b4c86e4ec2690471d73054eb">ClearEntityAtPosition</a>(Vector2Int position)</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    {</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        <a class="code hl_function" href="classBoard.html#a2b24f63d3a53f8e5ab8b2ca1b48410b5">SetEntityAtPosition</a>(position, <span class="keyword">null</span>);</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    }</div>
+</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="foldopen" id="foldopen00143" data-start="{" data-end="}">
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno"><a class="line" href="classBoard.html#a2941424d6be57903a53cc218995cf2dc">  143</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classBoard.html#a2941424d6be57903a53cc218995cf2dc">PlaceCrateAtPosition</a>(Vector2Int position, <a class="code hl_interface" href="interfaceIGameEntity.html">IGameEntity</a> crate)</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    {</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        <a class="code hl_function" href="classBoard.html#a7de5b8b643f1542590ca82cbfa509093">GetSquareAtPosition</a>(position.x, position.y).<a class="code hl_variable" href="classSquare.html#a04cc30c319187ac6eed76fe2ed0d36d3">containedEntity</a> = crate;</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    }</div>
+</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>}</div>
+</div>
+<div class="ttc" id="aclassBoard_html"><div class="ttname"><a href="classBoard.html">Board</a></div><div class="ttdoc">El tablero: una matriz de Square con lo que hay en cada casilla, y los ataques.</div><div class="ttdef"><b>Definition</b> <a href="#l00004">Board.cs:5</a></div></div>
+<div class="ttc" id="aclassBoard_html_a2941424d6be57903a53cc218995cf2dc"><div class="ttname"><a href="classBoard.html#a2941424d6be57903a53cc218995cf2dc">Board.PlaceCrateAtPosition</a></div><div class="ttdeci">void PlaceCrateAtPosition(Vector2Int position, IGameEntity crate)</div><div class="ttdoc">Pone una caja en una casilla.</div><div class="ttdef"><b>Definition</b> <a href="#l00143">Board.cs:143</a></div></div>
+<div class="ttc" id="aclassBoard_html_a2b24f63d3a53f8e5ab8b2ca1b48410b5"><div class="ttname"><a href="classBoard.html#a2b24f63d3a53f8e5ab8b2ca1b48410b5">Board.SetEntityAtPosition</a></div><div class="ttdeci">void SetEntityAtPosition(Vector2Int position, IGameEntity entity)</div><div class="ttdoc">Pone una entidad en una casilla y actualiza su posición.</div><div class="ttdef"><b>Definition</b> <a href="#l00055">Board.cs:55</a></div></div>
+<div class="ttc" id="aclassBoard_html_a2f9e52c8f83e21be433bb3a323834595"><div class="ttname"><a href="classBoard.html#a2f9e52c8f83e21be433bb3a323834595">Board.width</a></div><div class="ttdeci">int width</div><div class="ttdef"><b>Definition</b> <a href="#l00006">Board.cs:6</a></div></div>
+<div class="ttc" id="aclassBoard_html_a4c4a4960f5cfaab0bc2793b7d07c68b9"><div class="ttname"><a href="classBoard.html#a4c4a4960f5cfaab0bc2793b7d07c68b9">Board.AttackFrom</a></div><div class="ttdeci">void AttackFrom(Vector2Int position, bool isPlayer2Attacker, Piece attackingPiece)</div><div class="ttdoc">Ataca las cuatro casillas vecinas.</div><div class="ttdef"><b>Definition</b> <a href="#l00117">Board.cs:117</a></div></div>
+<div class="ttc" id="aclassBoard_html_a526453381a0dfbb431262bde0d59c06f"><div class="ttname"><a href="classBoard.html#a526453381a0dfbb431262bde0d59c06f">Board.GetEntityAtPosition</a></div><div class="ttdeci">IGameEntity GetEntityAtPosition(Vector2Int position)</div><div class="ttdef"><b>Definition</b> <a href="#l00046">Board.cs:46</a></div></div>
+<div class="ttc" id="aclassBoard_html_a5effa918b4c86e4ec2690471d73054eb"><div class="ttname"><a href="classBoard.html#a5effa918b4c86e4ec2690471d73054eb">Board.ClearEntityAtPosition</a></div><div class="ttdeci">void ClearEntityAtPosition(Vector2Int position)</div><div class="ttdoc">Vacía una casilla.</div><div class="ttdef"><b>Definition</b> <a href="#l00135">Board.cs:135</a></div></div>
+<div class="ttc" id="aclassBoard_html_a7de5b8b643f1542590ca82cbfa509093"><div class="ttname"><a href="classBoard.html#a7de5b8b643f1542590ca82cbfa509093">Board.GetSquareAtPosition</a></div><div class="ttdeci">Square GetSquareAtPosition(int x, int y)</div><div class="ttdef"><b>Definition</b> <a href="#l00035">Board.cs:35</a></div></div>
+<div class="ttc" id="aclassBoard_html_a83d9e421edca3a2f85ee8612e45a8406"><div class="ttname"><a href="classBoard.html#a83d9e421edca3a2f85ee8612e45a8406">Board.Board</a></div><div class="ttdeci">Board(int width, int height, GameObject boardSquarePrefab)</div><div class="ttdoc">Crea todas las casillas.</div><div class="ttdef"><b>Definition</b> <a href="#l00015">Board.cs:15</a></div></div>
+<div class="ttc" id="aclassBoard_html_aba4eee3e975371ff5e1552bc3f08b14b"><div class="ttname"><a href="classBoard.html#aba4eee3e975371ff5e1552bc3f08b14b">Board.Attack</a></div><div class="ttdeci">bool Attack(Vector2Int position, bool isPlayer2Attacker, Piece attackingPiece)</div><div class="ttdoc">Ataca una casilla. A una pieza rival le quita vida si la pieza atacante no está en espera; una caja s...</div><div class="ttdef"><b>Definition</b> <a href="#l00073">Board.cs:73</a></div></div>
+<div class="ttc" id="aclassBoard_html_ad48b8cf0082e8d524bf469050c08bad7"><div class="ttname"><a href="classBoard.html#ad48b8cf0082e8d524bf469050c08bad7">Board.squares</a></div><div class="ttdeci">Square[,] squares</div><div class="ttdef"><b>Definition</b> <a href="#l00008">Board.cs:8</a></div></div>
+<div class="ttc" id="aclassBoard_html_adbbf79735f96938460ee9bd4056ced62"><div class="ttname"><a href="classBoard.html#adbbf79735f96938460ee9bd4056ced62">Board.height</a></div><div class="ttdeci">int height</div><div class="ttdef"><b>Definition</b> <a href="#l00007">Board.cs:7</a></div></div>
+<div class="ttc" id="aclassBoard_html_ae7d8b1e37bc9b7356e3199bd3e42a58f"><div class="ttname"><a href="classBoard.html#ae7d8b1e37bc9b7356e3199bd3e42a58f">Board.boardContainer</a></div><div class="ttdeci">GameObject boardContainer</div><div class="ttdef"><b>Definition</b> <a href="#l00009">Board.cs:9</a></div></div>
+<div class="ttc" id="aclassBoard_html_af8a2d2fe5938e7da834e314a2f176121"><div class="ttname"><a href="classBoard.html#af8a2d2fe5938e7da834e314a2f176121">Board.IsOutOfBounds</a></div><div class="ttdeci">bool IsOutOfBounds(Vector2Int pos)</div><div class="ttdef"><b>Definition</b> <a href="#l00128">Board.cs:128</a></div></div>
+<div class="ttc" id="aclassGameManager_html"><div class="ttname"><a href="classGameManager.html">GameManager</a></div><div class="ttdoc">Controla la partida: crea el tablero, las piezas y el cursor, reparte los turnos por tiempo,...</div><div class="ttdef"><b>Definition</b> <a href="GameManager_8cs_source.html#l00012">GameManager.cs:13</a></div></div>
+<div class="ttc" id="aclassGameManager_html_a0af056005cfb0031c3a9dadc816c2585"><div class="ttname"><a href="classGameManager.html#a0af056005cfb0031c3a9dadc816c2585">GameManager.pieceNum</a></div><div class="ttdeci">int pieceNum</div><div class="ttdef"><b>Definition</b> <a href="GameManager_8cs_source.html#l00037">GameManager.cs:37</a></div></div>
+<div class="ttc" id="aclassGameManager_html_ac18b697ee847a05ae5aea289cf0c67d0"><div class="ttname"><a href="classGameManager.html#ac18b697ee847a05ae5aea289cf0c67d0">GameManager.GetActivePiecesCount</a></div><div class="ttdeci">int GetActivePiecesCount(bool isPlayer2)</div><div class="ttdef"><b>Definition</b> <a href="GameManager_8cs_source.html#l00381">GameManager.cs:381</a></div></div>
+<div class="ttc" id="aclassGameManager_html_ad3e717f4fb0f378b969f4457de81f23e"><div class="ttname"><a href="classGameManager.html#ad3e717f4fb0f378b969f4457de81f23e">GameManager.Instance</a></div><div class="ttdeci">static GameManager Instance</div><div class="ttdoc">Única instancia del gestor, para que el modelo pueda llamarlo.</div><div class="ttdef"><b>Definition</b> <a href="GameManager_8cs_source.html#l00048">GameManager.cs:48</a></div></div>
+<div class="ttc" id="aclassPiece_html"><div class="ttname"><a href="classPiece.html">Piece</a></div><div class="ttdoc">Pieza de un jugador: vida, posición y espera entre ataques. La espera es más corta cuantas menos piez...</div><div class="ttdef"><b>Definition</b> <a href="Piece_8cs_source.html#l00007">Piece.cs:8</a></div></div>
+<div class="ttc" id="aclassPiece_html_a55d821c72255712984fbceb15740e09d"><div class="ttname"><a href="classPiece.html#a55d821c72255712984fbceb15740e09d">Piece.isHeld</a></div><div class="ttdeci">bool isHeld</div><div class="ttdef"><b>Definition</b> <a href="Piece_8cs_source.html#l00019">Piece.cs:19</a></div></div>
+<div class="ttc" id="aclassPiece_html_aeb2ce746b1603cd796db8614ca25ba14"><div class="ttname"><a href="classPiece.html#aeb2ce746b1603cd796db8614ca25ba14">Piece.StartAttackCooldown</a></div><div class="ttdeci">void StartAttackCooldown(int currentPieces, int initialPieces)</div><div class="ttdoc">Empieza la espera de ataque, más corta cuantas menos piezas quedan (mínimo un 20 %).</div><div class="ttdef"><b>Definition</b> <a href="Piece_8cs_source.html#l00100">Piece.cs:100</a></div></div>
+<div class="ttc" id="aclassPiece_html_aff1521698dd53b18d00bb89b7eb5e07b"><div class="ttname"><a href="classPiece.html#aff1521698dd53b18d00bb89b7eb5e07b">Piece.isOnAttackCooldown</a></div><div class="ttdeci">bool isOnAttackCooldown</div><div class="ttdef"><b>Definition</b> <a href="Piece_8cs_source.html#l00016">Piece.cs:16</a></div></div>
+<div class="ttc" id="aclassPiece_html_affb78bd181e9500124ae7b0538af3701"><div class="ttname"><a href="classPiece.html#affb78bd181e9500124ae7b0538af3701">Piece.isPlayer2</a></div><div class="ttdeci">bool isPlayer2</div><div class="ttdef"><b>Definition</b> <a href="Piece_8cs_source.html#l00009">Piece.cs:9</a></div></div>
+<div class="ttc" id="aclassSquare_html"><div class="ttname"><a href="classSquare.html">Square</a></div><div class="ttdoc">Una casilla del tablero: su posición, su objeto en la escena y lo que hay encima.</div><div class="ttdef"><b>Definition</b> <a href="Square_8cs_source.html#l00004">Square.cs:5</a></div></div>
+<div class="ttc" id="aclassSquare_html_a04cc30c319187ac6eed76fe2ed0d36d3"><div class="ttname"><a href="classSquare.html#a04cc30c319187ac6eed76fe2ed0d36d3">Square.containedEntity</a></div><div class="ttdeci">IGameEntity containedEntity</div><div class="ttdef"><b>Definition</b> <a href="Square_8cs_source.html#l00008">Square.cs:8</a></div></div>
+<div class="ttc" id="ainterfaceIAttackable_html"><div class="ttname"><a href="interfaceIAttackable.html">IAttackable</a></div><div class="ttdoc">Algo que se puede atacar: piezas y cajas.</div><div class="ttdef"><b>Definition</b> <a href="IAttackable_8cs_source.html#l00004">IAttackable.cs:5</a></div></div>
+<div class="ttc" id="ainterfaceIGameEntity_html"><div class="ttname"><a href="interfaceIGameEntity.html">IGameEntity</a></div><div class="ttdoc">Cualquier cosa que ocupa una casilla del tablero.</div><div class="ttdef"><b>Definition</b> <a href="IGameEntity_8cs_source.html#l00004">IGameEntity.cs:5</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_84bbf7b3c7f28a5a18725745e1505219.html">Assets</a></li><li class="navelem"><a class="el" href="dir_f13b41af88cf68434578284aaf699e39.html">Scripts</a></li><li class="navelem"><a class="el" href="dir_9982d9b0f4ad3ea6cfe45d3d01cb7131.html">Model</a></li><li class="navelem"><a class="el" href="Board_8cs.html">Board.cs</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>

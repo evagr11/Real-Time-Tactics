@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+/// <summary>Aspecto de la pieza: encoge al perder vida, cambia de color en la espera de ataque y suelta partículas.</summary>
 public class PieceVisual : MonoBehaviour
 {
     private Vector3 initialScale;
@@ -17,6 +18,7 @@ public class PieceVisual : MonoBehaviour
     public GameObject healParticlesPrefab;
     [SerializeField] private ParticleSystem destructionParticles;
 
+    /// <summary>Guarda la escala, la posición y el material iniciales.</summary>
     void Awake()
     {
         initialScale = transform.localScale;
@@ -25,6 +27,7 @@ public class PieceVisual : MonoBehaviour
         originalMaterial = pieceRenderer.material;
     }
 
+    /// <summary>Guarda el color original.</summary>
     void Start()
     {
         if (pieceReference != null)
@@ -34,11 +37,15 @@ public class PieceVisual : MonoBehaviour
         originalColor = originalMaterial.color;
     }
 
+    /// <summary>Avanza el cambio de color de la espera.</summary>
     void Update()
     {
         InterpolateMaterial();
     }
 
+    /// <summary>Ajusta la altura de la pieza a la vida que le queda.</summary>
+    /// <param name="currentHealth">Vida actual.</param>
+    /// <param name="maxHealth">Vida máxima.</param>
     public void ShrinkOnHit(int currentHealth, int maxHealth)
     {
         if (currentHealth <= 0)
@@ -53,6 +60,9 @@ public class PieceVisual : MonoBehaviour
         transform.localPosition -= new Vector3(0, yOffset, 0);
     }
 
+    /// <summary>Empieza el cambio de color de la espera.</summary>
+    /// <param name="isOnCooldown">Si empieza la espera.</param>
+    /// <param name="cooldownTime">Duración de la espera.</param>
     public void UpdateCooldownVisual(bool isOnCooldown, float cooldownTime)
     {
         if (isOnCooldown)
@@ -63,6 +73,7 @@ public class PieceVisual : MonoBehaviour
         }
     }
 
+    /// <summary>Pasa poco a poco del color de espera al original.</summary>
     void InterpolateMaterial()
     {
         if (isInterpolating)
@@ -77,6 +88,7 @@ public class PieceVisual : MonoBehaviour
         }
     }
 
+    /// <summary>Crea partículas de curación del color de la pieza.</summary>
     public void PlayHealParticles()
     {
         GameObject particlesObject = Instantiate(healParticlesPrefab, transform.position, Quaternion.identity);
@@ -87,6 +99,7 @@ public class PieceVisual : MonoBehaviour
         
     }
 
+    /// <summary>Crea partículas de destrucción con el material de la pieza.</summary>
     public void PlayDestructionParticles()
     {
         ParticleSystem particlesInstance = Instantiate(destructionParticles, transform.position + Vector3.up * 1.5f, Quaternion.identity);

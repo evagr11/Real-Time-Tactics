@@ -1,0 +1,528 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Real-Time Tactics: Referencia de la clase CursorLogic</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Real-Time Tactics
+   </div>
+   <div id="projectbrief">Juego de tablero por turnos con tiempo para dos jugadores: mover piezas, atacar, romper cajas y recoger vidas.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('classCursorLogic.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="#properties">Propiedades</a> &#124;
+<a href="#pri-methods">Métodos privados</a> &#124;
+<a href="#pri-attribs">Atributos privados</a> &#124;
+<a href="classCursorLogic-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle"><div class="title">Referencia de la clase CursorLogic</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Lógica del cursor del tablero: moverse por las casillas, coger una pieza propia, llevarla a una casilla vecina libre y soltarla.  
+ <a href="#details">Más...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:a702ffee38df96c1e0b6c9f01453afdd7" id="r_a702ffee38df96c1e0b6c9f01453afdd7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a702ffee38df96c1e0b6c9f01453afdd7">CursorLogic</a> (int width, int height, Vector2Int startPosition, <a class="el" href="classBoard.html">Board</a> board)</td></tr>
+<tr class="memdesc:a702ffee38df96c1e0b6c9f01453afdd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crea el cursor en una casilla del tablero.  <br /></td></tr>
+<tr class="separator:a702ffee38df96c1e0b6c9f01453afdd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b9b9f106354e12312949119391fa3fa" id="r_a1b9b9f106354e12312949119391fa3fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1b9b9f106354e12312949119391fa3fa">Move</a> (Vector2Int direction)</td></tr>
+<tr class="memdesc:a1b9b9f106354e12312949119391fa3fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mueve el cursor una casilla. Sin pieza cogida, al salirse por un lado aparece por el otro; con una pieza cogida, solo puede ir a una casilla vecina libre, con vida, o volver a la de origen.  <br /></td></tr>
+<tr class="separator:a1b9b9f106354e12312949119391fa3fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fdbd2e7ee9ef712c73ac0c30db67818" id="r_a9fdbd2e7ee9ef712c73ac0c30db67818"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9fdbd2e7ee9ef712c73ac0c30db67818">HandlePieceInteraction</a> (bool isCurrentPlayer2)</td></tr>
+<tr class="memdesc:a9fdbd2e7ee9ef712c73ac0c30db67818"><td class="mdescLeft">&#160;</td><td class="mdescRight">Si no lleva pieza, coge la del jugador que tiene el turno; si lleva una, la suelta en la casilla actual si está libre, tiene una vida o es la de origen.  <br /></td></tr>
+<tr class="separator:a9fdbd2e7ee9ef712c73ac0c30db67818"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae857a9ca43d7b872561873a54ac562d3" id="r_ae857a9ca43d7b872561873a54ac562d3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae857a9ca43d7b872561873a54ac562d3">IsHoldingPiece</a> ()</td></tr>
+<tr class="memdesc:ae857a9ca43d7b872561873a54ac562d3"><td class="mdescLeft">&#160;</td><td class="mdescRight"><dl class="section return"><dt>Devuelve</dt><dd><code>true</code> si el cursor lleva una pieza.</dd></dl>
+ <br /></td></tr>
+<tr class="separator:ae857a9ca43d7b872561873a54ac562d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
+Propiedades</h2></td></tr>
+<tr class="memitem:a971545de621939277d12e9313217d247" id="r_a971545de621939277d12e9313217d247"><td class="memItemLeft" align="right" valign="top">Vector2Int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a971545de621939277d12e9313217d247">currentPosition</a><code> [get, private set]</code></td></tr>
+<tr class="memdesc:a971545de621939277d12e9313217d247"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casilla en la que está el cursor.  <br /></td></tr>
+<tr class="separator:a971545de621939277d12e9313217d247"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Métodos privados</h2></td></tr>
+<tr class="memitem:aa098708179b7e26e1f6536270fc73751" id="r_aa098708179b7e26e1f6536270fc73751"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa098708179b7e26e1f6536270fc73751">CalculateAllowedMoveSquares</a> ()</td></tr>
+<tr class="memdesc:aa098708179b7e26e1f6536270fc73751"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcula las casillas a las que se puede llevar la pieza: la de origen y las vecinas libres o con vida.  <br /></td></tr>
+<tr class="separator:aa098708179b7e26e1f6536270fc73751"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Atributos privados</h2></td></tr>
+<tr class="memitem:ac13e96326c18070d0ca9f317dc3fcd55" id="r_ac13e96326c18070d0ca9f317dc3fcd55"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac13e96326c18070d0ca9f317dc3fcd55">boardWidth</a></td></tr>
+<tr class="separator:ac13e96326c18070d0ca9f317dc3fcd55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61d5374e0a0c3cf86b418affc2d9804a" id="r_a61d5374e0a0c3cf86b418affc2d9804a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a61d5374e0a0c3cf86b418affc2d9804a">boardHeight</a></td></tr>
+<tr class="separator:a61d5374e0a0c3cf86b418affc2d9804a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a105e7734eccab343ba8f18e3c1b70992" id="r_a105e7734eccab343ba8f18e3c1b70992"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classBoard.html">Board</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a105e7734eccab343ba8f18e3c1b70992">boardReference</a></td></tr>
+<tr class="separator:a105e7734eccab343ba8f18e3c1b70992"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90c8d02ab5b580f655d75ea7cbc17a63" id="r_a90c8d02ab5b580f655d75ea7cbc17a63"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPiece.html">Piece</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a90c8d02ab5b580f655d75ea7cbc17a63">heldPiece</a></td></tr>
+<tr class="separator:a90c8d02ab5b580f655d75ea7cbc17a63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a629a826f9bb3c81a2ca4145e631bc1" id="r_a6a629a826f9bb3c81a2ca4145e631bc1"><td class="memItemLeft" align="right" valign="top">Vector2Int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6a629a826f9bb3c81a2ca4145e631bc1">originalPickUpPosition</a></td></tr>
+<tr class="separator:a6a629a826f9bb3c81a2ca4145e631bc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9d0d2015a42e0c09b956ff61e3fb572" id="r_ae9d0d2015a42e0c09b956ff61e3fb572"><td class="memItemLeft" align="right" valign="top">List&lt; Vector2Int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae9d0d2015a42e0c09b956ff61e3fb572">allowedMoveSquares</a></td></tr>
+<tr class="separator:ae9d0d2015a42e0c09b956ff61e3fb572"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Lógica del cursor del tablero: moverse por las casillas, coger una pieza propia, llevarla a una casilla vecina libre y soltarla. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="CursorLogic_8cs_source.html#l00009">9</a> del archivo <a class="el" href="CursorLogic_8cs_source.html">CursorLogic.cs</a>.</p>
+</div><h2 class="groupheader">Documentación de constructores y destructores</h2>
+<a id="a702ffee38df96c1e0b6c9f01453afdd7" name="a702ffee38df96c1e0b6c9f01453afdd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a702ffee38df96c1e0b6c9f01453afdd7">&#9670;&#160;</a></span>CursorLogic()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CursorLogic.CursorLogic </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>width</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>height</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Vector2Int</td>          <td class="paramname"><span class="paramname"><em>startPosition</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classBoard.html">Board</a></td>          <td class="paramname"><span class="paramname"><em>board</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Crea el cursor en una casilla del tablero. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">width</td><td>Ancho del tablero.</td></tr>
+    <tr><td class="paramname">height</td><td>Alto del tablero.</td></tr>
+    <tr><td class="paramname">startPosition</td><td>Casilla inicial.</td></tr>
+    <tr><td class="paramname">board</td><td>Tablero de la partida.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="CursorLogic_8cs_source.html#l00025">25</a> del archivo <a class="el" href="CursorLogic_8cs_source.html">CursorLogic.cs</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de funciones miembro</h2>
+<a id="aa098708179b7e26e1f6536270fc73751" name="aa098708179b7e26e1f6536270fc73751"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa098708179b7e26e1f6536270fc73751">&#9670;&#160;</a></span>CalculateAllowedMoveSquares()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CursorLogic.CalculateAllowedMoveSquares </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calcula las casillas a las que se puede llevar la pieza: la de origen y las vecinas libres o con vida. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="CursorLogic_8cs_source.html#l00117">117</a> del archivo <a class="el" href="CursorLogic_8cs_source.html">CursorLogic.cs</a>.</p>
+
+</div>
+</div>
+<a id="a9fdbd2e7ee9ef712c73ac0c30db67818" name="a9fdbd2e7ee9ef712c73ac0c30db67818"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fdbd2e7ee9ef712c73ac0c30db67818">&#9670;&#160;</a></span>HandlePieceInteraction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CursorLogic.HandlePieceInteraction </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>isCurrentPlayer2</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Si no lleva pieza, coge la del jugador que tiene el turno; si lleva una, la suelta en la casilla actual si está libre, tiene una vida o es la de origen. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">isCurrentPlayer2</td><td>Si el turno es del jugador 2.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="CursorLogic_8cs_source.html#l00084">84</a> del archivo <a class="el" href="CursorLogic_8cs_source.html">CursorLogic.cs</a>.</p>
+
+</div>
+</div>
+<a id="ae857a9ca43d7b872561873a54ac562d3" name="ae857a9ca43d7b872561873a54ac562d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae857a9ca43d7b872561873a54ac562d3">&#9670;&#160;</a></span>IsHoldingPiece()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CursorLogic.IsHoldingPiece </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><dl class="section return"><dt>Devuelve</dt><dd><code>true</code> si el cursor lleva una pieza.</dd></dl>
+</p>
+
+<p class="definition">Definición en la línea <a class="el" href="CursorLogic_8cs_source.html#l00143">143</a> del archivo <a class="el" href="CursorLogic_8cs_source.html">CursorLogic.cs</a>.</p>
+
+</div>
+</div>
+<a id="a1b9b9f106354e12312949119391fa3fa" name="a1b9b9f106354e12312949119391fa3fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b9b9f106354e12312949119391fa3fa">&#9670;&#160;</a></span>Move()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CursorLogic.Move </td>
+          <td>(</td>
+          <td class="paramtype">Vector2Int</td>          <td class="paramname"><span class="paramname"><em>direction</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Mueve el cursor una casilla. Sin pieza cogida, al salirse por un lado aparece por el otro; con una pieza cogida, solo puede ir a una casilla vecina libre, con vida, o volver a la de origen. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">direction</td><td>Dirección del movimiento.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="CursorLogic_8cs_source.html#l00039">39</a> del archivo <a class="el" href="CursorLogic_8cs_source.html">CursorLogic.cs</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de datos miembro</h2>
+<a id="ae9d0d2015a42e0c09b956ff61e3fb572" name="ae9d0d2015a42e0c09b956ff61e3fb572"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9d0d2015a42e0c09b956ff61e3fb572">&#9670;&#160;</a></span>allowedMoveSquares</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt;Vector2Int&gt; CursorLogic.allowedMoveSquares</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="CursorLogic_8cs_source.html#l00018">18</a> del archivo <a class="el" href="CursorLogic_8cs_source.html">CursorLogic.cs</a>.</p>
+
+</div>
+</div>
+<a id="a61d5374e0a0c3cf86b418affc2d9804a" name="a61d5374e0a0c3cf86b418affc2d9804a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61d5374e0a0c3cf86b418affc2d9804a">&#9670;&#160;</a></span>boardHeight</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CursorLogic.boardHeight</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="CursorLogic_8cs_source.html#l00014">14</a> del archivo <a class="el" href="CursorLogic_8cs_source.html">CursorLogic.cs</a>.</p>
+
+</div>
+</div>
+<a id="a105e7734eccab343ba8f18e3c1b70992" name="a105e7734eccab343ba8f18e3c1b70992"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a105e7734eccab343ba8f18e3c1b70992">&#9670;&#160;</a></span>boardReference</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classBoard.html">Board</a> CursorLogic.boardReference</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="CursorLogic_8cs_source.html#l00015">15</a> del archivo <a class="el" href="CursorLogic_8cs_source.html">CursorLogic.cs</a>.</p>
+
+</div>
+</div>
+<a id="ac13e96326c18070d0ca9f317dc3fcd55" name="ac13e96326c18070d0ca9f317dc3fcd55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac13e96326c18070d0ca9f317dc3fcd55">&#9670;&#160;</a></span>boardWidth</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CursorLogic.boardWidth</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="CursorLogic_8cs_source.html#l00013">13</a> del archivo <a class="el" href="CursorLogic_8cs_source.html">CursorLogic.cs</a>.</p>
+
+</div>
+</div>
+<a id="a90c8d02ab5b580f655d75ea7cbc17a63" name="a90c8d02ab5b580f655d75ea7cbc17a63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90c8d02ab5b580f655d75ea7cbc17a63">&#9670;&#160;</a></span>heldPiece</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classPiece.html">Piece</a> CursorLogic.heldPiece</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="CursorLogic_8cs_source.html#l00016">16</a> del archivo <a class="el" href="CursorLogic_8cs_source.html">CursorLogic.cs</a>.</p>
+
+</div>
+</div>
+<a id="a6a629a826f9bb3c81a2ca4145e631bc1" name="a6a629a826f9bb3c81a2ca4145e631bc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a629a826f9bb3c81a2ca4145e631bc1">&#9670;&#160;</a></span>originalPickUpPosition</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vector2Int CursorLogic.originalPickUpPosition</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="CursorLogic_8cs_source.html#l00017">17</a> del archivo <a class="el" href="CursorLogic_8cs_source.html">CursorLogic.cs</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de propiedades</h2>
+<a id="a971545de621939277d12e9313217d247" name="a971545de621939277d12e9313217d247"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a971545de621939277d12e9313217d247">&#9670;&#160;</a></span>currentPosition</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vector2Int CursorLogic.currentPosition</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">private set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Casilla en la que está el cursor. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="CursorLogic_8cs_source.html#l00012">12</a> del archivo <a class="el" href="CursorLogic_8cs_source.html">CursorLogic.cs</a>.</p>
+
+</div>
+</div>
+<hr/>La documentación de esta clase está generada del siguiente archivo:<ul>
+<li><a class="el" href="CursorLogic_8cs_source.html">CursorLogic.cs</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classCursorLogic.html">CursorLogic</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>

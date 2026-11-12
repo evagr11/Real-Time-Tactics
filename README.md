@@ -4,6 +4,7 @@
 
 <div align="center">
   <a href="https://github.com/evagr11/Real-Time-Tactics" target="_blank"><img src="https://img.shields.io/badge/Ver_Código-181717?style=for-the-badge&logo=github&logoColor=white" alt="Ver Código"/></a>
+  <a href="https://evagr11.github.io/Real-Time-Tactics/" target="_blank"><img src="https://img.shields.io/badge/Documentación_(Doxygen)-181717?style=for-the-badge&logo=doxygen&logoColor=white" alt="Documentación del código"></a>
   <a href="https://evagr11.github.io/Curriculum/proyectos/real-time-tactics.html" target="_blank"><img src="https://img.shields.io/badge/Ver_Web-00b89a?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Ver Web"/></a>
   <a href="https://evagr.itch.io/real-time-tactics" target="_blank"><img src="https://img.shields.io/badge/Jugar_en_itch.io-FA5C5C?style=for-the-badge&logo=itch.io&logoColor=white" alt="Jugar en itch.io"/></a>
 </div>

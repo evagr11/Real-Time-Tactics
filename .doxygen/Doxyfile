@@ -1,0 +1,24 @@
+# Documentación del código con Doxygen. Desde la raíz del repo:  doxygen .doxygen/Doxyfile
+PROJECT_NAME           = "Real-Time Tactics"
+PROJECT_BRIEF          = "Juego de tablero por turnos con tiempo para dos jugadores: mover piezas, atacar, romper cajas y recoger vidas."
+OUTPUT_LANGUAGE        = Spanish
+OUTPUT_DIRECTORY       = docs
+HTML_OUTPUT            = html
+GENERATE_HTML          = YES
+GENERATE_LATEX         = NO
+INPUT                  = .doxygen/inicio.md Assets/Scripts
+USE_MDFILE_AS_MAINPAGE = .doxygen/inicio.md
+FILE_PATTERNS          = *.cs
+RECURSIVE              = YES
+EXCLUDE_PATTERNS       = */TextMesh*/* */Plugins/* */Packages/* */Library/*
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+EXTRACT_STATIC         = YES
+FULL_PATH_NAMES        = NO
+SOURCE_BROWSER         = YES
+GENERATE_TREEVIEW      = YES
+HTML_COLORSTYLE        = LIGHT
+HTML_TIMESTAMP         = NO
+QUIET                  = YES
+WARN_IF_UNDOCUMENTED   = NO
+HAVE_DOT               = NO

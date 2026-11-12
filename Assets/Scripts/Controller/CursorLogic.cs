@@ -2,8 +2,13 @@
 using System.Collections.Generic;
 using Unity.VisualScripting;
 
+/// <summary>
+/// Lógica del cursor del tablero: moverse por las casillas, coger una pieza propia, llevarla a
+/// una casilla vecina libre y soltarla.
+/// </summary>
 public class CursorLogic
 {
+    /// <summary>Casilla en la que está el cursor.</summary>
     public Vector2Int currentPosition { get; private set; }
     private int boardWidth;
     private int boardHeight;
@@ -12,6 +17,11 @@ public class CursorLogic
     private Vector2Int originalPickUpPosition;
     private List<Vector2Int> allowedMoveSquares;
 
+    /// <summary>Crea el cursor en una casilla del tablero.</summary>
+    /// <param name="width">Ancho del tablero.</param>
+    /// <param name="height">Alto del tablero.</param>
+    /// <param name="startPosition">Casilla inicial.</param>
+    /// <param name="board">Tablero de la partida.</param>
     public CursorLogic(int width, int height, Vector2Int startPosition, Board board)
     {
         boardWidth = width;
@@ -21,6 +31,11 @@ public class CursorLogic
         allowedMoveSquares = new List<Vector2Int>();
     }
 
+    /// <summary>
+    /// Mueve el cursor una casilla. Sin pieza cogida, al salirse por un lado aparece por el otro;
+    /// con una pieza cogida, solo puede ir a una casilla vecina libre, con vida, o volver a la de origen.
+    /// </summary>
+    /// <param name="direction">Dirección del movimiento.</param>
     public void Move(Vector2Int direction)
     {
         Vector2Int newPotentialPosition = currentPosition + direction;
@@ -61,6 +76,11 @@ public class CursorLogic
         }
     }
 
+    /// <summary>
+    /// Si no lleva pieza, coge la del jugador que tiene el turno; si lleva una, la suelta en la casilla
+    /// actual si está libre, tiene una vida o es la de origen.
+    /// </summary>
+    /// <param name="isCurrentPlayer2">Si el turno es del jugador 2.</param>
     public void HandlePieceInteraction(bool isCurrentPlayer2)
     {
         if (heldPiece == null)
@@ -93,6 +113,7 @@ public class CursorLogic
         }
     }
 
+    /// <summary>Calcula las casillas a las que se puede llevar la pieza: la de origen y las vecinas libres o con vida.</summary>
     private void CalculateAllowedMoveSquares()
     {
         allowedMoveSquares.Clear();
@@ -118,6 +139,7 @@ public class CursorLogic
         }
     }
 
+    /// <returns><c>true</c> si el cursor lleva una pieza.</returns>
     public bool IsHoldingPiece()
     {
         return heldPiece != null;

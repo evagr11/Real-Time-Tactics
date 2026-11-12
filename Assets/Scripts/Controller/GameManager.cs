@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
+/// <summary>
+/// Controla la partida: crea el tablero, las piezas y el cursor, reparte los turnos por tiempo,
+/// lee los controles de cada jugador, genera cajas y comprueba quién gana.
+/// </summary>
 public class GameManager : MonoBehaviour
 {
     [Header("Medidas tablero")]
@@ -40,6 +44,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] float targetY;
     [SerializeField] float speed;
 
+    /// <summary>Única instancia del gestor, para que el modelo pueda llamarlo.</summary>
     public static GameManager Instance { get; private set; }
 
     Board board;
@@ -51,11 +56,13 @@ public class GameManager : MonoBehaviour
     private bool isPlayer2Turn;
     private Vector3 cursorVisualOffset = new Vector3(-0.5f, -0.05f, 0);
 
+    /// <summary>Guarda la instancia.</summary>
     void Awake()
     {
         Instance = this;
     }
 
+    /// <summary>Crea el tablero, el cursor y las piezas, elige quién empieza y arranca el primer turno y las cajas.</summary>
     void Start()
     {
         board = new Board(boardWidth, boardHeight, boardSquarePrefab);
@@ -79,6 +86,7 @@ public class GameManager : MonoBehaviour
         StartCoroutine(SpawnCrateCoroutine());
     }
 
+    /// <summary>Lee los controles, actualiza la barra de tiempo, el cursor y las esperas de las piezas, y comprueba el final.</summary>
     void Update()
     {
         if (timeLeftInTurn > 0)
@@ -92,6 +100,10 @@ public class GameManager : MonoBehaviour
         CheckGameOver();
     }
 
+    /// <summary>
+    /// Controles del jugador con el turno. Jugador 1: WASD, Ctrl izquierdo para coger o soltar y Espacio
+    /// para atacar. Jugador 2: flechas, Ctrl derecho y Enter.
+    /// </summary>
     void HandlePlayerInput()
     {
         Vector2Int moveDirection = Vector2Int.zero;
@@ -132,12 +144,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    /// <summary>Coloca el cursor visual sobre su casilla.</summary>
     void UpdateCursorVisualPosition()
     {
         Square currentCursorSquare = board.GetSquareAtPosition(cursorLogic.currentPosition.x, cursorLogic.currentPosition.y);
         cursorVisual.UpdatePosition(currentCursorSquare.boardSquare.transform.position + cursorVisualOffset);
     }
 
+    /// <summary>Crea las piezas de los dos jugadores en el centro de su fila de salida.</summary>
     void InitializePieces()
     {
         allPieces.Clear();
@@ -149,6 +163,11 @@ public class GameManager : MonoBehaviour
         CreateInitialPieces(player2StartPositions, player2PiecePrefab, true, maxHealth);
     }
 
+    /// <summary>Crea las piezas de un jugador.</summary>
+    /// <param name="startPositions">Casillas de salida.</param>
+    /// <param name="piecePrefab">Prefab de la pieza.</param>
+    /// <param name="isPlayer2">Si son del jugador 2.</param>
+    /// <param name="maxHealth">Vida máxima de cada pieza.</param>
     void CreateInitialPieces(Vector2Int[] startPositions, GameObject piecePrefab, bool isPlayer2, int maxHealth)
     {
         for (int i = 0; i < pieceNum; i++)
@@ -162,6 +181,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    /// <summary>Cada cierto tiempo al azar crea una caja, si no se ha llegado al máximo.</summary>
     IEnumerator SpawnCrateCoroutine()
     {
         while (true)
@@ -174,6 +194,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    /// <returns>El número de cajas que hay en el tablero.</returns>
     int CountCratesOnBoard()
     {
         int count = 0;
@@ -190,6 +211,7 @@ public class GameManager : MonoBehaviour
         return count;
     }
 
+    /// <summary>Crea una caja en una casilla libre al azar que no sea la del cursor.</summary>
     void SpawnCrate()
     {
         Vector2Int position;
@@ -202,27 +224,37 @@ public class GameManager : MonoBehaviour
         board.GetSquareAtPosition(position.x, position.y).containedEntity = crate;
     }
 
+    /// <summary>Quita la caja de una casilla.</summary>
+    /// <param name="pos">Casilla de la caja.</param>
     public void RemoveCrateAtPosition(Vector2Int pos)
     {
         board.GetSquareAtPosition(pos.x, pos.y).containedEntity = null;
     }
 
+    /// <summary>Pasa una casilla del tablero a una posición en la escena (X, 0, Y).</summary>
+    /// <param name="vector2IntPos">Casilla.</param>
+    /// <returns>Posición en la escena.</returns>
     public static Vector3 Vector2IntToVector3(Vector2Int vector2IntPos)
     {
         return new Vector3(vector2IntPos.x, 0, vector2IntPos.y);
     }
 
+    /// <summary>Deja una vida en una casilla.</summary>
+    /// <param name="pos">Casilla.</param>
     public void SpawnHealthPickup(Vector2Int pos)
     {
         HealthPickup pickup = new HealthPickup(pos, healthPickupPrefab);
         board.GetSquareAtPosition(pos.x, pos.y).containedEntity = pickup;
     }
 
+    /// <summary>Quita la vida de una casilla.</summary>
+    /// <param name="pos">Casilla.</param>
     public void RemoveHealthPickupAtPosition(Vector2Int pos)
     {
         board.GetSquareAtPosition(pos.x, pos.y).containedEntity = null;
     }
 
+    /// <summary>Reinicia el tiempo del turno y pinta el cursor y la barra del color del jugador.</summary>
     void StartNewTurn()
     {
         timeLeftInTurn = turnTime;
@@ -230,11 +262,13 @@ public class GameManager : MonoBehaviour
         UpdateTimerBarColor();
     }
 
+    /// <summary>Vacía la barra de tiempo según lo que queda de turno.</summary>
     void UpdateTurnTimerVisuals()
     {
         timerBar.fillAmount = (timeLeftInTurn / turnTime);
     }
 
+    /// <summary>Pone la barra del color del jugador y la hace vaciarse hacia su lado.</summary>
     void UpdateTimerBarColor()
     {
         if (isPlayer2Turn)
@@ -250,6 +284,7 @@ public class GameManager : MonoBehaviour
     }
 
 
+    /// <summary>Descuenta el tiempo del turno y lo termina al llegar a 0.</summary>
     void FixedUpdate()
     {
         if (timeLeftInTurn > 0)
@@ -263,6 +298,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    /// <summary>Si un jugador se queda sin piezas, baja el panel y carga la escena de victoria del otro.</summary>
     void CheckGameOver()
     {
         bool player1HasPieces = allPieces.Exists(piece => !piece.isPlayer2);
@@ -278,6 +314,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    /// <summary>Baja el panel de transición y carga la escena.</summary>
+    /// <param name="panel">Panel que baja.</param>
+    /// <param name="targetY">Altura final.</param>
+    /// <param name="speed">Velocidad.</param>
+    /// <param name="sceneToLoad">Escena que se carga al terminar.</param>
     IEnumerator LowerPanelCoroutine(Image panel, float targetY, float speed, string sceneToLoad)
     {
         Vector3 startPos = panel.rectTransform.position;
@@ -292,6 +333,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(sceneToLoad);
     }
 
+    /// <summary>Suelta la pieza que se llevaba y pasa el turno al otro jugador.</summary>
     void EndTurn()
     {
         cursorLogic.HandlePieceInteraction(isPlayer2Turn);
@@ -299,6 +341,7 @@ public class GameManager : MonoBehaviour
         StartNewTurn();
     }
 
+    /// <summary>Quita del tablero las piezas destruidas y descuenta la espera de ataque de las demás.</summary>
     void UpdatePieceCooldowns()
     {
         float dt = Time.deltaTime;
@@ -315,6 +358,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    /// <returns>La pieza del jugador con el turno que está bajo el cursor, o <c>null</c>.</returns>
     Piece GetCurrentPlayerPiece()
     {
         foreach (Piece piece in allPieces)
@@ -325,12 +369,15 @@ public class GameManager : MonoBehaviour
         return null;
     }
 
+    /// <summary>Pone en espera de ataque la pieza que está bajo el cursor.</summary>
     public void ApplyCooldownToCurrentPiece()
     {
         Piece currentPiece = GetCurrentPlayerPiece();
         currentPiece.StartAttackCooldown(GetActivePiecesCount(currentPiece.isPlayer2), pieceNum);
     }
 
+    /// <param name="isPlayer2">Jugador del que se cuentan las piezas.</param>
+    /// <returns>Las piezas que le quedan.</returns>
     public int GetActivePiecesCount(bool isPlayer2)
     {
         return allPieces.FindAll(p => p.isPlayer2 == isPlayer2).Count;
