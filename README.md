@@ -15,7 +15,7 @@
   <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com/?font=JetBrains+Mono&size=18&duration=3500&pause=800&color=ff2d85&center=true&vCenter=true&width=600&lines=Desarrollado+en+Unity+3D%3BGameplay+t%C3%A1ctico+1v1%3BTurnos+limitados+en+tiempo+real%3BTablero+5x5+con+cursor+toroidal%3BScripts+en+C%23%3BMec%C3%A1nica+de+catch-up" alt="Typing SVG" /></a>
 </div>
 
-# 🚀 Sobre el Proyecto
+# Sobre el Proyecto
 
 **Real-Time Tactics (RTT)** es un juego de estrategia táctica **1v1** desarrollado en **Unity 3D**. La partida se desarrolla en un tablero de **5x5** donde el **cursor es toroidal**: si sale por un lado, aparece por el opuesto, así que ninguna casilla queda lejos. El escenario es un bosque encantado nocturno, con una atmósfera inmersiva creada a través de modelos 3D, efectos de partículas y una cuidada iluminación. Cada jugador controla **3 piezas con 3 puntos de vida** y gana quien elimine las del oponente.
 
@@ -27,18 +27,18 @@
 </div>
 
 
-### ✨ Características principales:
+### Características principales:
 
-*   👑 **Estrategia 1v1**: Enfréntate a otro jugador en un duelo táctico por la supremacía del tablero.
-*   ⏱️ **Turnos en Tiempo Real**: Cada turno dura **15 segundos**, marcados por una barra del color del jugador. En ese tiempo puedes hacer todo lo que te dé tiempo; quién empieza se decide al azar.
-*   🌐 **Cursor Toroidal**: El cursor no tiene bordes y llega a cualquier pieza en pocos pasos; las piezas, en cambio, solo avanzan a casillas vecinas, así que la posición importa.
-*   ❤️ **Gestión de Salud Visual**: La altura de las piezas representa su vida. A medida que reciben daño, se encogen visualmente.
-*   ⚔️ **Ataque en cruz con enfriamiento**: Una pieza golpea a la vez las cuatro casillas vecinas y después espera unos segundos antes de volver a atacar.
-*   ⚡ **Mecánica de Remontada (Catch-up)**: El enfriamiento base es de 2 s y se multiplica por las piezas que te quedan entre las iniciales (con un mínimo del 20 %): con una sola pieza atacas el triple de rápido.
-*   📦 **Cajas y corazones**: Cada 5-15 segundos aparece una caja (máximo 3). Al romperla deja un corazón que cura 1 punto de vida a la pieza que lo recoge.
-*   🌲 **Ambientación Inmersiva**: Sumérgete en un bosque mágico con modelos 3D, efectos de partículas y una atmósfera nocturna.
+*   **Estrategia 1v1**: Enfréntate a otro jugador en un duelo táctico por la supremacía del tablero.
+*   **Turnos en Tiempo Real**: Cada turno dura **15 segundos**, marcados por una barra del color del jugador. En ese tiempo puedes hacer todo lo que te dé tiempo; quién empieza se decide al azar.
+*   **Cursor Toroidal**: El cursor no tiene bordes y llega a cualquier pieza en pocos pasos; las piezas, en cambio, solo avanzan a casillas vecinas, así que la posición importa.
+*   **Gestión de Salud Visual**: La altura de las piezas representa su vida. A medida que reciben daño, se encogen visualmente.
+*   **Ataque en cruz con enfriamiento**: Una pieza golpea a la vez las cuatro casillas vecinas y después espera unos segundos antes de volver a atacar.
+*   **Mecánica de Remontada (Catch-up)**: El enfriamiento base es de 2 s y se multiplica por las piezas que te quedan entre las iniciales (con un mínimo del 20 %): con una sola pieza atacas el triple de rápido.
+*   **Cajas y corazones**: Cada 5-15 segundos aparece una caja (máximo 3). Al romperla deja un corazón que cura 1 punto de vida a la pieza que lo recoge.
+*   **Ambientación Inmersiva**: Sumérgete en un bosque mágico con modelos 3D, efectos de partículas y una atmósfera nocturna.
 
-### 🎮 Cómo se juega
+### Cómo se juega
 
 Los dos jugadores comparten teclado y un mismo cursor, que cambia de color según de quién sea el turno.
 
@@ -57,11 +57,11 @@ Los dos jugadores comparten teclado y un mismo cursor, que cambia de color segú
 2. Muévela a una casilla vecina libre (o con un corazón) y suéltala, o ataca desde donde está.
 3. Si se acaba tu turno con una pieza cogida, se suelta sola.
 
-# 🧠 Contexto del Proyecto
+# Contexto del Proyecto
 
 Este proyecto fue desarrollado como parte de la asignatura de **Programación** durante el primer año del ciclo formativo de **Desarrollo de Aplicaciones Multiplataforma (DAM)**. Sirvió como una aplicación práctica de los conceptos de programación orientada a objetos, gestión de estados y desarrollo de videojuegos con el motor Unity.
 
-# 🛠️ Stack Tecnológico
+# Stack Tecnológico
 <div align="center">
   <img src="https://img.shields.io/badge/Unity-000000?style=for-the-badge&logo=unity&logoColor=white" alt="Unity"/>
   <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white" alt="C#"/>
@@ -83,7 +83,7 @@ Este proyecto fue desarrollado como parte de la asignatura de **Programación** 
 
 </div>
 
-# 🖼️ Capturas del Juego
+# Capturas del Juego
 
 | Inicio de la Partida                                         | Un jugador se cura                                      |
 | :----------------------------------------------------------: | :------------------------------------------------------: |
@@ -97,7 +97,7 @@ Este proyecto fue desarrollado como parte de la asignatura de **Programación** 
   <p><em>Pantalla que se muestra al ganar la partida.</em></p>
 </div>
 
-# 📂 Estructura del Proyecto
+# Estructura del Proyecto
 
 La estructura del proyecto sigue las convenciones de Unity, separando la lógica (`Controller`), los datos (`Model`) y la representación visual (`View`).
 
@@ -139,7 +139,7 @@ Real-Time-Tactics/
 └── ProjectSettings/
 ```
 
-# 🚀 Cómo Utilizar el Proyecto
+# Cómo Utilizar el Proyecto
 
 Para ejecutar este proyecto localmente necesitas **Unity Hub** y **Unity 2023.2** (se creó con la 2023.2.20f1). Si solo quieres jugar, está [en itch.io](https://evagr.itch.io/real-time-tactics).
 
@@ -155,7 +155,7 @@ Para ejecutar este proyecto localmente necesitas **Unity Hub** y **Unity 2023.2*
 
 3.  **Ejecuta el juego:**
     *   Una vez que el proyecto esté abierto en el Editor de Unity, abre la escena `Principal` de la carpeta `Assets/Scenes`.
-    *   Presiona el botón de **Play** ▶️ en la parte superior central del editor para iniciar el juego.
+    *   Presiona el botón de **Play** en la parte superior central del editor para iniciar el juego.
 
 <br>
 
